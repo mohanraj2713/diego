@@ -11,8 +11,9 @@ import TestimonialAreaHomeOne from "./TestimonialAreaHomeOne";
 import ContactAreaHomeOne from "./ContactAreaHomeOne";
 import FAQAreaHomeOne from "./FAQAreaHomeOne";
 import PartnerAreaHomeOne from "./PartnerAreaHomeOne";
-import MyWorkShopTrainingHomeOne from "./MyWorkShopTrainingHomeOne";
 import FooterOne from "@/layouts/footers/FooterOne";
+import ServiceHeroAreaHomeOne from "./ServiceHeroAreaHomeOne";
+import MyWorkShopTrainingHomeOne from "./MyWorkShopTrainingHomeOne";
 
 const HomeOne = () => {
   return (
@@ -29,8 +30,11 @@ const HomeOne = () => {
             <ServiceAreaHomeOne />
             <MarqueeAreaHomeOne />
             <AboutAreaHomeOne />
-            <MyWorkShopTrainingHomeOne />
+            {/* <HeroAreaHomeTwo /> */}
+            {/* <MyWorkShopTrainingHomeOne /> */}
             {/* <PortfolioAreaHomeOne /> */}
+            {/* <SkillAreaHomeOne /> */}
+            <ServiceHeroAreaHomeOne />
             <PartnerAreaHomeOne />
             <TestimonialAreaHomeOne />
             <ContactAreaHomeOne />

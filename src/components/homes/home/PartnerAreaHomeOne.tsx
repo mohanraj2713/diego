@@ -34,7 +34,14 @@ const partner_data: PartnerItem[] = [
 
 const PartnerAreaHomeOne = () => {
   return (
-    <section className="tp-partner-area pt-80 pb-80 p-relative fix">
+    <section
+      className="tp-skill-area tp-partner-area pt-100 pb-100 p-relative z-index-1 fix theme-bg-2"
+      style={{ backgroundImage: 'url(/assets/img/skill/bg-distort.png)' }}
+    >
+      <div className="tp-skill-shape">
+        <span className="tp-skill-shape-1"></span>
+        <span className="tp-skill-shape-2"></span>
+      </div>
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
@@ -45,6 +52,7 @@ const PartnerAreaHomeOne = () => {
                   fontSize: '42px',
                   fontWeight: '700',
                   marginBottom: '10px',
+                  color: '#1e2022',
                   fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                 }}
               >
@@ -65,14 +73,19 @@ const PartnerAreaHomeOne = () => {
         </div>
 
         <div className="tp-partner-slider-wrapper">
+          <style>{`
+            .tp-partner-slider-active .swiper-wrapper {
+              transition-timing-function: linear !important;
+            }
+          `}</style>
           <Swiper
             modules={[Autoplay]}
             slidesPerView={5}
             spaceBetween={30}
             loop={true}
-            speed={1000}
+            speed={3500}
             autoplay={{
-              delay: 2000,
+              delay: 0,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
@@ -102,7 +115,7 @@ const PartnerAreaHomeOne = () => {
           >
             {partner_data.map((item) => (
               <SwiperSlide key={item.id}>
-                <div 
+                <div
                   className="tp-partner-item text-center"
                   style={{
                     padding: '20px 10px',
@@ -135,7 +148,7 @@ const PartnerAreaHomeOne = () => {
                       }}
                     />
                   </div>
-                  <h4
+                  {/* <h4
                     style={{
                       fontSize: '15px',
                       fontWeight: '600',
@@ -147,7 +160,7 @@ const PartnerAreaHomeOne = () => {
                     }}
                   >
                     {item.name}
-                  </h4>
+                  </h4> */}
                 </div>
               </SwiperSlide>
             ))}
