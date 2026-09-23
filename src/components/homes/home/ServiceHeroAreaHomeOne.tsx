@@ -105,11 +105,11 @@ const ServiceHeroAreaHomeOne = () => {
                                         </span>
                                         <h2
                                             style={{
-                                                fontSize: '44px',
+                                                fontSize: '32px',
                                                 fontWeight: '700',
-                                                lineHeight: '1.15',
+                                                lineHeight: '1.25',
                                                 color: '#171718',
-                                                marginBottom: '25px',
+                                                marginBottom: '20px',
                                                 fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                             }}
                                         >

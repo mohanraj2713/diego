@@ -22,7 +22,7 @@ const ContactAreaHomeOne: React.FC = () => {
             Contact Us
           </span>
 
-          <h2 className="tp-section-title" style={{ fontSize: 'clamp(36px, 5vw, 52px)', lineHeight: '1.15', marginBottom: '16px' }}>
+          <h2 className="tp-section-title" style={{ fontSize: 'clamp(28px, 4vw, 34px)', lineHeight: '1.15', marginBottom: '16px' }}>
             Let’s Talk
           </h2>
 

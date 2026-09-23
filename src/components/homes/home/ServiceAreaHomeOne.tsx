@@ -134,7 +134,7 @@ const ServiceAreaHomeOne = () => {
                   <div className="tp-section-title-wrapper tp_text_anim mb-170">
                     <div className="tp-section-title-inner p-relative">
                       <span className="tp-section-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '10px' }}>{subtitle}</span>
-                      <h3 className="tp-section-title tp_title_anim">{title}</h3>
+                      <h3 className="tp-section-title tp_title_anim" style={{ fontSize: '32px', lineHeight: '1.2' }}>{title}</h3>
                     </div>
                     <p>{sm_des}</p>
                   </div>
@@ -201,26 +201,17 @@ const ServiceAreaHomeOne = () => {
                             aria-expanded={`${i === 1 ? 'true' : 'false'}`}
                             aria-controls={`collapse${item.tab_id}`}
                             tabIndex={0}
+                            style={{
+                              fontSize: '22px',
+                              fontWeight: '600',
+                              padding: '16px 0 16px',
+                              lineHeight: '1.3'
+                            }}
                           >
-                            <span>0{item.id}</span>
+                            <span style={{ fontSize: '14px', marginRight: '12px', transform: 'none', display: 'inline-block' }}>0{item.id}</span>
                             {item.question}
                           </button>
                         </h2>
-                        {/* <div
-                          id={`collapse${item.tab_id}`}
-                          className={`accordion-collapse collapse ${i === 1 ? 'show' : ''}`}
-                          aria-labelledby={`heading${item.tab_id}`}
-                          data-bs-parent="#accordionExample"
-                        >
-                          <div className="accordion-body">
-                            <p>{item.answer}</p>
-                            <ul>
-                              {item.some_features.map((feature, index) => (
-                                <li key={index}>{feature}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div> */}
                         <span className="accordion-item-border"></span>
                       </div>
                     ))}

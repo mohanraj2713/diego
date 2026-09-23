@@ -49,7 +49,7 @@ const PartnerAreaHomeOne = () => {
               <h2
                 className="tp-section-title text-center"
                 style={{
-                  fontSize: '42px',
+                  fontSize: '32px',
                   fontWeight: '700',
                   marginBottom: '10px',
                   color: '#1e2022',

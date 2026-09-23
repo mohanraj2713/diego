@@ -47,7 +47,7 @@ const FAQAreaHomeOne: React.FC = () => {
     <section className="tp-faq-area pt-90 pb-100 p-relative fix" style={{ backgroundColor: '#ffffff' }}>
       <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 20px' }}>
         <div className="tp-section-title-wrapper p-relative mb-40">
-          <h2 className="tp-section-title" style={{ fontSize: 'clamp(32px, 4.5vw, 44px)' }}>
+          <h2 className="tp-section-title" style={{ fontSize: 'clamp(26px, 3.5vw, 32px)' }}>
             FAQ
           </h2>
         </div>
