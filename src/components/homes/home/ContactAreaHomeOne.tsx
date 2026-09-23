@@ -18,7 +18,7 @@ const ContactAreaHomeOne: React.FC = () => {
       <div className="container" style={{ maxWidth: '820px' }}>
         {/* Section Header with Theme Typography */}
         <div className="tp-section-title-wrapper p-relative mb-45 text-center">
-          <span className="tp-section-subtitle" style={{ color: '#d96b27', display: 'block', marginBottom: '8px' }}>
+          <span className="tp-section-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', color: '#d96b27', marginBottom: '8px' }}>
             Contact Us
           </span>
 

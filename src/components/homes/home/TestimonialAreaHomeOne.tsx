@@ -219,7 +219,7 @@ const TestimonialAreaHomeOne = ({ style }: any) => {
                 <div className="tp-testimonial-section-title">
                   <div className="tp-section-title-wrapper tp_text_anim mb-50 text-center">
                     <div className="tp-section-title-inner tp_title_anim p-relative">
-                      <span className="tp-section-subtitle">{subtitle}</span>
+                      <span className="tp-section-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '10px' }}>{subtitle}</span>
                       <h3 className="tp-section-title">{title}</h3>
                     </div>
                     <p>{info}</p>
