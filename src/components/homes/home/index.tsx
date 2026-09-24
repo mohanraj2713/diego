@@ -30,13 +30,14 @@ const HomeOne = () => {
             <HeroAreaHome />
             <ServiceAreaHomeOne />
             <MarqueeAreaHomeOne />
-            <MyWorkAreaHomeOne />
+
             <AboutAreaHomeOne />
             {/* <HeroAreaHomeTwo /> */}
             {/* <MyWorkShopTrainingHomeOne /> */}
             {/* <PortfolioAreaHomeOne /> */}
             {/* <SkillAreaHomeOne /> */}
             <ServiceHeroAreaHomeOne />
+            <MyWorkAreaHomeOne />
             <PartnerAreaHomeOne />
             <TestimonialAreaHomeOne />
             <ContactAreaHomeOne />

@@ -90,7 +90,7 @@ const HeroAreaHome = () => {
         <div className="container">
           <div className="row align-items-end">
             <div className="col-xl-7 col-lg-7 col-md-12">
-              <div className="tp-hero-left-wrapper">
+              <div className="tp-hero-left-wrapper" style={{ paddingTop: '130px', paddingBottom: '80px' }}>
                 <div className="tp-hero-content tp_text_anim p-relative z-index-1">
                   <span className="singleLine">{sub_title} <Image src={HeroHand} alt="diego-image" /></span>
                   <h3 className="tp-hero-title cd-headline clip tp_title_anim">
@@ -108,6 +108,22 @@ const HeroAreaHome = () => {
 
                   </h3>
                   <p>{sm_info}</p>
+                  
+                  {/* Signature Logo Centered */}
+                  <div className="tp-hero-signature my-4 text-center d-flex justify-content-center">
+                    <img
+                      src="/assets/img/my-work/Signature.png"
+                      alt="Swara Patel Signature"
+                      style={{
+                        maxHeight: '75px',
+                        width: 'auto',
+                        objectFit: 'contain',
+                        margin: '0 auto',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
+
                   <div className="tp-hero-btn wrap">
                     <div className="tp-hover-btn-wrapper tp-btn-bounce">
                       <Link href="/contact" className="tp-hover-btn tp-hover-btn-item tp-btn-circle square">
