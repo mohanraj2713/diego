@@ -5,114 +5,22 @@ import Image from 'next/image';
 import shape_1 from "@/assets/img/services/shape/services-shape-1.png";
 import shape_2 from "@/assets/img/services/shape/services-shape-2.png";
 
-
 interface DataType {
   subtitle: string;
   title: React.JSX.Element;
   sm_des: React.JSX.Element;
-  accordion_data: {
-    id: number;
-    tab_id: string;
-    question: string;
-    answer: string;
-    some_features: string[];
-  }[];
 }
 
 const service_content: DataType = {
   subtitle: "What I Believe",
   title: <>Movement is <br /> more than exercise</>,
   sm_des: <>More than dance | More than performance. It shapes </>,
-  accordion_data: [
-    {
-      id: 1,
-      tab_id: "One",
-      question: "Dance curriculum expert",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
-      some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
-    },
-    {
-      id: 2,
-      tab_id: "Two",
-      question: "Teacher Training & Teacher Wellness",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
-      some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
-    },
-    {
-      id: 3,
-      tab_id: "Three",
-      question: "Parent Engagement",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
-      some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
-    },
-    {
-      id: 4,
-      tab_id: "Four",
-      question: "Student Workshops",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
-      some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
-    },
-    {
-      id: 5,
-      tab_id: "Five",
-      question: "Leadership Workshops",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
-      some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
-    },
-    {
-      id: 6,
-      tab_id: "Six",
-      question: "Corporate Wellness",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
-      some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
-    },
-    {
-      id: 7,
-      tab_id: "Seven",
-      question: "Speaking & Facilitation",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
-      some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
-    }
-  ]
 }
 
-const { subtitle, title, sm_des, accordion_data } = service_content;
-
+const { subtitle, title, sm_des } = service_content;
 
 const ServiceAreaHomeOne = () => {
-  const [active, setActive] = useState(1);
-
-  const handleItemClick = (index: number) => {
-    setActive(index);
-  }
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <>
@@ -126,10 +34,10 @@ const ServiceAreaHomeOne = () => {
             <div className="tp-services-bottom-text tp-services-bg-text">
               <p>Services</p>
             </div>
-            <div className="row gx-0">
+            <div className="row gx-0 align-items-center">
 
               <div className="col-xl-6 col-lg-7">
-                <div className="tp-services-wrapper tp-services-capsule-wrapper p-relative pt-100 pr-70" style={{ paddingTop: "100px", }}
+                <div className="tp-services-wrapper tp-services-capsule-wrapper p-relative pt-100 pr-70" style={{ paddingTop: "100px" }}
                   data-tp-throwable-scene="true">
                   <div className="tp-section-title-wrapper tp_text_anim mb-170">
                     <div className="tp-section-title-inner p-relative">
@@ -149,27 +57,15 @@ const ServiceAreaHomeOne = () => {
                     <p data-tp-throwable-el="">
                       <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>How we grow</span>
                     </p>
-                    {/* <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Consulting</span>
-                    </p> */}
                     <p data-tp-throwable-el="">
                       <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>How we learn</span>
                     </p>
-                    {/* <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Consulting</span>
-                    </p> */}
-                    {/* <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Brand strategy</span>
-                    </p> */}
                     <p data-tp-throwable-el="">
                       <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>Project connect deeply</span>
                     </p>
                     <p data-tp-throwable-el="">
                       <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Families move,laugh, and connect</span>
                     </p>
-                    {/* <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Testing</span>
-                    </p> */}
                     <p data-tp-throwable-el="">
                       <span className="">
                         <Image src={shape_1} alt="brand-img" />
@@ -185,37 +81,135 @@ const ServiceAreaHomeOne = () => {
                 </div>
               </div>
 
+              {/* Right Column: Interactive Video Showreel Container */}
               <div className="col-xl-6 col-lg-5">
-                <div className="tp-services-accordion tp-accordion tp-accordion-2 pl-70 p-relative" style={{ marginTop: "90px" }}>
-                  <span className="tp-services-accordion-border"></span>
-                  <div className="accordion" id="accordionExample">
+                <div className="tp-services-video-container pl-30 p-relative" style={{ marginTop: "60px" }}>
+                  <div
+                    style={{
+                      position: 'relative',
+                      width: '100%',
+                      aspectRatio: '16 / 10',
+                      minHeight: '380px',
+                      borderRadius: '24px',
+                      overflow: 'hidden',
+                      boxShadow: '0 20px 45px rgba(0, 0, 0, 0.15)',
+                      backgroundColor: '#111115',
+                    }}
+                  >
+                    {!isPlaying ? (
+                      <div
+                        onClick={() => setIsPlaying(true)}
+                        style={{
+                          position: 'relative',
+                          width: '100%',
+                          height: '100%',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        <img
+                          src="/assets/img/projects/2.jpg"
+                          alt="Showreel Thumbnail"
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            objectPosition: 'center',
+                            filter: 'brightness(0.9)',
+                            transition: 'transform 0.5s ease',
+                          }}
+                        />
 
-                    {accordion_data.map((item, i) => (
-                      <div key={i} onClick={() => handleItemClick(i)} className={`accordion-item tp-services-accordion-item ${active === i ? 'active' : ''}`}>
-                        <h2 className="accordion-header" id={`heading${item.tab_id}`}>
-                          <button
-                            className={`accordion-button ${i === 1 ? '' : 'collapsed'}`}
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target={`#collapse${item.tab_id}`}
-                            aria-expanded={`${i === 1 ? 'true' : 'false'}`}
-                            aria-controls={`collapse${item.tab_id}`}
-                            tabIndex={0}
+                        {/* Dark Overlay Gradient */}
+                        <div
+                          style={{
+                            position: 'absolute',
+                            inset: 0,
+                            background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%)',
+                          }}
+                        />
+
+                        {/* Play Button Icon */}
+                        <div
+                          style={{
+                            position: 'absolute',
+                            width: '76px',
+                            height: '76px',
+                            borderRadius: '50%',
+                            backgroundColor: '#BA9666',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            boxShadow: '0 10px 30px rgba(186, 150, 102, 0.5)',
+                            zIndex: 3,
+                          }}
+                        >
+                          <svg
+                            width="26"
+                            height="28"
+                            viewBox="0 0 24 26"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style={{ marginLeft: '4px' }}
+                          >
+                            <path
+                              d="M22.5 11.402C23.8333 12.1718 23.8333 14.0963 22.5 14.8661L3.75 25.6914C2.41666 26.4612 0.749999 25.4989 0.749999 23.9594L0.75 2.30873C0.75 0.769229 2.41667 -0.193022 3.75 0.576778L22.5 11.402Z"
+                              fill="#FFFFFF"
+                            />
+                          </svg>
+                        </div>
+
+                        {/* Label Badge */}
+                        <div
+                          style={{
+                            position: 'absolute',
+                            bottom: '24px',
+                            left: '24px',
+                            zIndex: 3,
+                          }}
+                        >
+                          <span
                             style={{
-                              fontSize: '22px',
-                              fontWeight: '600',
-                              padding: '16px 0 16px',
-                              lineHeight: '1.3'
+                              fontSize: '13px',
+                              fontWeight: '700',
+                              textTransform: 'uppercase',
+                              letterSpacing: '1.2px',
+                              color: '#BA9666',
+                              display: 'block',
+                              marginBottom: '4px',
+                              fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                             }}
                           >
-                            <span style={{ fontSize: '14px', marginRight: '12px', transform: 'none', display: 'inline-block' }}>0{item.id}</span>
-                            {item.question}
-                          </button>
-                        </h2>
-                        <span className="accordion-item-border"></span>
+                            Watch Showreel
+                          </span>
+                          <h4
+                            style={{
+                              fontSize: '22px',
+                              fontWeight: '700',
+                              color: '#FFFFFF',
+                              margin: 0,
+                              fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
+                            }}
+                          >
+                            Swara&rsquo;s Showreel
+                          </h4>
+                        </div>
                       </div>
-                    ))}
-
+                    ) : (
+                      <video
+                        src="/assets/img/my-work/Swara ma'am Showreel.mp4"
+                        controls
+                        autoPlay
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          borderRadius: '24px',
+                        }}
+                      />
+                    )}
                   </div>
                 </div>
               </div>

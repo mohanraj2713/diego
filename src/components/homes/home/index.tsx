@@ -14,6 +14,7 @@ import PartnerAreaHomeOne from "./PartnerAreaHomeOne";
 import FooterOne from "@/layouts/footers/FooterOne";
 import ServiceHeroAreaHomeOne from "./ServiceHeroAreaHomeOne";
 import MyWorkShopTrainingHomeOne from "./MyWorkShopTrainingHomeOne";
+import MyWorkAreaHomeOne from "./MyWorkAreaHomeOne"
 
 const HomeOne = () => {
   return (
@@ -29,6 +30,7 @@ const HomeOne = () => {
             <HeroAreaHome />
             <ServiceAreaHomeOne />
             <MarqueeAreaHomeOne />
+            <MyWorkAreaHomeOne />
             <AboutAreaHomeOne />
             {/* <HeroAreaHomeTwo /> */}
             {/* <MyWorkShopTrainingHomeOne /> */}

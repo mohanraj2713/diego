@@ -11,6 +11,13 @@ import projects_img_2 from "@/assets/img/projects/project-2.jpg";
 import projects_img_3 from "@/assets/img/projects/project-3.png";
 import projects_img_4 from "@/assets/img/projects/project-4.png";
 
+import projects_new_img_1 from "@/assets/img/projects/1.jpg";
+import projects_new_img_2 from "@/assets/img/projects/2.jpg";
+import projects_new_img_3 from "@/assets/img/projects/3.jpg";
+import projects_new_img_4 from "@/assets/img/projects/4.jpg";
+import projects_new_img_5 from "@/assets/img/projects/5.jpg";
+import projects_new_img_6 from "@/assets/img/projects/6.jpg";
+
 import Slider from "react-slick";
 
 interface DataType {
@@ -28,12 +35,12 @@ const hero_content: DataType = {
     info1: "They bring together movement, play, interaction, reflection and moments of discovery.",
     info2: "Because learning is most powerful when people feel free to participate, experience and discover.",
     slider_images_1: [
-        projects_img_1, projects_img_2, projects_img_3, projects_img_4,
-        projects_img_1, projects_img_2, projects_img_3, projects_img_4,
+        projects_new_img_1, projects_new_img_2, projects_new_img_3, projects_new_img_4, projects_new_img_5, projects_new_img_6,
+        projects_new_img_1, projects_new_img_2, projects_new_img_3, projects_new_img_4, projects_new_img_5, projects_new_img_6,
     ],
     slider_images_2: [
-        projects_img_1, projects_img_2, projects_img_3, projects_img_4,
-        projects_img_1, projects_img_2, projects_img_3, projects_img_4,
+        projects_new_img_6, projects_new_img_5, projects_new_img_4, projects_new_img_3, projects_new_img_2, projects_new_img_1,
+        projects_new_img_6, projects_new_img_5, projects_new_img_4, projects_new_img_3, projects_new_img_2, projects_new_img_1,
     ]
 }
 
@@ -142,25 +149,45 @@ const ServiceHeroAreaHomeOne = () => {
                             </div>
                         </div>
                         <div className="col-xl-6 col-lg-6">
-                            <div className="sv-inner__slider-main">
-                                <div className="row">
+                            <div className="sv-inner__slider-main" style={{ maxHeight: '540px', overflow: 'hidden' }}>
+                                <div className="row g-3">
                                     <div className="col-xl-6 col-lg-6 col-md-6">
-                                        <div className="sv-inner__slider-wrapper">
+                                        <div className="sv-inner__slider-wrapper" style={{ maxHeight: '540px', overflow: 'hidden' }}>
                                             <Slider {...setting_1} className="sv-inner__slider-active-1">
                                                 {slider_images_1.map((item, index) => (
-                                                    <div key={index} className="sv-inner__slider-item">
-                                                        <Image src={item} alt="image-here" />
+                                                    <div key={index} className="sv-inner__slider-item" style={{ padding: '8px 0' }}>
+                                                        <Image
+                                                            src={item}
+                                                            alt="workshop image"
+                                                            style={{
+                                                                width: '100%',
+                                                                height: '240px',
+                                                                objectFit: 'cover',
+                                                                borderRadius: '16px',
+                                                                display: 'block'
+                                                            }}
+                                                        />
                                                     </div>
                                                 ))}
                                             </Slider>
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6 col-md-6">
-                                        <div className="sv-inner__slider-wrapper">
+                                        <div className="sv-inner__slider-wrapper" style={{ maxHeight: '540px', overflow: 'hidden' }}>
                                             <Slider {...setting_1} className="sv-inner__slider-active-2">
                                                 {slider_images_2.map((item, index) => (
-                                                    <div key={index} className="sv-inner__slider-item">
-                                                        <Image src={item} alt="image-here" />
+                                                    <div key={index} className="sv-inner__slider-item" style={{ padding: '8px 0' }}>
+                                                        <Image
+                                                            src={item}
+                                                            alt="workshop image"
+                                                            style={{
+                                                                width: '100%',
+                                                                height: '240px',
+                                                                objectFit: 'cover',
+                                                                borderRadius: '16px',
+                                                                display: 'block'
+                                                            }}
+                                                        />
                                                     </div>
                                                 ))}
                                             </Slider>
@@ -168,7 +195,6 @@ const ServiceHeroAreaHomeOne = () => {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
