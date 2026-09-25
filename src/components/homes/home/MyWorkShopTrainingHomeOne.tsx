@@ -9,7 +9,7 @@ import img_9 from '@/assets/img/my-workshop-training/image 9.jpg';
 
 const MyWorkShopTrainingHomeOne = () => {
   return (
-    <section id="portfolio" className="tp-workshop-area pt-120 pb-120 fix p-relative">
+    <section id="portfolio" className="tp-workshop-area tp-workshop-home-section pt-120 pb-120 fix p-relative">
       <div className="container container-large">
         <div className="row align-items-center gx-5">
           {/* Left Text Content Column */}
@@ -17,26 +17,23 @@ const MyWorkShopTrainingHomeOne = () => {
             <div className="tp-workshop-content pr-30">
               <div className="tp-section-title-wrapper mb-25">
                 <span
+                  className="tp-workshop-home-subtitle"
                   style={{
                     fontSize: '18px',
                     fontWeight: '700',
                     display: 'inline-block',
                     marginBottom: '15px',
-                    background: 'linear-gradient(91deg, #9ABF03 5.09%, #FF8D62 98.42%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
                     fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                   }}
                 >
                   My workshops &amp; training
                 </span>
                 <h2
-                  className="tp-section-title"
+                  className="tp-section-title tp-workshop-home-title"
                   style={{
                     fontSize: '44px',
                     fontWeight: '700',
                     lineHeight: '1.15',
-                    color: 'var(--tp-common-black-5, #171718)',
                     marginBottom: '25px',
                     fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                   }}
@@ -45,10 +42,10 @@ const MyWorkShopTrainingHomeOne = () => {
                 </h2>
               </div>
               <p
+                className="tp-workshop-home-desc"
                 style={{
                   fontSize: '16px',
                   lineHeight: '1.65',
-                  color: '#6F7074',
                   marginBottom: '20px',
                   fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                 }}
@@ -56,10 +53,10 @@ const MyWorkShopTrainingHomeOne = () => {
                 They bring together movement, play, interaction, reflection and moments of discovery.
               </p>
               <p
+                className="tp-workshop-home-desc"
                 style={{
                   fontSize: '16px',
                   lineHeight: '1.65',
-                  color: '#6F7074',
                   margin: 0,
                   fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                 }}

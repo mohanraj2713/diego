@@ -35,17 +35,17 @@ const counter_data = [
 
 const MyWorkAreaHomeOne: React.FC = () => {
     return (
-        <section className="tp-my-work-area pt-100 pb-100 fix" style={{ backgroundColor: '#ffffff' }}>
+        <section className="tp-my-work-area tp-mywork-home-section pt-100 pb-100 fix">
             <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 20px' }}>
                 <div className="row align-items-center gx-5">
                     {/* Left Column: Heading & Work List */}
                     <div className="col-xl-5 col-lg-5 mb-40 mb-lg-0">
                         <div className="tp-my-work-left">
                             <span
+                                className="tp-mywork-home-subtitle"
                                 style={{
                                     fontSize: '16px',
                                     fontWeight: '600',
-                                    color: '#BA9666',
                                     display: 'block',
                                     marginBottom: '12px',
                                     fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
@@ -54,30 +54,15 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                 My Work
                             </span>
 
-                            {/* <h2
-                style={{
-                  fontSize: 'clamp(32px, 3.8vw, 44px)',
-                  fontWeight: '700',
-                  lineHeight: '1.2',
-                  color: '#161934',
-                  marginBottom: '35px',
-                  fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
-                  letterSpacing: '-0.5px',
-                }}
-              >
-                From classrooms to conference rooms
-              </h2> */}
-
                             <div className="tp-my-work-list">
                                 {workItems.map((item, index) => (
                                     <div
                                         key={index}
+                                        className="tp-mywork-home-item"
                                         style={{
                                             padding: '18px 0',
-                                            borderBottom: '1px solid #EBEBEB',
                                             fontSize: '17px',
                                             fontWeight: '700',
-                                            color: '#161934',
                                             fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                             transition: 'all 0.2s ease',
                                             cursor: 'default',
@@ -93,8 +78,8 @@ const MyWorkAreaHomeOne: React.FC = () => {
                     {/* Right Column: Featured Quote & Persona Card */}
                     <div className="col-xl-7 col-lg-7">
                         <div
+                            className="tp-mywork-home-card"
                             style={{
-                                backgroundColor: '#EAECE6',
                                 borderRadius: '24px',
                                 padding: '48px 40px 48px 48px',
                                 position: 'relative',
@@ -114,12 +99,12 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                 }}
                             >
                                 <h3
+                                    className="tp-mywork-card-heading"
                                     style={{
                                         fontFamily: 'Georgia, "Playfair Display", "Times New Roman", serif',
                                         fontSize: 'clamp(21px, 2.2vw, 26px)',
                                         fontWeight: '600',
                                         lineHeight: '1.35',
-                                        color: '#242624',
                                         marginBottom: '24px',
                                         letterSpacing: '-0.2px',
                                     }}
@@ -128,10 +113,10 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                 </h3>
 
                                 <p
+                                    className="tp-mywork-card-text"
                                     style={{
                                         fontSize: '15px',
                                         lineHeight: '1.65',
-                                        color: '#525452',
                                         marginBottom: '16px',
                                         fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                     }}
@@ -140,10 +125,10 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                 </p>
 
                                 <p
+                                    className="tp-mywork-card-text"
                                     style={{
                                         fontSize: '15px',
                                         lineHeight: '1.65',
-                                        color: '#525452',
                                         marginBottom: '20px',
                                         fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                     }}
@@ -152,11 +137,11 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                 </p>
 
                                 <p
+                                    className="tp-mywork-card-highlight"
                                     style={{
                                         fontSize: '15px',
                                         lineHeight: '1.65',
                                         fontWeight: '700',
-                                        color: '#161934',
                                         marginBottom: 0,
                                         fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                     }}
@@ -164,11 +149,11 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                     And when people feel seen, they let go, participate fully, and connect more openly. That&rsquo;s where real connection begins.
                                 </p>
                                 <p
+                                    className="tp-mywork-card-highlight"
                                     style={{
                                         fontSize: '15px',
                                         lineHeight: '1.65',
                                         fontWeight: '700',
-                                        color: '#161934',
                                         marginBottom: 0,
                                         fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                     }}
@@ -176,11 +161,11 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                     From classrooms to conference rooms
                                 </p>
                                 <p
+                                    className="tp-mywork-card-highlight"
                                     style={{
                                         fontSize: '15px',
                                         lineHeight: '1.65',
                                         fontWeight: '700',
-                                        color: '#161934',
                                         marginBottom: 0,
                                         fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                     }}
@@ -188,11 +173,11 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                     From students to leaders.
                                 </p>
                                 <p
+                                    className="tp-mywork-card-highlight"
                                     style={{
                                         fontSize: '15px',
                                         lineHeight: '1.65',
                                         fontWeight: '700',
-                                        color: '#161934',
                                         marginBottom: 0,
                                         fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                     }}
@@ -236,7 +221,7 @@ const MyWorkAreaHomeOne: React.FC = () => {
                         <div className="row">
                             {counter_data.map((item, index) => (
                                 <div key={index} className="col-md-4 col-sm-6 mb-30">
-                                    <div className="tp-about-fact-item">
+                                    <div className="tp-about-fact-item tp-mywork-fact-item">
                                         <h4 className="d-flex">
                                             <span className="purecounter">
                                                 <Count number={item.count} />

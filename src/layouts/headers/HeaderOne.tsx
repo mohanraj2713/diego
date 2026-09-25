@@ -83,15 +83,26 @@ const HeaderOne = () => {
               <div className="col-xl-4 col-lg-3 col-md-7 col-6">
                 <div className="tp-header-right d-flex align-items-center justify-content-end">
                   <div className="tp-theme-toggle">
-                    <label
-                      onClick={toggleTheme}
+                    <div
+                      onClick={(e) => {
+                        e.preventDefault();
+                        toggleTheme();
+                      }}
                       className={`tp-theme-toggle-main themepure-theme-toggle ${active ? 'dark-active' : 'light-active'}`}
                       style={{ cursor: 'pointer' }}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          toggleTheme();
+                        }
+                      }}
                     >
                       <span className="tp-theme-toggle-light">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
-                            d="M8.0448 11.0454C9.70165 11.0454 11.0448 9.7023 11.0448 8.04544C11.0448 6.38859 9.70165 5.04544 8.0448 5.04544C6.38795 5.04544 5.0448 6.38859 5.0448 8.04544C5.0448 9.7023 6.38795 11.0454 8.0448 11.0454Z"
+                            d="M8.0448 11.0454C9.70165 11.0454 11.0448 9.7023 11.0448 8.04544C11.0448 6.38859 9.70165 5.04544 9.0448 5.04544C6.38795 5.04544 5.0448 6.38859 5.0448 8.04544C5.0448 9.7023 6.38795 11.0454 8.0448 11.0454Z"
                             fill="currentColor"
                           />
                           <path d="M8 1.5V2.68182" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -105,7 +116,7 @@ const HeaderOne = () => {
                         </svg>
                       </span>
 
-                      <input type="checkbox" className="themepure-theme-toggle-input" id="this-s" />
+                      <input type="checkbox" className="themepure-theme-toggle-input" id="this-s" checked={active} readOnly />
                       <i className="tp-theme-toggle-slide"></i>
 
                       <span className="tp-theme-toggle-dark">
@@ -116,7 +127,7 @@ const HeaderOne = () => {
                           />
                         </svg>
                       </span>
-                    </label>
+                    </div>
                   </div>
 
                   {/* <div className="tp-header-cv ml-10 d-none d-md-block">
@@ -169,10 +180,21 @@ const HeaderOne = () => {
               <div className="col-xl-4 col-lg-3 col-md-7 col-6">
                 <div className="tp-header-right d-flex align-items-center justify-content-end">
                   <div className="tp-theme-toggle">
-                    <label
-                      onClick={toggleTheme}
+                    <div
+                      onClick={(e) => {
+                        e.preventDefault();
+                        toggleTheme();
+                      }}
                       className={`tp-theme-toggle-main themepure-theme-toggle ${active ? 'dark-active' : 'light-active'}`}
                       style={{ cursor: 'pointer' }}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          toggleTheme();
+                        }
+                      }}
                     >
                       <span id="tp-theme-toggle-light" className="tp-theme-toggle-light">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -191,7 +213,7 @@ const HeaderOne = () => {
                         </svg>
                       </span>
 
-                      <input id="this-ss" type="checkbox" className="themepure-theme-toggle-input" />
+                      <input id="this-ss" type="checkbox" className="themepure-theme-toggle-input" checked={active} readOnly />
                       <i className="tp-theme-toggle-slide"></i>
 
                       <span id="tp-theme-toggle-dark" className="tp-theme-toggle-dark">
@@ -202,7 +224,7 @@ const HeaderOne = () => {
                           />
                         </svg>
                       </span>
-                    </label>
+                    </div>
                   </div>
 
                   {/* <div className="tp-header-cv ml-10 d-none d-md-block">

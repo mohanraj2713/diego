@@ -47,21 +47,20 @@ const PartnerAreaHomeOne = () => {
           <div className="col-xl-12">
             <div className="tp-section-title-wrapper mb-50 text-center">
               <h2
-                className="tp-section-title text-center"
+                className="tp-section-title tp-partner-title text-center"
                 style={{
                   fontSize: '32px',
                   fontWeight: '700',
                   marginBottom: '10px',
-                  color: '#1e2022',
                   fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                 }}
               >
                 Trusted By
               </h2>
               <p
+                className="tp-partner-subtitle"
                 style={{
                   fontSize: '16px',
-                  color: '#666',
                   margin: '0',
                   fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                 }}

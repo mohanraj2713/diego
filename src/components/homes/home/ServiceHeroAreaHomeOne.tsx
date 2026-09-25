@@ -87,7 +87,7 @@ const setting_1 = {
 const ServiceHeroAreaHomeOne = () => {
     return (
         <>
-            <div className="sv-inner__slider-area black-bg-3 sv-inner__slider-plr">
+            <div className="sv-inner__slider-area tp-service-hero-area sv-inner__slider-plr">
                 <div className="container-fluid">
                     <div className="row align-items-center">
                         <div className="col-xl-6 col-lg-6">
@@ -95,6 +95,7 @@ const ServiceHeroAreaHomeOne = () => {
                                 <div className="sv-inner__slider-content-wrap" style={{ maxWidth: '520px', paddingRight: '20px' }}>
                                     <div className="sv-inner__slider-title-box mb-25">
                                         <span
+                                            className="tp-service-hero-subtitle"
                                             style={{
                                                 fontSize: '18px',
                                                 fontWeight: '700',
@@ -109,11 +110,11 @@ const ServiceHeroAreaHomeOne = () => {
                                             {subtitle}
                                         </span>
                                         <h2
+                                            className="tp-service-hero-title"
                                             style={{
                                                 fontSize: '32px',
                                                 fontWeight: '700',
                                                 lineHeight: '1.25',
-                                                color: '#171718',
                                                 marginBottom: '20px',
                                                 fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                             }}
@@ -122,10 +123,10 @@ const ServiceHeroAreaHomeOne = () => {
                                         </h2>
                                     </div>
                                     <p
+                                        className="tp-service-hero-desc"
                                         style={{
                                             fontSize: '16px',
                                             lineHeight: '1.65',
-                                            color: '#6F7074',
                                             marginBottom: '20px',
                                             fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                         }}
@@ -133,10 +134,10 @@ const ServiceHeroAreaHomeOne = () => {
                                         {info1}
                                     </p>
                                     <p
+                                        className="tp-service-hero-desc"
                                         style={{
                                             fontSize: '16px',
                                             lineHeight: '1.65',
-                                            color: '#6F7074',
                                             margin: 0,
                                             fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                         }}

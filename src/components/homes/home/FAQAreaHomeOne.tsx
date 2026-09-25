@@ -44,10 +44,10 @@ const FAQAreaHomeOne: React.FC = () => {
   ];
 
   return (
-    <section className="tp-faq-area pt-90 pb-100 p-relative fix" style={{ backgroundColor: '#ffffff' }}>
+    <section className="tp-faq-area tp-faq-home-section pt-90 pb-100 p-relative fix">
       <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 20px' }}>
         <div className="tp-section-title-wrapper p-relative mb-40">
-          <h2 className="tp-section-title" style={{ fontSize: 'clamp(26px, 3.5vw, 32px)' }}>
+          <h2 className="tp-section-title tp-faq-home-title" style={{ fontSize: 'clamp(26px, 3.5vw, 32px)' }}>
             FAQ
           </h2>
         </div>
@@ -63,13 +63,12 @@ const FAQAreaHomeOne: React.FC = () => {
               <div
                 key={index}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
+                className={`tp-faq-home-card ${isOpen ? 'is-open' : ''}`}
                 style={{
-                  backgroundColor: '#f6f7fb',
                   borderRadius: '16px',
                   padding: '20px 24px',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  border: isOpen ? '1px solid #dcdfe8' : '1px solid transparent'
+                  transition: 'all 0.2s ease'
                 }}
               >
                 <div style={{
@@ -78,44 +77,49 @@ const FAQAreaHomeOne: React.FC = () => {
                   justifyContent: 'space-between',
                   gap: '16px'
                 }}>
-                  <h3 style={{
-                    fontSize: '17px',
-                    fontWeight: isOpen ? '700' : '600',
-                    color: '#161934',
-                    fontFamily: 'inherit',
-                    margin: 0,
-                    lineHeight: '1.4'
-                  }}>
+                  <h3
+                    className="tp-faq-home-question"
+                    style={{
+                      fontSize: '17px',
+                      fontWeight: isOpen ? '700' : '600',
+                      fontFamily: 'inherit',
+                      margin: 0,
+                      lineHeight: '1.4'
+                    }}
+                  >
                     {faq.question}
                   </h3>
 
-                  <div style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '50%',
-                    backgroundColor: '#161934',
-                    color: '#ffffff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '14px',
-                    flexShrink: 0,
-                    transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                    transition: 'transform 0.2s ease'
-                  }}>
+                  <div
+                    className={`tp-faq-home-arrow ${isOpen ? 'is-open' : ''}`}
+                    style={{
+                      width: '32px',
+                      height: '32px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '14px',
+                      flexShrink: 0,
+                      transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                      transition: 'transform 0.2s ease, background-color 0.2s ease'
+                    }}
+                  >
                     {isOpen ? '↑' : '→'}
                   </div>
                 </div>
 
                 {isOpen && (
-                  <p style={{
-                    fontSize: '15px',
-                    color: '#555975',
-                    marginTop: '16px',
-                    marginBottom: 0,
-                    lineHeight: '1.7',
-                    fontFamily: 'inherit'
-                  }}>
+                  <p
+                    className="tp-faq-home-answer"
+                    style={{
+                      fontSize: '15px',
+                      marginTop: '16px',
+                      marginBottom: 0,
+                      lineHeight: '1.7',
+                      fontFamily: 'inherit'
+                    }}
+                  >
                     {faq.answer}
                   </p>
                 )}

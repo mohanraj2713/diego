@@ -41,10 +41,10 @@ const ServiceAreaHomeOne = () => {
                   data-tp-throwable-scene="true">
                   <div className="tp-section-title-wrapper tp_text_anim mb-170">
                     <div className="tp-section-title-inner p-relative">
-                      <span className="tp-section-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '10px' }}>{subtitle}</span>
-                      <h3 className="tp-section-title tp_title_anim" style={{ fontSize: '32px', lineHeight: '1.2' }}>{title}</h3>
+                      <span className="tp-section-subtitle tp-service-home-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '10px' }}>{subtitle}</span>
+                      <h3 className="tp-section-title tp-service-home-title tp_title_anim" style={{ fontSize: '32px', lineHeight: '1.2' }}>{title}</h3>
                     </div>
-                    <p>{sm_des}</p>
+                    <p className="tp-service-home-desc">{sm_des}</p>
                   </div>
 
                   <div className="tp-services-capsule-item-wrapper">

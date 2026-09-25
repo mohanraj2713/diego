@@ -14,21 +14,20 @@ const ContactAreaHomeOne: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="tp-contact-area pt-90 pb-100 p-relative fix" style={{ backgroundColor: '#f4f7fb' }}>
+    <section id="contact" className="tp-contact-area tp-contact-home-section pt-90 pb-100 p-relative fix">
       <div className="container" style={{ maxWidth: '820px' }}>
         {/* Section Header with Theme Typography */}
         <div className="tp-section-title-wrapper p-relative mb-45 text-center">
-          <span className="tp-section-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', color: '#d96b27', marginBottom: '8px' }}>
+          <span className="tp-section-subtitle tp-contact-home-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '8px' }}>
             Contact Us
           </span>
 
-          <h2 className="tp-section-title" style={{ fontSize: 'clamp(28px, 4vw, 34px)', lineHeight: '1.15', marginBottom: '16px' }}>
+          <h2 className="tp-section-title tp-contact-home-title" style={{ fontSize: 'clamp(28px, 4vw, 34px)', lineHeight: '1.15', marginBottom: '16px' }}>
             Let’s Talk
           </h2>
 
-          <p style={{
+          <p className="tp-contact-home-desc" style={{
             fontSize: '16px',
-            color: '#666a85',
             lineHeight: '1.6',
             maxWidth: '560px',
             margin: '0 auto'
@@ -51,17 +50,14 @@ const ContactAreaHomeOne: React.FC = () => {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="tp-contact-home-input"
                 style={{
                   width: '100%',
                   padding: '16px 20px',
                   borderRadius: '12px',
-                  border: '1px solid #dcdfe8',
-                  backgroundColor: '#ffffff',
                   fontSize: '15px',
-                  color: '#161934',
                   fontFamily: 'inherit',
-                  outline: 'none',
-                  boxShadow: '0 2px 6px rgba(0,0,0,0.02)'
+                  outline: 'none'
                 }}
               />
             </div>
@@ -71,17 +67,14 @@ const ContactAreaHomeOne: React.FC = () => {
                 placeholder="Company"
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                className="tp-contact-home-input"
                 style={{
                   width: '100%',
                   padding: '16px 20px',
                   borderRadius: '12px',
-                  border: '1px solid #dcdfe8',
-                  backgroundColor: '#ffffff',
                   fontSize: '15px',
-                  color: '#161934',
                   fontFamily: 'inherit',
-                  outline: 'none',
-                  boxShadow: '0 2px 6px rgba(0,0,0,0.02)'
+                  outline: 'none'
                 }}
               />
             </div>
@@ -94,17 +87,14 @@ const ContactAreaHomeOne: React.FC = () => {
               placeholder="Email Id"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="tp-contact-home-input"
               style={{
                 width: '100%',
                 padding: '16px 20px',
                 borderRadius: '12px',
-                border: '1px solid #dcdfe8',
-                backgroundColor: '#ffffff',
                 fontSize: '15px',
-                color: '#161934',
                 fontFamily: 'inherit',
-                outline: 'none',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.02)'
+                outline: 'none'
               }}
             />
           </div>
@@ -116,18 +106,15 @@ const ContactAreaHomeOne: React.FC = () => {
               placeholder="Comments"
               value={formData.comments}
               onChange={(e) => setFormData({ ...formData, comments: e.target.value })}
+              className="tp-contact-home-input"
               style={{
                 width: '100%',
                 padding: '16px 20px',
                 borderRadius: '12px',
-                border: '1px solid #dcdfe8',
-                backgroundColor: '#ffffff',
                 fontSize: '15px',
-                color: '#161934',
                 fontFamily: 'inherit',
                 outline: 'none',
-                resize: 'vertical',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.02)'
+                resize: 'vertical'
               }}
             />
           </div>
@@ -136,12 +123,11 @@ const ContactAreaHomeOne: React.FC = () => {
           <div style={{ marginTop: '10px' }}>
             <button
               type="submit"
+              className="tp-contact-home-btn"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '10px',
-                backgroundColor: '#bada10',
-                color: '#161934',
                 padding: '14px 32px',
                 borderRadius: '30px',
                 fontSize: '16px',
@@ -149,7 +135,6 @@ const ContactAreaHomeOne: React.FC = () => {
                 fontFamily: 'inherit',
                 border: 'none',
                 cursor: 'pointer',
-                boxShadow: '0 8px 24px rgba(186, 218, 16, 0.35)',
                 transition: 'transform 0.2s ease'
               }}
             >

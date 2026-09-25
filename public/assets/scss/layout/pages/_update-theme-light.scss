@@ -599,3 +599,352 @@ html[tp-theme='tp-theme-light'] {
         }
     }
 }
+
+/*----------------------------------------*/
+/*  Home Page Dynamic Dark/Light Theme Rules (Green Dark Theme)
+/*----------------------------------------*/
+
+/* 1. Default / Dark Theme Mode (tp-theme-dark) - Rich Dark Green Theme */
+
+/* Trusted By */
+.tp-partner-title {
+  color: #ffffff !important;
+}
+.tp-partner-subtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Contact Us */
+.tp-contact-home-section {
+  background-color: #142213 !important;
+}
+.tp-contact-home-subtitle {
+  color: #bada10 !important;
+}
+.tp-contact-home-title {
+  color: #ffffff !important;
+}
+.tp-contact-home-desc {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.tp-contact-home-input {
+  background-color: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+  &:focus {
+    border-color: #bada10 !important;
+  }
+}
+.tp-contact-home-btn {
+  background-color: #bada10 !important;
+  color: #142213 !important;
+  box-shadow: 0 8px 24px rgba(186, 218, 16, 0.35) !important;
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* FAQ */
+.tp-faq-home-section {
+  background-color: #111e10 !important;
+}
+.tp-faq-home-title {
+  color: #ffffff !important;
+}
+.tp-faq-home-card {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+
+  &.is-open {
+    border-color: rgba(186, 218, 16, 0.6) !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+  }
+}
+.tp-faq-home-question {
+  color: #ffffff !important;
+}
+.tp-faq-home-answer {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.tp-faq-home-arrow {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+
+  &.is-open {
+    background-color: #bada10 !important;
+    color: #142213 !important;
+  }
+}
+
+/* Footer */
+.tp-footer-home-section {
+  background-color: #0e1a0d !important;
+}
+.tp-footer-logo-title,
+.tp-footer-column-title {
+  color: #ffffff !important;
+}
+.tp-footer-text,
+.tp-footer-link {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+.tp-footer-link:hover {
+  color: #bada10 !important;
+}
+.tp-footer-social-btn {
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+
+  &:hover {
+    background-color: #bada10 !important;
+    border-color: #bada10 !important;
+    color: #142213 !important;
+  }
+}
+
+/* Service Area Home */
+.tp-service-home-subtitle {
+  color: #bada10 !important;
+}
+.tp-service-home-title {
+  color: #ffffff !important;
+}
+.tp-service-home-desc {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* My Work Area Home */
+.tp-mywork-home-section {
+  background-color: #142213 !important;
+}
+.tp-mywork-home-subtitle {
+  color: #bada10 !important;
+}
+.tp-mywork-home-item {
+  color: #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+.tp-mywork-home-card {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+.tp-mywork-card-heading {
+  color: #ffffff !important;
+}
+.tp-mywork-card-text {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.tp-mywork-card-highlight {
+  color: #bada10 !important;
+}
+.tp-mywork-fact-item {
+  h4 {
+    color: #ffffff !important;
+  }
+  p {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+}
+
+/* Service Hero Area (My workshops & training - I CREATE SPACES...) */
+.tp-service-hero-area {
+  background-color: #142213 !important;
+}
+.tp-service-hero-subtitle {
+  color: #bada10 !important;
+  background: none !important;
+  -webkit-text-fill-color: #bada10 !important;
+}
+.tp-service-hero-title {
+  color: #ffffff !important;
+}
+.tp-service-hero-desc {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Workshop Home Section (Designed to be experienced...) */
+.tp-workshop-home-section {
+  background-color: #111e10 !important;
+}
+.tp-workshop-home-subtitle {
+  color: #bada10 !important;
+  background: none !important;
+  -webkit-text-fill-color: #bada10 !important;
+}
+.tp-workshop-home-title {
+  color: #ffffff !important;
+}
+.tp-workshop-home-desc {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 2. Light Theme Overrides (tp-theme-light) */
+html[tp-theme='tp-theme-light'] {
+  .tp-partner-title {
+    color: #1e2022 !important;
+  }
+  .tp-partner-subtitle {
+    color: #666666 !important;
+  }
+
+  .tp-contact-home-section {
+    background-color: #f4f7fb !important;
+  }
+  .tp-contact-home-subtitle {
+    color: #d96b27 !important;
+  }
+  .tp-contact-home-title {
+    color: #161934 !important;
+  }
+  .tp-contact-home-desc {
+    color: #666a85 !important;
+  }
+  .tp-contact-home-input {
+    background-color: #ffffff !important;
+    border: 1px solid #dcdfe8 !important;
+    color: #161934 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+
+    &::placeholder {
+      color: #999eb4 !important;
+    }
+  }
+  .tp-contact-home-btn {
+    background-color: #bada10 !important;
+    color: #161934 !important;
+  }
+
+  .tp-faq-home-section {
+    background-color: #ffffff !important;
+  }
+  .tp-faq-home-title {
+    color: #161934 !important;
+  }
+  .tp-faq-home-card {
+    background-color: #f6f7fb !important;
+    border: 1px solid transparent !important;
+
+    &.is-open {
+      border-color: #dcdfe8 !important;
+      background-color: #f6f7fb !important;
+    }
+  }
+  .tp-faq-home-question {
+    color: #161934 !important;
+  }
+  .tp-faq-home-answer {
+    color: #555975 !important;
+  }
+  .tp-faq-home-arrow {
+    background-color: #161934 !important;
+    color: #ffffff !important;
+
+    &.is-open {
+      background-color: #161934 !important;
+      color: #ffffff !important;
+    }
+  }
+
+  .tp-footer-home-section {
+    background-color: #e7eaf0 !important;
+  }
+  .tp-footer-logo-title,
+  .tp-footer-column-title {
+    color: #161934 !important;
+  }
+  .tp-footer-text,
+  .tp-footer-link {
+    color: rgba(22, 25, 52, 0.75) !important;
+  }
+  .tp-footer-link:hover {
+    color: #161934 !important;
+  }
+  .tp-footer-social-btn {
+    border: 1px solid rgba(22, 25, 52, 0.2) !important;
+    background-color: rgba(22, 25, 52, 0.05) !important;
+    color: #161934 !important;
+
+    &:hover {
+      background-color: #161934 !important;
+      color: #ffffff !important;
+    }
+  }
+
+  .tp-service-home-subtitle {
+    color: inherit !important;
+  }
+  .tp-service-home-title {
+    color: var(--tp-common-black-5) !important;
+  }
+  .tp-service-home-desc {
+    color: #666666 !important;
+  }
+
+  .tp-mywork-home-section {
+    background-color: #ffffff !important;
+  }
+  .tp-mywork-home-subtitle {
+    color: #BA9666 !important;
+  }
+  .tp-mywork-home-item {
+    color: #161934 !important;
+    border-bottom: 1px solid #EBEBEB !important;
+  }
+  .tp-mywork-home-card {
+    background-color: #EAECE6 !important;
+    border: none !important;
+  }
+  .tp-mywork-card-heading {
+    color: #242624 !important;
+  }
+  .tp-mywork-card-text {
+    color: #525452 !important;
+  }
+  .tp-mywork-card-highlight {
+    color: #161934 !important;
+  }
+  .tp-mywork-fact-item {
+    h4 {
+      color: var(--tp-common-black-5) !important;
+    }
+    p {
+      color: var(--tp-common-black-5) !important;
+    }
+  }
+
+  .tp-service-hero-area {
+    background-color: #f4f7fb !important;
+  }
+  .tp-service-hero-subtitle {
+    background: linear-gradient(91deg, #9ABF03 5.09%, #FF8D62 98.42%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+  .tp-service-hero-title {
+    color: #171718 !important;
+  }
+  .tp-service-hero-desc {
+    color: #6F7074 !important;
+  }
+
+  .tp-workshop-home-section {
+    background-color: #ffffff !important;
+  }
+  .tp-workshop-home-subtitle {
+    background: linear-gradient(91deg, #9ABF03 5.09%, #FF8D62 98.42%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+  .tp-workshop-home-title {
+    color: #171718 !important;
+  }
+  .tp-workshop-home-desc {
+    color: #6F7074 !important;
+  }
+}
