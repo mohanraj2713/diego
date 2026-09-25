@@ -161,9 +161,10 @@ const ServiceHeroAreaHomeOne = () => {
                                                             style={{
                                                                 width: '100%',
                                                                 height: '240px',
-                                                                objectFit: 'cover',
+                                                                objectFit: 'fill',
                                                                 borderRadius: '16px',
                                                                 display: 'block'
+
                                                             }}
                                                         />
                                                     </div>
@@ -182,7 +183,7 @@ const ServiceHeroAreaHomeOne = () => {
                                                             style={{
                                                                 width: '100%',
                                                                 height: '240px',
-                                                                objectFit: 'cover',
+                                                                objectFit: 'fill',
                                                                 borderRadius: '16px',
                                                                 display: 'block'
                                                             }}

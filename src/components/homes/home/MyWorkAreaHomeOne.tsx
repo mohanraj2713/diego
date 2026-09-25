@@ -75,16 +75,51 @@ const MyWorkAreaHomeOne: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Right Column: Featured Quote & Persona Card */}
-                    <div className="col-xl-7 col-lg-7">
+                    {/* Right Column: Featured Quote & Persona Card with High Pop-Out Image */}
+                    <div className="col-xl-7 col-lg-7" style={{ marginTop: '80px' }}>
+                        <style jsx>{`
+                            .mywork-popout-card {
+                                background-color: #eaf2e8;
+                                border: 1px solid rgba(84, 185, 96, 0.3);
+                                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+                            }
+                            .mywork-card-title {
+                                color: #152216;
+                            }
+                            .mywork-card-text {
+                                color: #3d4d3e;
+                            }
+                            .mywork-card-highlight {
+                                color: #111a12;
+                            }
+
+                            html[tp-theme='tp-theme-dark'] .mywork-popout-card,
+                            .tp-theme-dark .mywork-popout-card {
+                                background-color: rgba(22, 36, 24, 0.85);
+                                border: 1px solid rgba(84, 185, 96, 0.35);
+                                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+                            }
+                            html[tp-theme='tp-theme-dark'] .mywork-card-title,
+                            .tp-theme-dark .mywork-card-title {
+                                color: #ffffff;
+                            }
+                            html[tp-theme='tp-theme-dark'] .mywork-card-text,
+                            .tp-theme-dark .mywork-card-text {
+                                color: rgba(255, 255, 255, 0.82);
+                            }
+                            html[tp-theme='tp-theme-dark'] .mywork-card-highlight,
+                            .tp-theme-dark .mywork-card-highlight {
+                                color: #ffffff;
+                            }
+                        `}</style>
                         <div
-                            className="tp-mywork-home-card"
+                            className="tp-mywork-home-card mywork-popout-card position-relative"
                             style={{
                                 borderRadius: '24px',
-                                padding: '48px 40px 48px 48px',
+                                padding: '48px 36px 48px 44px',
                                 position: 'relative',
-                                overflow: 'hidden',
-                                minHeight: '520px',
+                                overflow: 'visible',
+                                minHeight: '440px',
                                 display: 'flex',
                                 alignItems: 'center',
                             }}
@@ -95,17 +130,17 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                     position: 'relative',
                                     zIndex: 2,
                                     width: '100%',
-                                    maxWidth: '62%',
+                                    maxWidth: '52%',
+                                    paddingRight: '15px',
                                 }}
                             >
                                 <h3
-                                    className="tp-mywork-card-heading"
+                                    className="mywork-card-title mb-4"
                                     style={{
                                         fontFamily: 'Georgia, "Playfair Display", "Times New Roman", serif',
-                                        fontSize: 'clamp(21px, 2.2vw, 26px)',
+                                        fontSize: 'clamp(19px, 2vw, 24px)',
                                         fontWeight: '600',
-                                        lineHeight: '1.35',
-                                        marginBottom: '24px',
+                                        lineHeight: '1.38',
                                         letterSpacing: '-0.2px',
                                     }}
                                 >
@@ -113,11 +148,10 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                 </h3>
 
                                 <p
-                                    className="tp-mywork-card-text"
+                                    className="mywork-card-text mb-3"
                                     style={{
-                                        fontSize: '15px',
+                                        fontSize: '14.5px',
                                         lineHeight: '1.65',
-                                        marginBottom: '16px',
                                         fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                     }}
                                 >
@@ -125,11 +159,10 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                 </p>
 
                                 <p
-                                    className="tp-mywork-card-text"
+                                    className="mywork-card-text mb-4"
                                     style={{
-                                        fontSize: '15px',
+                                        fontSize: '14.5px',
                                         lineHeight: '1.65',
-                                        marginBottom: '20px',
                                         fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                     }}
                                 >
@@ -137,79 +170,44 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                 </p>
 
                                 <p
-                                    className="tp-mywork-card-highlight"
+                                    className="mywork-card-highlight mb-0"
                                     style={{
-                                        fontSize: '15px',
+                                        fontSize: '14.5px',
                                         lineHeight: '1.65',
                                         fontWeight: '700',
-                                        marginBottom: 0,
                                         fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                     }}
                                 >
                                     And when people feel seen, they let go, participate fully, and connect more openly. That&rsquo;s where real connection begins.
                                 </p>
-                                <p
-                                    className="tp-mywork-card-highlight"
-                                    style={{
-                                        fontSize: '15px',
-                                        lineHeight: '1.65',
-                                        fontWeight: '700',
-                                        marginBottom: 0,
-                                        fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
-                                    }}
-                                >
-                                    From classrooms to conference rooms
-                                </p>
-                                <p
-                                    className="tp-mywork-card-highlight"
-                                    style={{
-                                        fontSize: '15px',
-                                        lineHeight: '1.65',
-                                        fontWeight: '700',
-                                        marginBottom: 0,
-                                        fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
-                                    }}
-                                >
-                                    From students to leaders.
-                                </p>
-                                <p
-                                    className="tp-mywork-card-highlight"
-                                    style={{
-                                        fontSize: '15px',
-                                        lineHeight: '1.65',
-                                        fontWeight: '700',
-                                        marginBottom: 0,
-                                        fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
-                                    }}
-                                >
-                                    From teaching to transformation.
-                                </p>
                             </div>
 
-                            {/* Right Side Overlay Image */}
+                            {/* Out-Of-The-Box Pop-Out Image (Head & Hair Extending High Above Card) */}
                             <div
                                 style={{
                                     position: 'absolute',
-                                    right: '0',
+                                    right: '-25px',
                                     bottom: '0',
-                                    height: '92%',
-                                    width: '45%',
-                                    maxHeight: '480px',
-                                    zIndex: 1,
+                                    width: '340px',
+                                    height: '520px',
+                                    top: '-80px',
+                                    zIndex: 5,
+                                    pointerEvents: 'none',
                                     display: 'flex',
                                     alignItems: 'flex-end',
                                     justifyContent: 'flex-end',
-                                    pointerEvents: 'none',
                                 }}
                             >
                                 <img
                                     src="/assets/img/my-work/mywork_section_image.png"
-                                    alt="My Work Section"
+                                    alt="Swara Patel - Connection"
                                     style={{
-                                        maxHeight: '100%',
-                                        maxWidth: '100%',
+                                        height: '520px',
+                                        width: 'auto',
+                                        maxWidth: 'none',
                                         objectFit: 'contain',
                                         objectPosition: 'bottom right',
+                                        filter: 'drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12))',
                                     }}
                                 />
                             </div>

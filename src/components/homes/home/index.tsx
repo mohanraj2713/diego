@@ -16,6 +16,7 @@ import ServiceHeroAreaHomeOne from "./ServiceHeroAreaHomeOne";
 import MyWorkShopTrainingHomeOne from "./MyWorkShopTrainingHomeOne";
 import MyWorkAreaHomeOne from "./MyWorkAreaHomeOne"
 import PriceAreaHomeOne from "./PriceAreaHomeOne";
+import WhatIBelieveAreaHomeOne from "./WhatIBelieveAreaHomeOne"
 
 const HomeOne = () => {
   return (
@@ -40,6 +41,7 @@ const HomeOne = () => {
             <ServiceHeroAreaHomeOne />
             <MyWorkAreaHomeOne />
             <TestimonialAreaHomeOne />
+            <WhatIBelieveAreaHomeOne />
             {/* <PriceAreaHomeOne /> */}
             <PartnerAreaHomeOne />
             <ContactAreaHomeOne />

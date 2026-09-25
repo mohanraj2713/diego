@@ -157,7 +157,7 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                       >
                         Testimonials
                       </span>
-                      <h3 className="tp-section-title" style={{ fontSize: '36px', color: '#ffffff', fontWeight: 800 }}>
+                      <h3 className="tp-section-title" style={{ fontSize: '36px', fontWeight: 800 }}>
                         What People Say
                       </h3>
                     </div>

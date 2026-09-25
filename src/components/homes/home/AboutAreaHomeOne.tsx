@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import award_img from "@/assets/img/about/award-icon.svg";
-import about_img from "@/assets/img/about/about-1.png";
+import about_img from "@/assets/img/my-work/about-me.png";
 // import about_img from "@/assets/img/my-work/about-me.png";
 import Count from '@/components/common/Count';
 
@@ -83,10 +83,34 @@ const AboutAreaHomeOne = () => {
                     <span className="tp-section-subtitle tp-section-subtitle-1 tp-about-subtitle">{subtitle}</span>
                   </div>
                   <div className="tp-about-thumb-wrapper p-relative z-index-1">
-                    <div className="tp-about-thumb p-relative z-index-1">
-                      <div className="tp-about-thumb-bg-shape include-bg"
-                        style={{ backgroundImage: 'url(/assets/img/about/shape/about-shape-1.png)' }}></div>
-                      <Image src={about_img} alt="image" />
+                    <div 
+                      className="tp-about-thumb-container p-relative z-index-1"
+                      style={{
+                        width: '100%',
+                        maxWidth: '380px',
+                        height: '460px',
+                        borderRadius: '28px',
+                        overflow: 'hidden',
+                        boxShadow: '0 20px 50px rgba(0, 0, 0, 0.2), 0 0 35px rgba(84, 185, 96, 0.15)',
+                        border: '1px solid rgba(84, 185, 96, 0.3)',
+                        position: 'relative',
+                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                        margin: '0 auto',
+                      }}
+                    >
+                      <Image 
+                        src={about_img} 
+                        alt="Swara Patel - About Me" 
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          objectPosition: 'top center',
+                          borderRadius: '28px',
+                          display: 'block',
+                        }}
+                        priority
+                      />
                     </div>
                   </div>
                 </div>
@@ -107,7 +131,7 @@ const AboutAreaHomeOne = () => {
                   <div className="tp-about-desc-content mb-40">
                     <div>{about_des}</div>
                   </div>
-                  <div className="tp-about-fact">
+                  {/* <div className="tp-about-fact">
                     <div className="row">
                       {counter_data.map((item, index) => (
                         <div key={index} className="col-md-4 col-sm-6 mb-30">
@@ -122,7 +146,7 @@ const AboutAreaHomeOne = () => {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

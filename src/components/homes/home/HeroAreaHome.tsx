@@ -78,6 +78,18 @@ const HeroAreaHome = () => {
     }
   };
 
+  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      e.preventDefault();
+      scroller.scrollTo('contact', {
+        duration: 800,
+        delay: 0,
+        smooth: 'easeInOutQuart',
+      });
+    }
+  };
+
   return (
     <>
       <section id="home" className="tp-hero-area p-relative tp-btn-trigger z-index-1 fix theme-bg-2" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
@@ -178,7 +190,7 @@ const HeroAreaHome = () => {
 
                   <div className="tp-hero-btn wrap">
                     <div className="tp-hover-btn-wrapper tp-btn-bounce">
-                      <Link href="/contact" className="tp-hover-btn tp-hover-btn-item tp-btn-circle square">
+                      <Link href="/contact" onClick={handleScrollToContact} className="tp-hover-btn tp-hover-btn-item tp-btn-circle square">
                         <span className="tp-btn-circle-text">
                           {btn_text}
                         </span>
@@ -205,19 +217,19 @@ const HeroAreaHome = () => {
 
         {/* Right Side Bottom Action Bar (3 Actions: Play, Pause, Mute) */}
         <div 
-          className="hero-video-controls d-flex align-items-center gap-2"
+          className="hero-video-controls d-flex align-items-center gap-1"
           style={{
             position: 'absolute',
-            bottom: '40px',
-            right: '40px',
+            bottom: '30px',
+            right: '30px',
             zIndex: 10,
-            backgroundColor: 'rgba(15, 23, 42, 0.75)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            borderRadius: '50px',
-            padding: '8px 14px',
-            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4)'
+            backgroundColor: 'rgba(15, 23, 42, 0.6)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
+            borderRadius: '40px',
+            padding: '4px 6px',
+            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
           }}
         >
           {/* Action 1: Play */}
@@ -226,25 +238,23 @@ const HeroAreaHome = () => {
             onClick={handlePlay}
             title="Play Video"
             style={{
-              backgroundColor: isPlaying ? '#54b960' : 'rgba(255, 255, 255, 0.12)',
+              backgroundColor: isPlaying ? 'rgba(255, 255, 255, 0.25)' : 'transparent',
               color: '#ffffff',
               border: 'none',
-              borderRadius: '30px',
-              padding: '8px 16px',
-              fontSize: '13px',
-              fontWeight: 700,
+              borderRadius: '50%',
+              width: '32px',
+              height: '32px',
               display: 'flex',
               alignItems: 'center',
-              gap: '6px',
+              justifyContent: 'center',
               cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              boxShadow: isPlaying ? '0 0 15px rgba(84, 185, 96, 0.5)' : 'none'
+              transition: 'all 0.2s ease',
+              opacity: isPlaying ? 1 : 0.7
             }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z"/>
             </svg>
-            Play
           </button>
 
           {/* Action 2: Pause */}
@@ -253,25 +263,23 @@ const HeroAreaHome = () => {
             onClick={handlePause}
             title="Pause Video"
             style={{
-              backgroundColor: !isPlaying ? '#54b960' : 'rgba(255, 255, 255, 0.12)',
+              backgroundColor: !isPlaying ? 'rgba(255, 255, 255, 0.25)' : 'transparent',
               color: '#ffffff',
               border: 'none',
-              borderRadius: '30px',
-              padding: '8px 16px',
-              fontSize: '13px',
-              fontWeight: 700,
+              borderRadius: '50%',
+              width: '32px',
+              height: '32px',
               display: 'flex',
               alignItems: 'center',
-              gap: '6px',
+              justifyContent: 'center',
               cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              boxShadow: !isPlaying ? '0 0 15px rgba(84, 185, 96, 0.5)' : 'none'
+              transition: 'all 0.2s ease',
+              opacity: !isPlaying ? 1 : 0.7
             }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
             </svg>
-            Pause
           </button>
 
           {/* Action 3: Mute / Unmute */}
@@ -280,35 +288,28 @@ const HeroAreaHome = () => {
             onClick={toggleMute}
             title={isMuted ? "Unmute Sound" : "Mute Sound"}
             style={{
-              backgroundColor: isMuted ? 'rgba(239, 68, 68, 0.85)' : 'rgba(255, 255, 255, 0.12)',
+              backgroundColor: isMuted ? 'rgba(255, 255, 255, 0.25)' : 'transparent',
               color: '#ffffff',
               border: 'none',
-              borderRadius: '30px',
-              padding: '8px 16px',
-              fontSize: '13px',
-              fontWeight: 700,
+              borderRadius: '50%',
+              width: '32px',
+              height: '32px',
               display: 'flex',
               alignItems: 'center',
-              gap: '6px',
+              justifyContent: 'center',
               cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              boxShadow: isMuted ? '0 0 15px rgba(239, 68, 68, 0.5)' : 'none'
+              transition: 'all 0.2s ease',
+              opacity: isMuted ? 1 : 0.7
             }}
           >
             {isMuted ? (
-              <>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
-                </svg>
-                Muted
-              </>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+              </svg>
             ) : (
-              <>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-                </svg>
-                Sound On
-              </>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+              </svg>
             )}
           </button>
         </div>

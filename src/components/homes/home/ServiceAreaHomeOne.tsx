@@ -1,9 +1,10 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 import shape_1 from "@/assets/img/services/shape/services-shape-1.png";
 import shape_2 from "@/assets/img/services/shape/services-shape-2.png";
+import swara_img from "@/assets/img/my-work/swara_patel.png";
 
 interface DataType {
   subtitle: string;
@@ -20,7 +21,6 @@ const service_content: DataType = {
 const { subtitle, title, sm_des } = service_content;
 
 const ServiceAreaHomeOne = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <>
@@ -81,135 +81,67 @@ const ServiceAreaHomeOne = () => {
                 </div>
               </div>
 
-              {/* Right Column: Interactive Video Showreel Container */}
+              {/* Right Column: Swara Patel Image Showcase */}
               <div className="col-xl-6 col-lg-5">
-                <div className="tp-services-video-container pl-30 p-relative" style={{ marginTop: "60px" }}>
+                <div className="tp-services-img-wrapper pl-30 p-relative" style={{ marginTop: "60px" }}>
                   <div
+                    className="p-relative rounded-4 overflow-hidden"
                     style={{
-                      position: 'relative',
-                      width: '100%',
-                      aspectRatio: '16 / 10',
-                      minHeight: '380px',
-                      borderRadius: '24px',
-                      overflow: 'hidden',
-                      boxShadow: '0 20px 45px rgba(0, 0, 0, 0.15)',
-                      backgroundColor: '#111115',
+                      borderRadius: '28px',
+                      boxShadow: '0 25px 60px rgba(0, 0, 0, 0.18), 0 0 40px rgba(84, 185, 96, 0.15)',
+                      border: '1px solid rgba(84, 185, 96, 0.25)',
+                      transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
                     }}
                   >
-                    {!isPlaying ? (
-                      <div
-                        onClick={() => setIsPlaying(true)}
+                    <Image
+                      src={swara_img}
+                      alt="Swara Patel - Movement Specialist"
+                      className="w-100 h-auto d-block"
+                      style={{
+                        borderRadius: '28px',
+                        objectFit: 'cover',
+                        maxHeight: '520px',
+                        transition: 'transform 0.5s ease',
+                      }}
+                      priority
+                    />
+                    
+                    {/* Subtle Overlay Badge */}
+                    <div
+                      className="position-absolute bottom-0 start-0 w-100 p-4"
+                      style={{
+                        background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%)',
+                        borderBottomLeftRadius: '28px',
+                        borderBottomRightRadius: '28px',
+                      }}
+                    >
+                      <span
                         style={{
-                          position: 'relative',
-                          width: '100%',
-                          height: '100%',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
+                          fontSize: '13px',
+                          fontWeight: '700',
+                          textTransform: 'uppercase',
+                          letterSpacing: '1.5px',
+                          color: '#54b960',
+                          display: 'block',
+                          marginBottom: '4px',
+                          fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                         }}
                       >
-                        <img
-                          src="/assets/img/projects/2.jpg"
-                          alt="Showreel Thumbnail"
-                          style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                            objectPosition: 'center',
-                            filter: 'brightness(0.9)',
-                            transition: 'transform 0.5s ease',
-                          }}
-                        />
-
-                        {/* Dark Overlay Gradient */}
-                        <div
-                          style={{
-                            position: 'absolute',
-                            inset: 0,
-                            background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%)',
-                          }}
-                        />
-
-                        {/* Play Button Icon */}
-                        <div
-                          style={{
-                            position: 'absolute',
-                            width: '76px',
-                            height: '76px',
-                            borderRadius: '50%',
-                            backgroundColor: '#BA9666',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            boxShadow: '0 10px 30px rgba(186, 150, 102, 0.5)',
-                            zIndex: 3,
-                          }}
-                        >
-                          <svg
-                            width="26"
-                            height="28"
-                            viewBox="0 0 24 26"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            style={{ marginLeft: '4px' }}
-                          >
-                            <path
-                              d="M22.5 11.402C23.8333 12.1718 23.8333 14.0963 22.5 14.8661L3.75 25.6914C2.41666 26.4612 0.749999 25.4989 0.749999 23.9594L0.75 2.30873C0.75 0.769229 2.41667 -0.193022 3.75 0.576778L22.5 11.402Z"
-                              fill="#FFFFFF"
-                            />
-                          </svg>
-                        </div>
-
-                        {/* Label Badge */}
-                        <div
-                          style={{
-                            position: 'absolute',
-                            bottom: '24px',
-                            left: '24px',
-                            zIndex: 3,
-                          }}
-                        >
-                          <span
-                            style={{
-                              fontSize: '13px',
-                              fontWeight: '700',
-                              textTransform: 'uppercase',
-                              letterSpacing: '1.2px',
-                              color: '#BA9666',
-                              display: 'block',
-                              marginBottom: '4px',
-                              fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
-                            }}
-                          >
-                            Watch Showreel
-                          </span>
-                          <h4
-                            style={{
-                              fontSize: '22px',
-                              fontWeight: '700',
-                              color: '#FFFFFF',
-                              margin: 0,
-                              fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
-                            }}
-                          >
-                            Swara&rsquo;s Showreel
-                          </h4>
-                        </div>
-                      </div>
-                    ) : (
-                      <video
-                        src="/assets/img/my-work/Swara ma'am Showreel.mp4"
-                        controls
-                        autoPlay
+                        Movement Educator
+                      </span>
+                      <h4
                         style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          borderRadius: '24px',
+                          fontSize: '24px',
+                          fontWeight: '700',
+                          color: '#FFFFFF',
+                          margin: 0,
+                          fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                         }}
-                      />
-                    )}
+                      >
+                        Swara Patel
+                      </h4>
+                    </div>
                   </div>
                 </div>
               </div>
