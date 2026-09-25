@@ -75,43 +75,237 @@ const MyWorkAreaHomeOne: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Right Column: Featured Quote & Persona Card with High Pop-Out Image */}
-                    <div className="col-xl-7 col-lg-7" style={{ marginTop: '80px' }}>
-                        <style jsx>{`
+                    {/* Right Column: Featured Quote & Persona Card */}
+                    <div className="col-xl-7 col-lg-7 mywork-card-wrapper">
+                        <style jsx global>{`
+                            /* -------------------------------------------------------------
+                               MY WORK SECTION - GLOBAL THEME CONTROLS
+                            ------------------------------------------------------------- */
+                            
+                            /* DEFAULT & DARK THEME (Dark Background + Pure White Text) */
+                            .tp-mywork-home-section {
+                                background-color: #142213 !important;
+                            }
+                            .tp-mywork-home-subtitle {
+                                color: #54b960 !important;
+                            }
+                            .tp-mywork-home-item {
+                                color: #ffffff !important;
+                                border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+                            }
+                            .tp-mywork-home-card,
                             .mywork-popout-card {
-                                background-color: #eaf2e8;
-                                border: 1px solid rgba(84, 185, 96, 0.3);
-                                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+                                background-color: rgba(22, 36, 24, 0.92) !important;
+                                border: 1px solid rgba(84, 185, 96, 0.35) !important;
+                                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
                             }
+                            .tp-mywork-card-heading,
                             .mywork-card-title {
-                                color: #152216;
+                                color: #ffffff !important;
                             }
+                            .tp-mywork-card-text,
                             .mywork-card-text {
-                                color: #3d4d3e;
+                                color: rgba(255, 255, 255, 0.9) !important;
                             }
+                            .tp-mywork-card-highlight,
                             .mywork-card-highlight {
-                                color: #111a12;
+                                color: #ffffff !important;
+                            }
+                            .tp-mywork-fact-item h4,
+                            .tp-mywork-fact-item p {
+                                color: #ffffff !important;
                             }
 
+                            /* EXPLICIT DARK THEME SELECTORS */
+                            html[tp-theme='tp-theme-dark'] .tp-mywork-home-section,
+                            body.tp-theme-dark .tp-mywork-home-section,
+                            .tp-theme-dark .tp-mywork-home-section {
+                                background-color: #142213 !important;
+                            }
+                            html[tp-theme='tp-theme-dark'] .tp-mywork-home-subtitle,
+                            body.tp-theme-dark .tp-mywork-home-subtitle,
+                            .tp-theme-dark .tp-mywork-home-subtitle {
+                                color: #54b960 !important;
+                            }
+                            html[tp-theme='tp-theme-dark'] .tp-mywork-home-item,
+                            body.tp-theme-dark .tp-mywork-home-item,
+                            .tp-theme-dark .tp-mywork-home-item {
+                                color: #ffffff !important;
+                                border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+                            }
+                            html[tp-theme='tp-theme-dark'] .tp-mywork-home-card,
                             html[tp-theme='tp-theme-dark'] .mywork-popout-card,
+                            body.tp-theme-dark .tp-mywork-home-card,
+                            body.tp-theme-dark .mywork-popout-card,
+                            .tp-theme-dark .tp-mywork-home-card,
                             .tp-theme-dark .mywork-popout-card {
-                                background-color: rgba(22, 36, 24, 0.85);
-                                border: 1px solid rgba(84, 185, 96, 0.35);
-                                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+                                background-color: rgba(22, 36, 24, 0.92) !important;
+                                border: 1px solid rgba(84, 185, 96, 0.35) !important;
+                                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
                             }
+                            html[tp-theme='tp-theme-dark'] .tp-mywork-card-heading,
                             html[tp-theme='tp-theme-dark'] .mywork-card-title,
+                            body.tp-theme-dark .tp-mywork-card-heading,
+                            body.tp-theme-dark .mywork-card-title,
+                            .tp-theme-dark .tp-mywork-card-heading,
                             .tp-theme-dark .mywork-card-title {
-                                color: #ffffff;
+                                color: #ffffff !important;
                             }
+                            html[tp-theme='tp-theme-dark'] .tp-mywork-card-text,
                             html[tp-theme='tp-theme-dark'] .mywork-card-text,
+                            body.tp-theme-dark .tp-mywork-card-text,
+                            body.tp-theme-dark .mywork-card-text,
+                            .tp-theme-dark .tp-mywork-card-text,
                             .tp-theme-dark .mywork-card-text {
-                                color: rgba(255, 255, 255, 0.82);
+                                color: rgba(255, 255, 255, 0.9) !important;
                             }
+                            html[tp-theme='tp-theme-dark'] .tp-mywork-card-highlight,
                             html[tp-theme='tp-theme-dark'] .mywork-card-highlight,
+                            body.tp-theme-dark .tp-mywork-card-highlight,
+                            body.tp-theme-dark .mywork-card-highlight,
+                            .tp-theme-dark .tp-mywork-card-highlight,
                             .tp-theme-dark .mywork-card-highlight {
-                                color: #ffffff;
+                                color: #ffffff !important;
+                            }
+                            html[tp-theme='tp-theme-dark'] .tp-mywork-fact-item h4,
+                            html[tp-theme='tp-theme-dark'] .tp-mywork-fact-item p,
+                            body.tp-theme-dark .tp-mywork-fact-item h4,
+                            body.tp-theme-dark .tp-mywork-fact-item p,
+                            .tp-theme-dark .tp-mywork-fact-item h4,
+                            .tp-theme-dark .tp-mywork-fact-item p {
+                                color: #ffffff !important;
+                            }
+
+                            /* LIGHT THEME OVERRIDES (White Background + Pure Black Text) */
+                            html[tp-theme='tp-theme-light'] .tp-mywork-home-section,
+                            [tp-theme='tp-theme-light'] .tp-mywork-home-section,
+                            [tp-theme='light'] .tp-mywork-home-section,
+                            .tp-theme-light .tp-mywork-home-section,
+                            body.tp-theme-light .tp-mywork-home-section {
+                                background-color: #ffffff !important;
+                            }
+                            html[tp-theme='tp-theme-light'] .tp-mywork-home-subtitle,
+                            [tp-theme='tp-theme-light'] .tp-mywork-home-subtitle,
+                            [tp-theme='light'] .tp-mywork-home-subtitle,
+                            .tp-theme-light .tp-mywork-home-subtitle,
+                            body.tp-theme-light .tp-mywork-home-subtitle {
+                                color: #54b960 !important;
+                            }
+                            html[tp-theme='tp-theme-light'] .tp-mywork-home-item,
+                            [tp-theme='tp-theme-light'] .tp-mywork-home-item,
+                            [tp-theme='light'] .tp-mywork-home-item,
+                            .tp-theme-light .tp-mywork-home-item,
+                            body.tp-theme-light .tp-mywork-home-item {
+                                color: #000000 !important;
+                                border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+                            }
+                            html[tp-theme='tp-theme-light'] .tp-mywork-home-card,
+                            html[tp-theme='tp-theme-light'] .mywork-popout-card,
+                            [tp-theme='tp-theme-light'] .tp-mywork-home-card,
+                            [tp-theme='tp-theme-light'] .mywork-popout-card,
+                            [tp-theme='light'] .tp-mywork-home-card,
+                            [tp-theme='light'] .mywork-popout-card,
+                            .tp-theme-light .tp-mywork-home-card,
+                            .tp-theme-light .mywork-popout-card,
+                            body.tp-theme-light .tp-mywork-home-card,
+                            body.tp-theme-light .mywork-popout-card {
+                                background-color: #eaf2e8 !important;
+                                border: 1px solid rgba(84, 185, 96, 0.3) !important;
+                                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06) !important;
+                            }
+                            html[tp-theme='tp-theme-light'] .tp-mywork-card-heading,
+                            html[tp-theme='tp-theme-light'] .mywork-card-title,
+                            [tp-theme='tp-theme-light'] .tp-mywork-card-heading,
+                            [tp-theme='tp-theme-light'] .mywork-card-title,
+                            [tp-theme='light'] .tp-mywork-card-heading,
+                            [tp-theme='light'] .mywork-card-title,
+                            .tp-theme-light .tp-mywork-card-heading,
+                            .tp-theme-light .mywork-card-title,
+                            body.tp-theme-light .tp-mywork-card-heading,
+                            body.tp-theme-light .mywork-card-title {
+                                color: #000000 !important;
+                            }
+                            html[tp-theme='tp-theme-light'] .tp-mywork-card-text,
+                            html[tp-theme='tp-theme-light'] .mywork-card-text,
+                            [tp-theme='tp-theme-light'] .tp-mywork-card-text,
+                            [tp-theme='tp-theme-light'] .mywork-card-text,
+                            [tp-theme='light'] .tp-mywork-card-text,
+                            [tp-theme='light'] .mywork-card-text,
+                            .tp-theme-light .tp-mywork-card-text,
+                            .tp-theme-light .mywork-card-text,
+                            body.tp-theme-light .tp-mywork-card-text,
+                            body.tp-theme-light .mywork-card-text {
+                                color: #121212 !important;
+                            }
+                            html[tp-theme='tp-theme-light'] .tp-mywork-card-highlight,
+                            html[tp-theme='tp-theme-light'] .mywork-card-highlight,
+                            [tp-theme='tp-theme-light'] .tp-mywork-card-highlight,
+                            [tp-theme='tp-theme-light'] .mywork-card-highlight,
+                            [tp-theme='light'] .tp-mywork-card-highlight,
+                            [tp-theme='light'] .mywork-card-highlight,
+                            .tp-theme-light .tp-mywork-card-highlight,
+                            .tp-theme-light .mywork-card-highlight,
+                            body.tp-theme-light .tp-mywork-card-highlight,
+                            body.tp-theme-light .mywork-card-highlight {
+                                color: #000000 !important;
+                            }
+                            html[tp-theme='tp-theme-light'] .tp-mywork-fact-item h4,
+                            html[tp-theme='tp-theme-light'] .tp-mywork-fact-item p,
+                            [tp-theme='tp-theme-light'] .tp-mywork-fact-item h4,
+                            [tp-theme='tp-theme-light'] .tp-mywork-fact-item p,
+                            [tp-theme='light'] .tp-mywork-fact-item h4,
+                            [tp-theme='light'] .tp-mywork-fact-item p,
+                            .tp-theme-light .tp-mywork-fact-item h4,
+                            .tp-theme-light .tp-mywork-fact-item p,
+                            body.tp-theme-light .tp-mywork-fact-item h4,
+                            body.tp-theme-light .tp-mywork-fact-item p {
+                                color: #000000 !important;
+                            }
+
+                            /* Desktop Layout (>= 992px) */
+                            @media (min-width: 992px) {
+                                .mywork-card-wrapper {
+                                    margin-top: 80px;
+                                }
+                                .mywork-mobile-img {
+                                    display: none !important;
+                                }
+                                .mywork-desktop-img {
+                                    display: flex !important;
+                                }
+                                .mywork-text-block {
+                                    max-width: 52% !important;
+                                    padding-right: 15px !important;
+                                }
+                            }
+
+                            /* Mobile & Tablet Layout (< 992px) */
+                            @media (max-width: 991px) {
+                                .mywork-card-wrapper {
+                                    margin-top: 40px;
+                                }
+                                .mywork-desktop-img {
+                                    display: none !important;
+                                }
+                                .mywork-mobile-img {
+                                    display: block !important;
+                                    width: 100%;
+                                    max-width: 320px;
+                                    margin: 0 auto 25px auto;
+                                    text-align: center;
+                                }
+                                .mywork-popout-card {
+                                    padding: 32px 24px !important;
+                                    min-height: auto !important;
+                                    flex-direction: column !important;
+                                }
+                                .mywork-text-block {
+                                    max-width: 100% !important;
+                                    padding-right: 0 !important;
+                                }
                             }
                         `}</style>
+
                         <div
                             className="tp-mywork-home-card mywork-popout-card position-relative"
                             style={{
@@ -124,16 +318,25 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                 alignItems: 'center',
                             }}
                         >
+                            {/* Mobile Image Rendered First (< 992px) */}
+                            <div className="mywork-mobile-img">
+                                <img
+                                    src="/assets/img/my-work/mywork_section_image.png"
+                                    alt="Swara Patel - Connection"
+                                    style={{
+                                        width: '100%',
+                                        maxWidth: '280px',
+                                        height: 'auto',
+                                        objectFit: 'contain',
+                                        margin: '0 auto',
+                                        display: 'block',
+                                        filter: 'drop-shadow(0 10px 25px rgba(0, 0, 0, 0.12))',
+                                    }}
+                                />
+                            </div>
+
                             {/* Card Text Content */}
-                            <div
-                                style={{
-                                    position: 'relative',
-                                    zIndex: 2,
-                                    width: '100%',
-                                    maxWidth: '52%',
-                                    paddingRight: '15px',
-                                }}
-                            >
+                            <div className="mywork-text-block" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
                                 <h3
                                     className="mywork-card-title mb-4"
                                     style={{
@@ -182,8 +385,9 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                 </p>
                             </div>
 
-                            {/* Out-Of-The-Box Pop-Out Image (Head & Hair Extending High Above Card) */}
+                            {/* Desktop Out-Of-The-Box Pop-Out Image (>= 992px) */}
                             <div
+                                className="mywork-desktop-img"
                                 style={{
                                     position: 'absolute',
                                     right: '-25px',
@@ -193,7 +397,6 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                     top: '-80px',
                                     zIndex: 5,
                                     pointerEvents: 'none',
-                                    display: 'flex',
                                     alignItems: 'flex-end',
                                     justifyContent: 'flex-end',
                                 }}
