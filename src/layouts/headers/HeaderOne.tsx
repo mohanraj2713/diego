@@ -82,11 +82,11 @@ const HeaderOne = () => {
 
               <div className="col-xl-4 col-lg-3 col-md-7 col-6">
                 <div className="tp-header-right d-flex align-items-center justify-content-end">
-                  {/* <div className="tp-theme-toggle">
+                  <div className="tp-theme-toggle">
                     <label
-                      onChange={toggleTheme}
+                      onClick={toggleTheme}
                       className={`tp-theme-toggle-main themepure-theme-toggle ${active ? 'dark-active' : 'light-active'}`}
-                      htmlFor="this-s"
+                      style={{ cursor: 'pointer' }}
                     >
                       <span className="tp-theme-toggle-light">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +117,7 @@ const HeaderOne = () => {
                         </svg>
                       </span>
                     </label>
-                  </div> */}
+                  </div>
 
                   {/* <div className="tp-header-cv ml-10 d-none d-md-block">
                     <a className="tp-header-cv-btn" href="assets/img/cv/mycv.docx">
@@ -168,11 +168,11 @@ const HeaderOne = () => {
               </div>
               <div className="col-xl-4 col-lg-3 col-md-7 col-6">
                 <div className="tp-header-right d-flex align-items-center justify-content-end">
-                  {/* <div className="tp-theme-toggle">
+                  <div className="tp-theme-toggle">
                     <label
-                      onChange={toggleTheme}
+                      onClick={toggleTheme}
                       className={`tp-theme-toggle-main themepure-theme-toggle ${active ? 'dark-active' : 'light-active'}`}
-                      htmlFor="this-ss"
+                      style={{ cursor: 'pointer' }}
                     >
                       <span id="tp-theme-toggle-light" className="tp-theme-toggle-light">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -203,7 +203,7 @@ const HeaderOne = () => {
                         </svg>
                       </span>
                     </label>
-                  </div> */}
+                  </div>
 
                   {/* <div className="tp-header-cv ml-10 d-none d-md-block">
                     <a className="tp-header-cv-btn" href="assets/img/cv/mycv.docx">

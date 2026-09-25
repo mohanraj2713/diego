@@ -1,70 +1,44 @@
 "use client"
 import { useState, useEffect } from 'react';
 
-
 export default function UseThemeCheck() {
-
   const [themeCheck, setThemeCheck] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
 
-  const toggleTheme = () => {
-    const themeScheme = localStorage.getItem('tp_theme_scheme');
-    const themeToggle: any = document.querySelector('.themepure-theme-toggle');
-
-    if (themeScheme === 'tp-theme-dark') {
-      tp_set_scheme('tp-theme-light');
-      themeToggle.classList.remove('dark-active');
-      themeToggle.classList.add('light-active');
-    } else {
-      tp_set_scheme('tp-theme-dark');
-      themeToggle.classList.remove('light-active');
-      themeToggle.classList.add('dark-active');
-    }
-  };
-
-  const tp_set_scheme = (tp_theme: string) => {
+  const applyTheme = (tp_theme: string) => {
     localStorage.setItem('tp_theme_scheme', tp_theme);
     document.documentElement.setAttribute('tp-theme', tp_theme);
+    const isDark = tp_theme === 'tp-theme-dark';
+    setActive(isDark);
 
-    // Toggle button class
-    setActive(tp_theme === 'tp-theme-dark');
+    if (typeof window !== 'undefined') {
+      document.querySelectorAll('.themepure-theme-toggle').forEach((el) => {
+        if (isDark) {
+          el.classList.remove('light-active');
+          el.classList.add('dark-active');
+        } else {
+          el.classList.remove('dark-active');
+          el.classList.add('light-active');
+        }
+      });
+      document.querySelectorAll('.themepure-theme-toggle-input').forEach((input: any) => {
+        input.checked = isDark;
+      });
+    }
   };
 
-  const tp_init_theme = () => {
-    const themeToggle: any = document.querySelector('.themepure-theme-toggle');
-    const themeInput: HTMLInputElement | null = document.querySelector('.themepure-theme-toggle-input');
-
+  const toggleTheme = () => {
     const savedTheme = localStorage.getItem('tp_theme_scheme');
-    if (savedTheme === 'tp-theme-dark') {
-      tp_set_scheme('tp-theme-dark');
-      if (themeToggle && themeInput) {
-        themeInput.checked = true;
-        themeToggle.classList.remove('light-active');
-        themeToggle.classList.add('dark-active');
-      }
-    } else {
-      tp_set_scheme('tp-theme-light');
-      if (themeToggle && themeInput) {
-        themeToggle.classList.remove('dark-active');
-        themeToggle.classList.add('light-active');
-        themeInput.checked = false;
-      }
-    }
+    const currentTheme = savedTheme || (document.documentElement.getAttribute('tp-theme') || 'tp-theme-light');
+    const newTheme = currentTheme === 'tp-theme-dark' ? 'tp-theme-light' : 'tp-theme-dark';
+    applyTheme(newTheme);
   };
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      tp_init_theme();
-
-      const themeInput: any = document.querySelector('.themepure-theme-toggle-input');
-      if (themeInput) {
-        themeInput.addEventListener('change', toggleTheme);
-        return () => {
-          themeInput.removeEventListener('change', toggleTheme);
-        };
-      }
-
-      setThemeCheck(true)
+      const savedTheme = localStorage.getItem('tp_theme_scheme') || 'tp-theme-light';
+      applyTheme(savedTheme);
+      setThemeCheck(true);
     }
   }, []);
 
@@ -73,5 +47,4 @@ export default function UseThemeCheck() {
     toggleTheme,
     active,
   };
-
 }

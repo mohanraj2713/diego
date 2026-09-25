@@ -23,8 +23,7 @@ interface DataType {
 
 const hero_content: DataType = {
   slide_text: [
-    "Wellness",
-    // "Visual designer",
+    "Wellness", "Facilitator"
   ],
   sub_title: "Hello There!",
   title_1: "I am Swara Patel",
@@ -108,7 +107,7 @@ const HeroAreaHome = () => {
 
                   </h3>
                   <p>{sm_info}</p>
-                  
+
                   {/* Signature Logo Centered */}
                   <div className="tp-hero-signature my-4 text-center d-flex justify-content-center">
                     <img
@@ -150,7 +149,7 @@ const HeroAreaHome = () => {
               <div className="tp-hero-thumb-wrapper text-center text-lg-end p-relative z-index-1">
                 <div className="tp-hero-thumb-shape">
                   <Image className="tp-hero-thumb-shape-1" data-speed="1.4" src={HeroShape1} alt="diego-image" />
-                  <Image className="tp-hero-thumb-shape-2 d-none d-xl-block" data-speed="1.2" src={HeroShape2} alt="diego-image" />
+                  <Image className="tp-hero-thumb-shape-2 d-none d-xl-block " data-speed="1.2" src={HeroShape2} alt="diego-image" />
                   <span className="tp-hero-thumb-shape-3"></span>
                 </div>
                 <div className="tp-hero-thumb">

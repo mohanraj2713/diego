@@ -12,9 +12,9 @@ interface DataType {
 }
 
 const service_content: DataType = {
-  subtitle: "What I Believe",
-  title: <>Movement is <br /> more than exercise</>,
-  sm_des: <>More than dance | More than performance. It shapes </>,
+  subtitle: "What becomes possible ",
+  title: <>when we use movement </>,
+  sm_des: <>as a way to learn, connect and grow?  </>,
 }
 
 const { subtitle, title, sm_des } = service_content;
@@ -49,22 +49,22 @@ const ServiceAreaHomeOne = () => {
 
                   <div className="tp-services-capsule-item-wrapper">
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Teachers teach more creatively</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Children enjoy learning</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>How we lead</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Teachers teach more creatively</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>How we grow</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Leaders communicate with greater presence</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>How we learn</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Adults reconnect with themselves</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>Project connect deeply</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>Families move, laugh and connect</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Families move,laugh, and connect</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>People connect deeply</span>
                     </p>
                     <p data-tp-throwable-el="">
                       <span className="">

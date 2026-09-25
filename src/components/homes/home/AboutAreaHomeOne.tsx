@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import award_img from "@/assets/img/about/award-icon.svg";
 import about_img from "@/assets/img/about/about-1.png";
+// import about_img from "@/assets/img/my-work/about-me.png";
 import Count from '@/components/common/Count';
 
 
@@ -27,7 +28,7 @@ const about_content: DataType = {
   about_des: (
     <>
       <p>
-        It started with me.
+        If you had met me years ago, you probably wouldn’t recognize the person I am today.
         <br />
         I thought dance was changing my skills.
         <br />
@@ -35,13 +36,14 @@ const about_content: DataType = {
       </p>
 
       <p>
-        Over time, I began to understand that movement doesn’t just train
+        Over time, I began to understand that movement doesn’t just train the body. It influences how we feel, think, behave and connect.
         <br />
-        the body. <strong>It influences how we feel, think, behave and connect.</strong>
+        That realisation became part of my life’s work.
+        {/* the body. <strong>It influences how we feel, think, behave and connect.</strong> */}
       </p>
 
       <p>
-        That realisation became part of my life’s work.
+        Today, I bring that understanding into the way I teach, train, speak and facilitate, helping others experience what movement can make possible.
       </p>
     </>
   ),

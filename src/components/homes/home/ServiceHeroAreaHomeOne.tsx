@@ -31,16 +31,14 @@ interface DataType {
 
 const hero_content: DataType = {
     subtitle: "My workshops & training",
-    title: "Designed to be experienced, not simply attended.",
-    info1: "They bring together movement, play, interaction, reflection and moments of discovery.",
-    info2: "Because learning is most powerful when people feel free to participate, experience and discover.",
+    title: "I CREATE SPACES PEOPLE WANT TO BE PART OF.",
+    info1: "I’m known for my energy and my ability to make people feel at ease, open up and participate fully, whether I’m in a room of 10 or 500.My workshops & training are designed to be experienced, not simply attended. ",
+    info2: "They bring together movement, play, interaction, reflection and moments of discovery.Because learning is most powerful when people feel free to participate, experience and discover.",
     slider_images_1: [
-        projects_new_img_1, projects_new_img_2, projects_new_img_3, projects_new_img_4, projects_new_img_5, projects_new_img_6,
-        projects_new_img_1, projects_new_img_2, projects_new_img_3, projects_new_img_4, projects_new_img_5, projects_new_img_6,
+        projects_new_img_1, projects_new_img_2, projects_new_img_3
     ],
     slider_images_2: [
-        projects_new_img_6, projects_new_img_5, projects_new_img_4, projects_new_img_3, projects_new_img_2, projects_new_img_1,
-        projects_new_img_6, projects_new_img_5, projects_new_img_4, projects_new_img_3, projects_new_img_2, projects_new_img_1,
+        projects_new_img_6, projects_new_img_5, projects_new_img_4
     ]
 }
 

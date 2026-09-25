@@ -1,7 +1,6 @@
 import Link from "next/link";
 import HeroBehanceIcon from "@/svg/home/HeroIcons/HeroBehanceIcon";
 import HeroEmailIcon from "@/svg/home/HeroIcons/HeroEmailIcon";
-import HeroGoogleIcon from "@/svg/home/HeroIcons/HeroGoogleIcon";
 
 import type { JSX } from "react";
 
@@ -15,20 +14,26 @@ interface HeroDataType {
 const hero_social_data: HeroDataType[] = [
   {
     id: 1,
-    link: "https://mail.google.com",
+    link: "mailto:swara@example.com",
     icon: <HeroEmailIcon />,
   },
   {
     id: 2,
-    link: "https://www.google.com",
-    icon: <HeroGoogleIcon />,
+    link: "https://www.youtube.com",
+    icon: (
+      <img
+        src="/assets/img/my-work/youtube.png"
+        alt="YouTube"
+        style={{ width: "20px", height: "20px", objectFit: "contain" }}
+      />
+    ),
   },
   {
     id: 3,
     link: "https://www.behance.net",
     icon: <HeroBehanceIcon />,
   }
-]
+];
 
 export const HeroSocialLinks = () => {
   return (
@@ -42,10 +47,8 @@ export const HeroSocialLinks = () => {
         </Link>
       ))}
     </>
-  )
-}
-
-
+  );
+};
 
 // hero social links home three
 interface HDataType {
@@ -61,8 +64,8 @@ const hero_link_home_three: HDataType[] = [
   },
   {
     id: 2,
-    link: "https://www.twitter.com",
-    title: "Twitter",
+    link: "https://www.youtube.com",
+    title: "YouTube",
   },
   {
     id: 3,
@@ -74,7 +77,7 @@ const hero_link_home_three: HDataType[] = [
     link: "https://www.instagram.com",
     title: "Instagram",
   }
-]
+];
 export const HeroSocialLinksHomeThree = () => {
   return (
     <>
@@ -87,10 +90,8 @@ export const HeroSocialLinksHomeThree = () => {
         </Link>
       ))}
     </>
-  )
-
-}
-
+  );
+};
 
 // copy right text 
 type copy_right_text_type = {
@@ -100,16 +101,14 @@ type copy_right_text_type = {
 
 const copy_right_text: copy_right_text_type = {
   copy_right: <>
-    © {new Date().getFullYear()}  Diego, All Rights Reserved • <span>Credits</span>
+    © {new Date().getFullYear()} Swara Patel, All Rights Reserved • <span>Credits</span>
   </>,
-  copy_rigth_2: `Themepure © ${new Date().getFullYear()}. All rights reserved.`
-}
+  copy_rigth_2: `Swara Patel © ${new Date().getFullYear()}. All rights reserved.`
+};
 
-const { copy_right, copy_rigth_2 } = copy_right_text
-export const CopyRight = ({style_2}: any) => {
+const { copy_right, copy_rigth_2 } = copy_right_text;
+export const CopyRight = ({ style_2 }: any) => {
   return (
-    <> { style_2 ? copy_rigth_2 : copy_right}</>
-  )
-}
-
-
+    <> {style_2 ? copy_rigth_2 : copy_right}</>
+  );
+};
