@@ -11,6 +11,7 @@ import blog_img_4 from "@/assets/img/blog/blog-2.jpg";
 import blog_img_5 from "@/assets/img/blog/blog-3.jpg";
 import figma_icon from "@/assets/img/course/logo/figma.png";
 import ae_icon from "@/assets/img/course/logo/ae.png";
+import TestimonialAreaHomeOne from './TestimonialAreaHomeOne';
 
 interface DataType {
   subtitle: string;
@@ -297,27 +298,7 @@ const PriceAreaHomeOne = ({ style }: any) => {
                     }
                     {i === 2 &&
                       <div className="tp-blog-inner">
-                        <div className="row gx-45">
-                          {item.tab_items?.map((inner_item, index) =>
-                            <div key={index} className="col-xl-4 col-lg-4 mb-70">
-                              <div className="tp-blog-item">
-                                <div className="tp-blog-thumb fix">
-                                  <Link href="/blog-details">
-                                    <Image className="w-100" src={inner_item.img} alt="image-here" />
-                                  </Link>
-                                </div>
-                                <div className="tp-blog-content">
-                                  <h4 className="tp-blog-title-sm">
-                                    <Link href="/blog-details">{inner_item.title}</Link></h4>
-                                  <div className="tp-blog-meta d-flex justify-content-between align-items-center">
-                                    <span>{inner_item.date}</span>
-                                    <span><Link href="/blog-details">{inner_item.category}</Link></span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-                        </div>
+                        <TestimonialAreaHomeOne style={true} />
                       </div>
                     }
 

@@ -1,8 +1,8 @@
-'use client'
+'use client';
 import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Image, { StaticImageData } from 'next/image';
 import Slider from 'react-slick';
-import quote from "@/assets/img/testimonial/quote.svg";
 
 import user_avatar_1 from "@/assets/img/users/user-1.jpg";
 import user_avatar_2 from "@/assets/img/users/avata-1.png";
@@ -10,167 +10,90 @@ import user_avatar_3 from "@/assets/img/users/avata-2.png";
 import user_avatar_4 from "@/assets/img/users/avata-3.png";
 
 import StartIcon from '@/svg/icons/StartIcon';
-import { gsap } from 'gsap';
 
-
-
-interface DataType {
-  subtitle: string;
-  title: string;
-  info: string;
-  testimonial_slider_data: {
-    id: number;
-    rating_text: string;
-    description: string;
-  }[];
-  testimonial_nav_data: {
-    id: number;
-    img: StaticImageData;
-    name: string;
-    designation: string;
-    company: string;
-  }[];
+interface TestimonialVideoItem {
+  id: number;
+  name: string;
+  designation: string;
+  rating_text: string;
+  video: string;
+  description: string;
+  avatar: StaticImageData;
 }
 
+const testimonial_video_data: TestimonialVideoItem[] = [
+  {
+    id: 1,
+    name: "Testimonial 1",
+    designation: "Client Story",
+    rating_text: "5.0 Rating",
+    video: "/assets/video/testimonials/1.mp4",
+    description: "Exceptional quality and outstanding execution. The results exceeded all our expectations.",
+    avatar: user_avatar_1,
+  },
+  {
+    id: 2,
+    name: "Testimonial 2",
+    designation: "Client Story",
+    rating_text: "5.0 Rating",
+    video: "/assets/video/testimonials/2.mp4",
+    description: "Incredible attention to detail and smooth collaboration throughout the project lifecycle.",
+    avatar: user_avatar_2,
+  },
+  {
+    id: 3,
+    name: "Testimonial 3",
+    designation: "Client Story",
+    rating_text: "5.0 Rating",
+    video: "/assets/video/testimonials/3.mp4",
+    description: "Professional design and seamless workflow that helped boost our business growth.",
+    avatar: user_avatar_3,
+  },
+  {
+    id: 4,
+    name: "Testimonial 4",
+    designation: "Client Story",
+    rating_text: "5.0 Rating",
+    video: "/assets/video/testimonials/4.mp4",
+    description: "Top-tier creative strategy and flawless technical implementation. Truly impressive!",
+    avatar: user_avatar_4,
+  },
+  {
+    id: 5,
+    name: "Testimonial 5",
+    designation: "Client Story",
+    rating_text: "5.0 Rating",
+    video: "/assets/video/testimonials/5.mp4",
+    description: "Transformed our digital presence completely with modern animations and robust design.",
+    avatar: user_avatar_1,
+  },
+];
 
-const testimonial_content: DataType = {
-  subtitle: "Testimonials",
-  title: "What People Say",
-  // info: "Rated 4.9 out of 5 based on 768 reviews",
-  info: "",
-  testimonial_slider_data: [
-    {
-      id: 1,
-      rating_text: "5.0 Rating",
-      description: `"Will gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
-    },
-    {
-      id: 2,
-      rating_text: "5.0 Rating",
-      description: `"Will 2 gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
-    },
-    {
-      id: 3,
-      rating_text: "5.0 Rating",
-      description: `"Will 3 gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
-    },
-    {
-      id: 4,
-      rating_text: "5.0 Rating",
-      description: `"Will 4 gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
-    },
-    // update 
-    {
-      id: 1,
-      rating_text: "5.0 Rating",
-      description: `"Will gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
-    },
-    {
-      id: 2,
-      rating_text: "5.0 Rating",
-      description: `"Will gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
-    },
-    {
-      id: 3,
-      rating_text: "5.0 Rating",
-      description: `"Will gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
-    },
-    {
-      id: 4,
-      rating_text: "5.0 Rating",
-      description: `"Will gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
-    },
-  ],
-  testimonial_nav_data: [
-    {
-      id: 1,
-      img: user_avatar_1,
-      name: "Rudra Ghosh",
-      designation: "Founder & CEO at",
-      company: "Dulalix",
-    },
-    {
-      id: 2,
-      img: user_avatar_2,
-      name: "Albert Flores",
-      designation: "Marketing Officer at",
-      company: "Google lnc",
-    },
-    {
-      id: 3,
-      img: user_avatar_3,
-      name: "Robert Henricks",
-      designation: "UI/UX Designer at",
-      company: "Webflow",
-    },
-    {
-      id: 4,
-      img: user_avatar_4,
-      name: "Flores Albert",
-      designation: "Founder & CEO at",
-      company: "Dribbble",
-    },
-    // update
-    {
-      id: 1,
-      img: user_avatar_1,
-      name: "Rudra Ghosh",
-      designation: "Founder & CEO at",
-      company: "Dulalix",
-    },
-    {
-      id: 2,
-      img: user_avatar_2,
-      name: "Albert Flores",
-      designation: "Marketing Officer at",
-      company: "Google lnc",
-    },
-    {
-      id: 3,
-      img: user_avatar_3,
-      name: "Robert Henricks",
-      designation: "UI/UX Designer at",
-      company: "Webflow",
-    },
-    {
-      id: 4,
-      img: user_avatar_4,
-      name: "Flores Albert",
-      designation: "Founder & CEO at",
-      company: "Dribbble",
-    }
+const PlayIcon = () => (
+  <svg width="20" height="22" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17 8.26795C18.3333 9.03775 18.3333 10.9623 17 11.7321L3.5 19.5263C2.16667 20.2961 0.499999 19.3338 0.499999 17.7942L0.5 2.20577C0.5 0.666173 2.16667 -0.296077 3.5 0.473724L17 8.26795Z" fill="#ffffff"/>
+  </svg>
+);
 
-  ]
-}
-
-const { subtitle, title, info, testimonial_slider_data, testimonial_nav_data } = testimonial_content
-
-
-// slider a
-const slider_a = {
+const slider_settings = {
   dots: false,
   arrows: false,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
-// slider b
-const slider_b = {
-  dots: false,
-  arrows: false,
-  centerPadding: "0px",
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  speed: 800,
   slidesToShow: 3,
   slidesToScroll: 1,
-  focusOnSelect: true,
-  centerMode: true,
+  pauseOnHover: true,
   responsive: [
     {
-      breakpoint: 992,
+      breakpoint: 1024,
       settings: {
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: 576,
+      breakpoint: 768,
       settings: {
         slidesToShow: 1,
       },
@@ -178,132 +101,275 @@ const slider_b = {
   ],
 };
 
-
-const TestimonialAreaHomeOne = ({ style }: any) => {
-
-  const bg_img = style ? null : "/assets/img/bg/distort-bg.png"
-
-  useEffect(() => {
-    let testi_Line_1 = document.querySelectorAll('.tp-testimonial-user-border');
-
-    testi_Line_1.forEach((line, index) => {
-      gsap.set(line, {
-        width: 0
-      });
-      gsap.to(line, {
-        scrollTrigger: {
-          trigger: '.tp-testimonial-user-border',
-          start: 'top 90%',
-          end: "bottom 80%",
-          markers: false,
-        },
-        width: "100%"
-      });
-    });
-
-  })
-
-
-  const [slider1, setSlider1] = useState<Slider | null>(null);
-  const [slider2, setSlider2] = useState<Slider | null>(null);
+const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
   const sliderRef = useRef<Slider | null>(null);
 
+  const bg_img = style ? null : "/assets/img/bg/distort-bg.png";
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handlePlayVideo = (e: React.MouseEvent, videoUrl: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (sliderRef.current) {
+      sliderRef.current.slickPause();
+    }
+    setSelectedVideo(videoUrl);
+  };
+
+  const handleCloseVideo = () => {
+    setSelectedVideo(null);
+    if (sliderRef.current) {
+      sliderRef.current.slickPlay();
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedVideo) {
+        handleCloseVideo();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedVideo]);
 
   return (
     <>
-      <section style={{ backgroundImage: `url(${bg_img})` }} className={`tp-testimonial-area ${style ? 'sv-inner__customize pb-160 black-bg-3' : 'theme-bg tp-bg-light pb-80'} pt-25`}>
+      <section 
+        style={{ backgroundImage: bg_img ? `url(${bg_img})` : undefined }} 
+        className={`tp-testimonial-area ${style ? 'sv-inner__customize pb-60' : 'theme-bg tp-bg-light pb-80'} pt-25`}
+      >
         <div className="container">
-          {style ? null :
+          {!style && (
             <div className="row">
               <div className="col-xl-12">
                 <div className="tp-testimonial-section-title">
                   <div className="tp-section-title-wrapper tp_text_anim mb-50 text-center">
                     <div className="tp-section-title-inner tp_title_anim p-relative">
-                      <span className="tp-section-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '10px' }}>{subtitle}</span>
-                      <h3 className="tp-section-title" style={{ fontSize: '32px' }}>{title}</h3>
+                      <span 
+                        className="tp-section-subtitle" 
+                        style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '10px' }}
+                      >
+                        Testimonials
+                      </span>
+                      <h3 className="tp-section-title" style={{ fontSize: '32px' }}>
+                        What People Say
+                      </h3>
                     </div>
-                    <p>{info}</p>
                   </div>
                 </div>
               </div>
             </div>
-          }
+          )}
 
           <div className="row">
             <div className="col-xl-12">
-              <div className="tp-testimonial-slider ml-70 mr-70">
-
+              <div className="tp-testimonial-slider ml-10 mr-10">
                 <Slider
-                  {...slider_a}
-                  asNavFor={slider2 as Slider}
+                  {...slider_settings}
                   ref={(slider) => {
-                    setSlider1(slider);
                     sliderRef.current = slider;
                   }}
-                  className="tp-testimonial-slider-active swiper-container"
+                  className="tp-testimonial-slider-video-active"
                 >
-                  {testimonial_slider_data.map((item, i) => (
-                    <div key={i} className="swiper-slide">
-                      <div className="tp-testimonial-item theme-bg-2"
-                        style={{ backgroundImage: 'url(/assets/img/testimonial/bg-distort.png)' }}>
-                        <div className="tp-testimonial-quote">
-                          <Image src={quote} alt="image-here" />
-                        </div>
-                        <div className="tp-testimonial-item-top d-flex align-items-center">
+                  {testimonial_video_data.map((item) => (
+                    <div key={item.id} className="px-2">
+                      <div 
+                        className="testimonial-video-card p-3"
+                        style={{
+                          background: 'rgba(255, 255, 255, 0.04)',
+                          border: '1px solid rgba(255, 255, 255, 0.1)',
+                          borderRadius: '16px',
+                          transition: 'all 0.3s ease',
+                          cursor: 'pointer'
+                        }}
+                        onClick={(e) => handlePlayVideo(e, item.video)}
+                      >
+                        {/* Video Thumbnail Box */}
+                        <div 
+                          className="testimonial-video-thumb p-relative mb-3 fix rounded-3"
+                          style={{
+                            height: '210px',
+                            cursor: 'pointer',
+                            overflow: 'hidden',
+                            position: 'relative',
+                            borderRadius: '12px'
+                          }}
+                        >
+                          <video
+                            src={`${item.video}#t=0.5`}
+                            preload="metadata"
+                            muted
+                            playsInline
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover',
+                              borderRadius: '12px',
+                              display: 'block',
+                              pointerEvents: 'none'
+                            }}
+                          />
+                          {/* Dark Overlay */}
+                          <div 
+                            style={{
+                              position: 'absolute',
+                              top: 0,
+                              left: 0,
+                              right: 0,
+                              bottom: 0,
+                              background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%)',
+                              borderRadius: '12px',
+                              pointerEvents: 'none'
+                            }}
+                          />
 
-                          <div className="tp-testimonial-rating">
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
+                          {/* Play Button */}
+                          <div 
+                            className="play-btn-overlay d-flex align-items-center justify-content-center"
+                            style={{
+                              position: 'absolute',
+                              top: '50%',
+                              left: '50%',
+                              transform: 'translate(-50%, -50%)',
+                              width: '56px',
+                              height: '56px',
+                              borderRadius: '50%',
+                              backgroundColor: '#54b960',
+                              boxShadow: '0 0 20px rgba(84, 185, 96, 0.7)',
+                              transition: 'all 0.3s ease',
+                              zIndex: 2,
+                              pointerEvents: 'none'
+                            }}
+                          >
+                            <div style={{ marginLeft: '3px', display: 'flex' }}>
+                              <PlayIcon />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Testimonial Meta & Content */}
+                        <div className="testimonial-video-body">
+                          <div className="d-flex align-items-center justify-content-between mb-2">
+                            <div className="tp-testimonial-rating">
+                              <StartIcon /> <StartIcon /> <StartIcon /> <StartIcon /> <StartIcon />
+                            </div>
+                            <span style={{ fontSize: '13px', color: '#54b960', fontWeight: 600 }}>
+                              {item.rating_text}
+                            </span>
                           </div>
 
-                          <p>{item.rating_text}</p>
-                        </div>
-                        <div className="tp-testimonial-content">
-                          <p>{item.description}</p>
+                          <div className="d-flex align-items-center mb-3">
+                            <div style={{ width: '42px', height: '42px', borderRadius: '50%', overflow: 'hidden', marginRight: '12px', flexShrink: 0 }}>
+                              <Image src={item.avatar} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            </div>
+                            <div>
+                              <h4 style={{ fontSize: '17px', fontWeight: 700, margin: 0, color: '#ffffff' }}>
+                                {item.name}
+                              </h4>
+                              <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.6)' }}>
+                                {item.designation}
+                              </span>
+                            </div>
+                          </div>
+
+                          <p style={{ fontSize: '14px', lineHeight: '1.5', color: 'rgba(255, 255, 255, 0.8)', margin: 0, fontStyle: 'italic' }}>
+                            &ldquo;{item.description}&rdquo;
+                          </p>
                         </div>
                       </div>
                     </div>
                   ))}
                 </Slider>
-
-
-
-                <div className="tp-testimonial-thumb-slider">
-
-                  <Slider
-                    {...slider_b}
-                    asNavFor={slider1 as Slider}
-                    ref={slider => {
-                      setSlider2(slider);
-                    }}
-                    className="tp-testimonial-nav swiper-container"
-                  >
-                    {testimonial_nav_data.map((item, index) => (
-                      <div key={index} className="swiper-slide">
-                        <div
-                          className="tp-testimonial-user-item d-flex justify-content-center align-items-center">
-                          <div className="tp-testimonial-user-thumb">
-                            <Image src={item.img} alt="image-here" />
-                          </div>
-                          <div className="tp-testimonial-user-content">
-                            <h3 className="tp-testimonial-user-title">{item.name}</h3>
-                            <span className="tp-testimonial-user-designation">{item.designation}
-                              <a href="#"> {item.company}</a></span>
-                          </div>
-                          <span className="tp-testimonial-user-border"></span>
-                        </div>
-                      </div>
-                    ))}
-                  </Slider>
-
-                </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Video Lightbox Modal Portaled to Document Body */}
+        {mounted && selectedVideo && createPortal(
+          <div 
+            className="testimonial-video-modal-overlay"
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              backgroundColor: 'rgba(0, 0, 0, 0.88)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              zIndex: 999999,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '20px'
+            }}
+            onClick={handleCloseVideo}
+          >
+            <div 
+              className="testimonial-video-modal-content"
+              style={{
+                position: 'relative',
+                width: '100%',
+                maxWidth: '900px',
+                backgroundColor: '#0d130e',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 30px rgba(84, 185, 96, 0.5)',
+                border: '1px solid rgba(84, 185, 96, 0.4)'
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                onClick={handleCloseVideo}
+                aria-label="Close modal"
+                style={{
+                  position: 'absolute',
+                  top: '15px',
+                  right: '15px',
+                  zIndex: 10,
+                  background: 'rgba(0, 0, 0, 0.7)',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  color: '#fff',
+                  width: '42px',
+                  height: '42px',
+                  borderRadius: '50%',
+                  fontSize: '22px',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                ✕
+              </button>
+              <div style={{ position: 'relative', width: '100%', paddingTop: '56.25%' }}>
+                <video 
+                  src={selectedVideo}
+                  controls
+                  autoPlay
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    borderRadius: '16px'
+                  }}
+                />
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
       </section>
     </>
   );

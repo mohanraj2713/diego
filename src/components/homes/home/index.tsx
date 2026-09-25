@@ -15,6 +15,7 @@ import FooterOne from "@/layouts/footers/FooterOne";
 import ServiceHeroAreaHomeOne from "./ServiceHeroAreaHomeOne";
 import MyWorkShopTrainingHomeOne from "./MyWorkShopTrainingHomeOne";
 import MyWorkAreaHomeOne from "./MyWorkAreaHomeOne"
+import PriceAreaHomeOne from "./PriceAreaHomeOne";
 
 const HomeOne = () => {
   return (
@@ -39,6 +40,7 @@ const HomeOne = () => {
             <ServiceHeroAreaHomeOne />
             <MyWorkAreaHomeOne />
             <TestimonialAreaHomeOne />
+            {/* <PriceAreaHomeOne /> */}
             <PartnerAreaHomeOne />
             <ContactAreaHomeOne />
             <FAQAreaHomeOne />

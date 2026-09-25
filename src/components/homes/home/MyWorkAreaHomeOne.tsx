@@ -216,7 +216,7 @@ const MyWorkAreaHomeOne: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className='row align-items-center gx-5 mt-5' >
+                <div className='row align-items-center gx-5' style={{ marginTop: '80px' }}>
                     <div className="tp-about-fact">
                         <div className="row">
                             {counter_data.map((item, index) => (
