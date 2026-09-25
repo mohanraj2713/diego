@@ -142,7 +142,7 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
     <>
       <section 
         style={{ backgroundImage: bg_img ? `url(${bg_img})` : undefined }} 
-        className={`tp-testimonial-area ${style ? 'sv-inner__customize pb-60' : 'theme-bg tp-bg-light pb-80'} pt-25`}
+        className={`tp-testimonial-area ${style ? 'sv-inner__customize pb-60' : 'theme-bg-2 pb-80'} pt-25`}
       >
         <div className="container">
           {!style && (
@@ -153,11 +153,11 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                     <div className="tp-section-title-inner tp_title_anim p-relative">
                       <span 
                         className="tp-section-subtitle" 
-                        style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '10px' }}
+                        style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '10px', color: '#54b960', fontWeight: 600 }}
                       >
                         Testimonials
                       </span>
-                      <h3 className="tp-section-title" style={{ fontSize: '32px' }}>
+                      <h3 className="tp-section-title" style={{ fontSize: '36px', color: '#ffffff', fontWeight: 800 }}>
                         What People Say
                       </h3>
                     </div>
@@ -178,13 +178,14 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                   className="tp-testimonial-slider-video-active"
                 >
                   {testimonial_video_data.map((item) => (
-                    <div key={item.id} className="px-2">
+                    <div key={item.id} className="px-2 py-3">
                       <div 
                         className="testimonial-video-card p-3"
                         style={{
-                          background: 'rgba(255, 255, 255, 0.04)',
-                          border: '1px solid rgba(255, 255, 255, 0.1)',
-                          borderRadius: '16px',
+                          backgroundColor: '#162218',
+                          border: '1px solid rgba(84, 185, 96, 0.25)',
+                          borderRadius: '20px',
+                          boxShadow: '0 12px 30px rgba(0, 0, 0, 0.35)',
                           transition: 'all 0.3s ease',
                           cursor: 'pointer'
                         }}
@@ -198,7 +199,7 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                             cursor: 'pointer',
                             overflow: 'hidden',
                             position: 'relative',
-                            borderRadius: '12px'
+                            borderRadius: '14px'
                           }}
                         >
                           <video
@@ -210,7 +211,7 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                               width: '100%',
                               height: '100%',
                               objectFit: 'cover',
-                              borderRadius: '12px',
+                              borderRadius: '14px',
                               display: 'block',
                               pointerEvents: 'none'
                             }}
@@ -224,7 +225,7 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                               right: 0,
                               bottom: 0,
                               background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%)',
-                              borderRadius: '12px',
+                              borderRadius: '14px',
                               pointerEvents: 'none'
                             }}
                           />
@@ -265,20 +266,20 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                           </div>
 
                           <div className="d-flex align-items-center mb-3">
-                            <div style={{ width: '42px', height: '42px', borderRadius: '50%', overflow: 'hidden', marginRight: '12px', flexShrink: 0 }}>
+                            <div style={{ width: '42px', height: '42px', borderRadius: '50%', overflow: 'hidden', marginRight: '12px', flexShrink: 0, border: '2px solid rgba(84, 185, 96, 0.4)' }}>
                               <Image src={item.avatar} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             </div>
                             <div>
-                              <h4 style={{ fontSize: '17px', fontWeight: 700, margin: 0, color: '#ffffff' }}>
+                              <h4 style={{ fontSize: '16px', fontWeight: 700, margin: 0, color: '#ffffff' }}>
                                 {item.name}
                               </h4>
-                              <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.6)' }}>
+                              <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.65)', fontWeight: 500 }}>
                                 {item.designation}
                               </span>
                             </div>
                           </div>
 
-                          <p style={{ fontSize: '14px', lineHeight: '1.5', color: 'rgba(255, 255, 255, 0.8)', margin: 0, fontStyle: 'italic' }}>
+                          <p style={{ fontSize: '14px', lineHeight: '1.6', color: 'rgba(255, 255, 255, 0.88)', margin: 0, fontStyle: 'italic' }}>
                             &ldquo;{item.description}&rdquo;
                           </p>
                         </div>
@@ -340,7 +341,7 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                   width: '42px',
                   height: '42px',
                   borderRadius: '50%',
-                  fontSize: '22px',
+                  fontSize: '20px',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
