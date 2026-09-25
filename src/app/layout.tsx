@@ -15,9 +15,9 @@ export const metadata = {
   title: "Swara Patel | Dance Educator",
   description: "I use movement to unlock what words often cannot — confidence, connection, joy, and self-expression.",
   icons: {
-    icon: "/assets/img/source/Simple SP Letter Logo 1.png",
-    shortcut: "/assets/img/source/Simple SP Letter Logo 1.png",
-    apple: "/assets/img/source/Simple SP Letter Logo 1.png",
+    icon: "/assets/img/logo/favicon.png",
+    shortcut: "/assets/img/logo/favicon.png",
+    apple: "/assets/img/logo/favicon.png",
   },
 };
 
@@ -73,9 +73,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       `}
     >
       <head>
-        <link rel="icon" href="/assets/img/source/Simple SP Letter Logo 1.png" type="image/png" sizes="any" />
-        <link rel="shortcut icon" href="/assets/img/source/Simple SP Letter Logo 1.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/assets/img/source/Simple SP Letter Logo 1.png" />
+        <link rel="icon" href="/assets/img/logo/favicon.png" type="image/png" sizes="any" />
+        <link rel="shortcut icon" href="/assets/img/logo/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/assets/img/logo/favicon.png" />
       </head>
       <body suppressHydrationWarning className="scroll-smooth">
         <ThemeProvider>

@@ -81,67 +81,21 @@ const ServiceAreaHomeOne = () => {
                 </div>
               </div>
 
-              {/* Right Column: Swara Patel Image Showcase */}
+              {/* Right Column: Swara Patel Image Showcase (No Card Background) */}
               <div className="col-xl-6 col-lg-5">
-                <div className="tp-services-img-wrapper pl-30 p-relative" style={{ marginTop: "60px" }}>
-                  <div
-                    className="p-relative rounded-4 overflow-hidden"
-                    style={{
-                      borderRadius: '28px',
-                      boxShadow: '0 25px 60px rgba(0, 0, 0, 0.18), 0 0 40px rgba(84, 185, 96, 0.15)',
-                      border: '1px solid rgba(84, 185, 96, 0.25)',
-                      transition: 'transform 0.4s ease, box-shadow 0.4s ease',
-                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                    }}
-                  >
+                <div className="tp-services-img-wrapper pl-30 p-relative" style={{ marginTop: "30px" }}>
+                  <div className="p-relative d-flex justify-content-center">
                     <Image
                       src={swara_img}
                       alt="Swara Patel - Movement Specialist"
                       className="w-100 h-auto d-block"
                       style={{
-                        borderRadius: '28px',
-                        objectFit: 'cover',
-                        maxHeight: '520px',
-                        transition: 'transform 0.5s ease',
+                        objectFit: 'contain',
+                        maxHeight: '540px',
+                        filter: 'drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1))',
                       }}
                       priority
                     />
-                    
-                    {/* Subtle Overlay Badge */}
-                    <div
-                      className="position-absolute bottom-0 start-0 w-100 p-4"
-                      style={{
-                        background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%)',
-                        borderBottomLeftRadius: '28px',
-                        borderBottomRightRadius: '28px',
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: '13px',
-                          fontWeight: '700',
-                          textTransform: 'uppercase',
-                          letterSpacing: '1.5px',
-                          color: '#54b960',
-                          display: 'block',
-                          marginBottom: '4px',
-                          fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
-                        }}
-                      >
-                        Movement Educator
-                      </span>
-                      <h4
-                        style={{
-                          fontSize: '24px',
-                          fontWeight: '700',
-                          color: '#FFFFFF',
-                          margin: 0,
-                          fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
-                        }}
-                      >
-                        Swara Patel
-                      </h4>
-                    </div>
                   </div>
                 </div>
               </div>

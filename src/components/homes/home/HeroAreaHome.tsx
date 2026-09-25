@@ -93,7 +93,7 @@ const HeroAreaHome = () => {
   return (
     <>
       <section id="home" className="tp-hero-area p-relative tp-btn-trigger z-index-1 fix theme-bg-2" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
-        
+
         {/* Background Video */}
         <video
           ref={videoRef}
@@ -148,13 +148,28 @@ const HeroAreaHome = () => {
             <div className="col-xl-9 col-lg-10 col-md-12">
               <div className="tp-hero-left-wrapper" style={{ paddingTop: '140px', paddingBottom: '100px' }}>
                 <div className="tp-hero-content tp_text_anim p-relative z-index-1">
-                  
+
                   <span className="singleLine" style={{ color: '#e2e8f0', fontSize: '18px', fontWeight: 600 }}>
                     {sub_title} <Image src={HeroHand} alt="hand-greeting" />
                   </span>
 
                   <h3 className="tp-hero-title cd-headline clip tp_title_anim" style={{ color: '#ffffff', fontSize: '56px', fontWeight: 800, lineHeight: 1.15, marginTop: '15px', marginBottom: '20px' }}>
-                    {title_1} <br />
+                    <span className="d-inline-flex align-items-center flex-wrap gap-2" style={{ verticalAlign: 'middle' }}>
+                      <span>I am</span>
+                      <img
+                        src="/assets/img/my-work/Signature.png"
+                        alt="Swara Patel Signature"
+                        style={{
+                          height: 'clamp(45px, 6vw, 75px)',
+                          width: 'auto',
+                          objectFit: 'contain',
+                          filter: 'brightness(0) invert(1)',
+                          opacity: 0.95,
+                          marginLeft: '8px'
+                        }}
+                      />
+                    </span>
+                    <br />
                     <span className="cd-words-wrapper" style={{ color: '#54b960' }}>
                       {words.map((word, index) => (
                         <b
@@ -169,24 +184,9 @@ const HeroAreaHome = () => {
                     {title_2}
                   </h3>
 
-                  <p style={{ color: 'rgba(255, 255, 255, 0.88)', fontSize: '18px', maxWidth: '620px', lineHeight: 1.6, marginBottom: '30px' }}>
+                  <p style={{ color: 'rgba(255, 255, 255, 0.88)', fontSize: '18px', maxWidth: '620px', lineHeight: 1.6, marginBottom: '30px', paddingLeft: 0, paddingRight: 0, textAlign: 'left' }}>
                     {sm_info}
                   </p>
-
-                  {/* Signature Logo */}
-                  <div className="tp-hero-signature mb-4 text-start d-flex justify-content-start">
-                    <img
-                      src="/assets/img/my-work/Signature.png"
-                      alt="Swara Patel Signature"
-                      style={{
-                        maxHeight: '80px',
-                        width: 'auto',
-                        objectFit: 'contain',
-                        filter: 'brightness(0) invert(1)',
-                        opacity: 0.95
-                      }}
-                    />
-                  </div>
 
                   <div className="tp-hero-btn wrap">
                     <div className="tp-hover-btn-wrapper tp-btn-bounce">
@@ -216,7 +216,7 @@ const HeroAreaHome = () => {
         </div>
 
         {/* Right Side Bottom Action Bar (3 Actions: Play, Pause, Mute) */}
-        <div 
+        <div
           className="hero-video-controls d-flex align-items-center gap-1"
           style={{
             position: 'absolute',
@@ -253,7 +253,7 @@ const HeroAreaHome = () => {
             }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z"/>
+              <path d="M8 5v14l11-7z" />
             </svg>
           </button>
 
@@ -278,7 +278,7 @@ const HeroAreaHome = () => {
             }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
             </svg>
           </button>
 
@@ -304,11 +304,11 @@ const HeroAreaHome = () => {
           >
             {isMuted ? (
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
               </svg>
             ) : (
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
               </svg>
             )}
           </button>

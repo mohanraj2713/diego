@@ -1,76 +1,23 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import Image, { StaticImageData } from 'next/image';
 import Slider from 'react-slick';
-
-import user_avatar_1 from "@/assets/img/users/user-1.jpg";
-import user_avatar_2 from "@/assets/img/users/avata-1.png";
-import user_avatar_3 from "@/assets/img/users/avata-2.png";
-import user_avatar_4 from "@/assets/img/users/avata-3.png";
-
-import StartIcon from '@/svg/icons/StartIcon';
 
 interface TestimonialVideoItem {
   id: number;
-  name: string;
-  designation: string;
-  rating_text: string;
   video: string;
-  description: string;
-  avatar: StaticImageData;
 }
 
 const testimonial_video_data: TestimonialVideoItem[] = [
-  {
-    id: 1,
-    name: "Testimonial 1",
-    designation: "Client Story",
-    rating_text: "5.0 Rating",
-    video: "/assets/video/testimonials/1.mp4",
-    description: "Exceptional quality and outstanding execution. The results exceeded all our expectations.",
-    avatar: user_avatar_1,
-  },
-  {
-    id: 2,
-    name: "Testimonial 2",
-    designation: "Client Story",
-    rating_text: "5.0 Rating",
-    video: "/assets/video/testimonials/2.mp4",
-    description: "Incredible attention to detail and smooth collaboration throughout the project lifecycle.",
-    avatar: user_avatar_2,
-  },
-  {
-    id: 3,
-    name: "Testimonial 3",
-    designation: "Client Story",
-    rating_text: "5.0 Rating",
-    video: "/assets/video/testimonials/3.mp4",
-    description: "Professional design and seamless workflow that helped boost our business growth.",
-    avatar: user_avatar_3,
-  },
-  {
-    id: 4,
-    name: "Testimonial 4",
-    designation: "Client Story",
-    rating_text: "5.0 Rating",
-    video: "/assets/video/testimonials/4.mp4",
-    description: "Top-tier creative strategy and flawless technical implementation. Truly impressive!",
-    avatar: user_avatar_4,
-  },
-  {
-    id: 5,
-    name: "Testimonial 5",
-    designation: "Client Story",
-    rating_text: "5.0 Rating",
-    video: "/assets/video/testimonials/5.mp4",
-    description: "Transformed our digital presence completely with modern animations and robust design.",
-    avatar: user_avatar_1,
-  },
+  { id: 1, video: "/assets/video/testimonials/1.mp4" },
+  { id: 2, video: "/assets/video/testimonials/2.mp4" },
+  { id: 3, video: "/assets/video/testimonials/3.mp4" },
+  { id: 4, video: "/assets/video/testimonials/4.mp4" },
+  { id: 5, video: "/assets/video/testimonials/5.mp4" },
 ];
 
 const PlayIcon = () => (
-  <svg width="20" height="22" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="22" height="24" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M17 8.26795C18.3333 9.03775 18.3333 10.9623 17 11.7321L3.5 19.5263C2.16667 20.2961 0.499999 19.3338 0.499999 17.7942L0.5 2.20577C0.5 0.666173 2.16667 -0.296077 3.5 0.473724L17 8.26795Z" fill="#ffffff"/>
   </svg>
 );
@@ -144,6 +91,59 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
         style={{ backgroundImage: bg_img ? `url(${bg_img})` : undefined }} 
         className={`tp-testimonial-area ${style ? 'sv-inner__customize pb-60' : 'theme-bg-2 pb-80'} pt-25`}
       >
+        <style jsx>{`
+          /* Light Theme Styles */
+          :global(html[tp-theme='tp-theme-light']) .tp-testimonial-area {
+            background-color: #f7f9f7 !important;
+          }
+          :global(html[tp-theme='tp-theme-light']) .testimonial-section-title {
+            color: #121212 !important;
+          }
+          :global(html[tp-theme='tp-theme-light']) .testimonial-video-card {
+            background-color: #ffffff !important;
+            border: 1px solid rgba(84, 185, 96, 0.3) !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07) !important;
+          }
+          :global(html[tp-theme='tp-theme-light']) .testimonial-video-card:hover {
+            box-shadow: 0 16px 35px rgba(84, 185, 96, 0.22) !important;
+            border-color: rgba(84, 185, 96, 0.6) !important;
+          }
+
+          /* Dark Theme Styles */
+          :global(html[tp-theme='tp-theme-dark']) .tp-testimonial-area,
+          :global(html:not([tp-theme='tp-theme-light'])) .tp-testimonial-area {
+            background-color: #0f1811 !important;
+          }
+          :global(html[tp-theme='tp-theme-dark']) .testimonial-section-title,
+          :global(html:not([tp-theme='tp-theme-light'])) .testimonial-section-title {
+            color: #ffffff !important;
+          }
+          :global(html[tp-theme='tp-theme-dark']) .testimonial-video-card,
+          :global(html:not([tp-theme='tp-theme-light'])) .testimonial-video-card {
+            background-color: #162218 !important;
+            border: 1px solid rgba(84, 185, 96, 0.25) !important;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35) !important;
+          }
+          :global(html[tp-theme='tp-theme-dark']) .testimonial-video-card:hover,
+          :global(html:not([tp-theme='tp-theme-light'])) .testimonial-video-card:hover {
+            box-shadow: 0 15px 35px rgba(84, 185, 96, 0.35) !important;
+            border-color: rgba(84, 185, 96, 0.6) !important;
+          }
+
+          /* Hover Transformations */
+          .testimonial-video-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+          }
+          .play-btn-overlay {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+          }
+          .play-btn-overlay:hover {
+            transform: translate(-50%, -50%) scale(1.15) !important;
+            box-shadow: 0 0 35px rgba(84, 185, 96, 1) !important;
+            background-color: #45a451 !important;
+          }
+        `}</style>
+
         <div className="container">
           {!style && (
             <div className="row">
@@ -157,7 +157,7 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                       >
                         Testimonials
                       </span>
-                      <h3 className="tp-section-title" style={{ fontSize: '36px', fontWeight: 800 }}>
+                      <h3 className="tp-section-title testimonial-section-title" style={{ fontSize: '36px', fontWeight: 800 }}>
                         What People Say
                       </h3>
                     </div>
@@ -180,29 +180,23 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                   {testimonial_video_data.map((item) => (
                     <div key={item.id} className="px-2 py-3">
                       <div 
-                        className="testimonial-video-card p-3"
+                        className="testimonial-video-card p-2"
                         style={{
-                          backgroundColor: '#162218',
-                          border: '1px solid rgba(84, 185, 96, 0.25)',
                           borderRadius: '20px',
-                          boxShadow: '0 12px 30px rgba(0, 0, 0, 0.35)',
-                          transition: 'all 0.3s ease',
-                          cursor: 'pointer'
                         }}
-                        onClick={(e) => handlePlayVideo(e, item.video)}
                       >
-                        {/* Video Thumbnail Box */}
+                        {/* Video Thumbnail Box Only */}
                         <div 
-                          className="testimonial-video-thumb p-relative mb-3 fix rounded-3"
+                          className="testimonial-video-thumb p-relative fix"
                           style={{
-                            height: '210px',
-                            cursor: 'pointer',
+                            height: '320px',
                             overflow: 'hidden',
                             position: 'relative',
-                            borderRadius: '14px'
+                            borderRadius: '16px'
                           }}
                         >
                           <video
+                            className="video-element"
                             src={`${item.video}#t=0.5`}
                             preload="metadata"
                             muted
@@ -211,12 +205,13 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                               width: '100%',
                               height: '100%',
                               objectFit: 'cover',
-                              borderRadius: '14px',
+                              borderRadius: '16px',
                               display: 'block',
-                              pointerEvents: 'none'
+                              pointerEvents: 'none',
+                              transition: 'transform 0.4s ease'
                             }}
                           />
-                          {/* Dark Overlay */}
+                          {/* Dark Overlay Gradient */}
                           <div 
                             style={{
                               position: 'absolute',
@@ -224,64 +219,38 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                               left: 0,
                               right: 0,
                               bottom: 0,
-                              background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%)',
-                              borderRadius: '14px',
+                              background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.45) 100%)',
+                              borderRadius: '16px',
                               pointerEvents: 'none'
                             }}
                           />
 
-                          {/* Play Button */}
-                          <div 
+                          {/* Play Button Overlay */}
+                          <button 
                             className="play-btn-overlay d-flex align-items-center justify-content-center"
                             style={{
                               position: 'absolute',
                               top: '50%',
                               left: '50%',
                               transform: 'translate(-50%, -50%)',
-                              width: '56px',
-                              height: '56px',
+                              width: '60px',
+                              height: '60px',
                               borderRadius: '50%',
                               backgroundColor: '#54b960',
+                              border: 'none',
                               boxShadow: '0 0 20px rgba(84, 185, 96, 0.7)',
                               transition: 'all 0.3s ease',
                               zIndex: 2,
-                              pointerEvents: 'none'
+                              cursor: 'pointer',
+                              pointerEvents: 'auto'
                             }}
+                            onClick={(e) => handlePlayVideo(e, item.video)}
+                            aria-label="Play testimonial video"
                           >
                             <div style={{ marginLeft: '3px', display: 'flex' }}>
                               <PlayIcon />
                             </div>
-                          </div>
-                        </div>
-
-                        {/* Testimonial Meta & Content */}
-                        <div className="testimonial-video-body">
-                          <div className="d-flex align-items-center justify-content-between mb-2">
-                            <div className="tp-testimonial-rating">
-                              <StartIcon /> <StartIcon /> <StartIcon /> <StartIcon /> <StartIcon />
-                            </div>
-                            <span style={{ fontSize: '13px', color: '#54b960', fontWeight: 600 }}>
-                              {item.rating_text}
-                            </span>
-                          </div>
-
-                          <div className="d-flex align-items-center mb-3">
-                            <div style={{ width: '42px', height: '42px', borderRadius: '50%', overflow: 'hidden', marginRight: '12px', flexShrink: 0, border: '2px solid rgba(84, 185, 96, 0.4)' }}>
-                              <Image src={item.avatar} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                            </div>
-                            <div>
-                              <h4 style={{ fontSize: '16px', fontWeight: 700, margin: 0, color: '#ffffff' }}>
-                                {item.name}
-                              </h4>
-                              <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.65)', fontWeight: 500 }}>
-                                {item.designation}
-                              </span>
-                            </div>
-                          </div>
-
-                          <p style={{ fontSize: '14px', lineHeight: '1.6', color: 'rgba(255, 255, 255, 0.88)', margin: 0, fontStyle: 'italic' }}>
-                            &ldquo;{item.description}&rdquo;
-                          </p>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -317,13 +286,17 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
               className="testimonial-video-modal-content"
               style={{
                 position: 'relative',
-                width: '100%',
-                maxWidth: '900px',
+                width: 'auto',
+                maxWidth: '90vw',
+                maxHeight: '90vh',
                 backgroundColor: '#0d130e',
                 borderRadius: '16px',
                 overflow: 'hidden',
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 30px rgba(84, 185, 96, 0.5)',
-                border: '1px solid rgba(84, 185, 96, 0.4)'
+                border: '1px solid rgba(84, 185, 96, 0.4)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
               }}
               onClick={(e) => e.stopPropagation()}
             >
@@ -351,22 +324,20 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
               >
                 ✕
               </button>
-              <div style={{ position: 'relative', width: '100%', paddingTop: '56.25%' }}>
-                <video 
-                  src={selectedVideo}
-                  controls
-                  autoPlay
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'contain',
-                    borderRadius: '16px'
-                  }}
-                />
-              </div>
+              <video 
+                src={selectedVideo}
+                controls
+                autoPlay
+                style={{
+                  maxWidth: '85vw',
+                  maxHeight: '85vh',
+                  width: 'auto',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  borderRadius: '16px',
+                  display: 'block'
+                }}
+              />
             </div>
           </div>,
           document.body

@@ -181,9 +181,9 @@ const WhatIBelieveAreaHomeOne = () => {
       `}</style>
 
       <section className="tp-believe-area pt-100 pb-90 p-relative fix">
-        <div className="container">
+        <div className="container container-large px-3 px-md-5">
           {/* Section Header */}
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mx-0">
             <div className="col-xl-10 text-center">
               <div className="tp-section-title-wrapper mb-50">
                 <span className="tp-believe-subtitle mb-15">
@@ -201,9 +201,9 @@ const WhatIBelieveAreaHomeOne = () => {
           </div>
 
           {/* 3 Core Pillars */}
-          <div className="row mb-50 justify-content-center">
+          <div className="row mb-50 justify-content-center mx-0">
             {belief_points.map((item) => (
-              <div key={item.id} className="col-lg-4 col-md-6 mb-30">
+              <div key={item.id} className="col-lg-4 col-md-6 mb-30 px-2 px-md-3">
                 <div className="believe-pillar-card p-4 rounded-4 text-center h-100">
                   <div 
                     className="icon-box mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle"
@@ -228,8 +228,8 @@ const WhatIBelieveAreaHomeOne = () => {
           </div>
 
           {/* How Movement Shapes Us - 4 Grid */}
-          <div className="row align-items-center mb-60">
-            <div className="col-xl-4 col-lg-5 mb-30">
+          <div className="row align-items-center mb-60 mx-0">
+            <div className="col-xl-4 col-lg-5 mb-30 px-2 px-md-3">
               <div className="tp-believe-left-content">
                 <span 
                   className="badge px-3 py-2 rounded-pill mb-3" 
@@ -246,10 +246,10 @@ const WhatIBelieveAreaHomeOne = () => {
               </div>
             </div>
 
-            <div className="col-xl-8 col-lg-7">
-              <div className="row">
+            <div className="col-xl-8 col-lg-7 px-2 px-md-3">
+              <div className="row mx-0">
                 {transformation_cards.map((card) => (
-                  <div key={card.id} className="col-md-6 mb-30">
+                  <div key={card.id} className="col-md-6 mb-30 px-2">
                     <div className="believe-transform-card p-4 rounded-4 h-100 position-relative">
                       <span 
                         style={{
@@ -277,9 +277,9 @@ const WhatIBelieveAreaHomeOne = () => {
           </div>
 
           {/* Highlight Summary Quote Banner */}
-          <div className="row justify-content-center">
-            <div className="col-xl-11">
-              <div className="believe-quote-box p-4 p-md-5 rounded-4 text-center position-relative overflow-hidden">
+          <div className="row justify-content-center mx-0">
+            <div className="col-xl-11 px-2 px-md-3">
+              <div className="believe-quote-box p-4 p-md-5 rounded-4 text-center position-relative overflow-hidden mx-auto">
                 <div 
                   style={{
                     fontSize: '52px',

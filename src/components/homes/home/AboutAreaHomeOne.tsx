@@ -2,8 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import award_img from "@/assets/img/about/award-icon.svg";
-import about_img from "@/assets/img/my-work/about-me.png";
-// import about_img from "@/assets/img/my-work/about-me.png";
+import swara_img from "@/assets/img/my-work/about-me.png";
 import Count from '@/components/common/Count';
 
 
@@ -24,7 +23,6 @@ const about_content: DataType = {
   subtitle: "About Me",
   award_title: "Independent Of The Year",
   award_des: "Annual Awards 2020 • awwwards.com",
-  // about_des:<></>,
   about_des: (
     <>
       <p>
@@ -39,7 +37,6 @@ const about_content: DataType = {
         Over time, I began to understand that movement doesn’t just train the body. It influences how we feel, think, behave and connect.
         <br />
         That realisation became part of my life’s work.
-        {/* the body. <strong>It influences how we feel, think, behave and connect.</strong> */}
       </p>
 
       <p>
@@ -83,31 +80,17 @@ const AboutAreaHomeOne = () => {
                     <span className="tp-section-subtitle tp-section-subtitle-1 tp-about-subtitle">{subtitle}</span>
                   </div>
                   <div className="tp-about-thumb-wrapper p-relative z-index-1">
-                    <div 
-                      className="tp-about-thumb-container p-relative z-index-1"
-                      style={{
-                        width: '100%',
-                        maxWidth: '380px',
-                        height: '460px',
-                        borderRadius: '28px',
-                        overflow: 'hidden',
-                        boxShadow: '0 20px 50px rgba(0, 0, 0, 0.2), 0 0 35px rgba(84, 185, 96, 0.15)',
-                        border: '1px solid rgba(84, 185, 96, 0.3)',
-                        position: 'relative',
-                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                        margin: '0 auto',
-                      }}
-                    >
-                      <Image 
-                        src={about_img} 
-                        alt="Swara Patel - About Me" 
+                    <div className="d-flex justify-content-center align-items-center">
+                      <Image
+                        src={swara_img}
+                        alt="Swara Patel - About Me"
                         style={{
                           width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          objectPosition: 'top center',
-                          borderRadius: '28px',
+                          maxWidth: '380px',
+                          height: 'auto',
+                          objectFit: 'contain',
                           display: 'block',
+                          filter: 'drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12))',
                         }}
                         priority
                       />
@@ -117,36 +100,32 @@ const AboutAreaHomeOne = () => {
               </div>
               <div className="col-xl-7 col-lg-7">
                 <div className="tp-about-desc">
-                  {/* <div className="tp-about-award d-inline-block">
-                    <div className="tp-about-award-icon d-inline-block" style={{ marginRight: "15px" }}>
-                      <span>
-                        <Image src={award_img} alt="image" />
-                      </span>
-                    </div>
-                    <div className="tp-about-award-content d-inline-block">
-                      <h4 className="tp-about-award-title">{award_title}</h4>
-                      <p>{award_des}</p>
-                    </div>
-                  </div> */}
                   <div className="tp-about-desc-content mb-40">
+                    <style jsx>{`
+                      .tp-about-desc-content p {
+                        font-size: 17px !important;
+                        line-height: 1.65 !important;
+                        margin-bottom: 20px !important;
+                      }
+                      :global(body.tp-magic-cursor) .tp-about-desc-content p,
+                      :global(.light-theme) .tp-about-desc-content p {
+                        color: #27282C !important;
+                      }
+                      :global(body:not(.tp-magic-cursor)) .tp-about-desc-content p,
+                      :global(.dark-theme) .tp-about-desc-content p {
+                        color: #E2E8F0 !important;
+                      }
+                      :global(body.tp-magic-cursor) .tp-about-desc-content strong,
+                      :global(.light-theme) .tp-about-desc-content strong {
+                        color: #121212 !important;
+                      }
+                      :global(body:not(.tp-magic-cursor)) .tp-about-desc-content strong,
+                      :global(.dark-theme) .tp-about-desc-content strong {
+                        color: #FFFFFF !important;
+                      }
+                    `}</style>
                     <div>{about_des}</div>
                   </div>
-                  {/* <div className="tp-about-fact">
-                    <div className="row">
-                      {counter_data.map((item, index) => (
-                        <div key={index} className="col-md-4 col-sm-6 mb-30">
-                          <div className="tp-about-fact-item">
-                            <h4 className="d-flex">
-                              <span className="purecounter">
-                                <Count number={item.count} />
-                              </span>+
-                            </h4>
-                            <p>{item.text}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>

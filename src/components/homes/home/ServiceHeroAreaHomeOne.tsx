@@ -32,8 +32,8 @@ interface DataType {
 const hero_content: DataType = {
     subtitle: "My workshops & training",
     title: "I CREATE SPACES PEOPLE WANT TO BE PART OF.",
-    info1: "I’m known for my energy and my ability to make people feel at ease, open up and participate fully, whether I’m in a room of 10 or 500.My workshops & training are designed to be experienced, not simply attended. ",
-    info2: "They bring together movement, play, interaction, reflection and moments of discovery.Because learning is most powerful when people feel free to participate, experience and discover.",
+    info1: "I’m known for my energy and my ability to make people feel at ease, open up and participate fully, whether I’m in a room of 10 or 500. My workshops & training are designed to be experienced, not simply attended.",
+    info2: "They bring together movement, play, interaction, reflection and moments of discovery. Because learning is most powerful when people feel free to participate, experience and discover.",
     slider_images_1: [
         projects_new_img_1, projects_new_img_2, projects_new_img_3
     ],
@@ -88,6 +88,25 @@ const ServiceHeroAreaHomeOne = () => {
     return (
         <>
             <div className="sv-inner__slider-area tp-service-hero-area sv-inner__slider-plr">
+                <style jsx>{`
+                    :global(html[tp-theme='tp-theme-light']) .tp-service-hero-desc,
+                    :global(body.tp-magic-cursor) .tp-service-hero-desc {
+                        color: #27282C !important;
+                    }
+                    :global(html[tp-theme='tp-theme-dark']) .tp-service-hero-desc,
+                    :global(body:not(.tp-magic-cursor)) .tp-service-hero-desc {
+                        color: #E2E8F0 !important;
+                    }
+                    :global(html[tp-theme='tp-theme-light']) .tp-service-hero-title,
+                    :global(body.tp-magic-cursor) .tp-service-hero-title {
+                        color: #121212 !important;
+                    }
+                    :global(html[tp-theme='tp-theme-dark']) .tp-service-hero-title,
+                    :global(body:not(.tp-magic-cursor)) .tp-service-hero-title {
+                        color: #FFFFFF !important;
+                    }
+                `}</style>
+
                 <div className="container-fluid">
                     <div className="row align-items-center">
                         <div className="col-xl-6 col-lg-6">
@@ -98,13 +117,11 @@ const ServiceHeroAreaHomeOne = () => {
                                             className="tp-service-hero-subtitle"
                                             style={{
                                                 fontSize: '18px',
-                                                fontWeight: '700',
+                                                fontWeight: '600',
                                                 display: 'inline-block',
                                                 marginBottom: '15px',
-                                                background: 'linear-gradient(91deg, #9ABF03 5.09%, #FF8D62 98.42%)',
-                                                WebkitBackgroundClip: 'text',
-                                                WebkitTextFillColor: 'transparent',
-                                                fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
+                                                color: '#54b960',
+                                                fontFamily: 'var(--tp-ff-dmsans)',
                                             }}
                                         >
                                             {subtitle}
