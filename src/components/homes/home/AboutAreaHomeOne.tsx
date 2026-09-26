@@ -72,7 +72,7 @@ const AboutAreaHomeOne = () => {
         <div className="container container-large">
           <div className="tp-about-inner pt-145 pb-80" style={{ paddingTop: "145px", paddingBottom: "80px" }}>
             <span className="tp-about-inner-border transition-3"></span>
-            <div className="row">
+            <div className="row align-items-center">
               <div className="col-xl-5 col-lg-5">
                 <div className="tp-about-wrapper">
                   <div className="tp-section-title-wrapper p-relative mb-45">
@@ -100,28 +100,42 @@ const AboutAreaHomeOne = () => {
               </div>
               <div className="col-xl-7 col-lg-7">
                 <div className="tp-about-desc">
-                  <div className="tp-about-desc-content mb-40">
-                    <style jsx>{`
+                  <div className="tp-about-desc-content">
+                    <style jsx global>{`
                       .tp-about-desc-content p {
-                        font-size: 17px !important;
-                        line-height: 1.65 !important;
-                        margin-bottom: 20px !important;
+                        font-size: 18px !important;
+                        line-height: 1.7 !important;
+                        margin-bottom: 22px !important;
+                        color: #242528;
                       }
-                      :global(body.tp-magic-cursor) .tp-about-desc-content p,
-                      :global(.light-theme) .tp-about-desc-content p {
-                        color: #27282C !important;
+
+                      .tp-about-desc-content p:last-child {
+                        margin-bottom: 0 !important;
                       }
-                      :global(body:not(.tp-magic-cursor)) .tp-about-desc-content p,
-                      :global(.dark-theme) .tp-about-desc-content p {
-                        color: #E2E8F0 !important;
+
+                      .tp-about-desc-content p strong {
+                        font-weight: 700;
+                        color: #0f0f11;
                       }
-                      :global(body.tp-magic-cursor) .tp-about-desc-content strong,
-                      :global(.light-theme) .tp-about-desc-content strong {
-                        color: #121212 !important;
+
+                      html[tp-theme='tp-theme-light'] .tp-about-desc-content p,
+                      .tp-theme-light .tp-about-desc-content p {
+                        color: #242528 !important;
                       }
-                      :global(body:not(.tp-magic-cursor)) .tp-about-desc-content strong,
-                      :global(.dark-theme) .tp-about-desc-content strong {
-                        color: #FFFFFF !important;
+
+                      html[tp-theme='tp-theme-light'] .tp-about-desc-content p strong,
+                      .tp-theme-light .tp-about-desc-content p strong {
+                        color: #0f0f11 !important;
+                      }
+
+                      html[tp-theme='tp-theme-dark'] .tp-about-desc-content p,
+                      .tp-theme-dark .tp-about-desc-content p {
+                        color: #e2e8f0 !important;
+                      }
+
+                      html[tp-theme='tp-theme-dark'] .tp-about-desc-content p strong,
+                      .tp-theme-dark .tp-about-desc-content p strong {
+                        color: #ffffff !important;
                       }
                     `}</style>
                     <div>{about_des}</div>

@@ -55,28 +55,29 @@ const setting_1 = {
     buttons: false,
     vertical: true,
     verticalSwiping: true,
-    centerPadding: '120px',
     responsive: [
         {
             breakpoint: 1200,
             settings: {
+                slidesToShow: 2,
             }
         },
         {
             breakpoint: 992,
             settings: {
+                slidesToShow: 2,
             }
         },
         {
             breakpoint: 768,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
             }
         },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
             }
         }
     ]
@@ -127,7 +128,7 @@ const MyWorkShopTrainingHomeOneCopy = () => {
                         </div>
                         <div className="row gx-0 align-items-center">
 
-                            <div className="col-xl-6 col-lg-6">
+                            <div className="col-xl-6 col-lg-6 mb-4 mb-lg-0">
                                 <div className="tp-services-wrapper tp-services-capsule-wrapper p-relative pr-lg-4 pr-xl-5" style={{ paddingTop: "0px" }}
                                     data-tp-throwable-scene="true">
                                     <div className="tp-section-title-wrapper tp_text_anim mb-30">
@@ -142,21 +143,21 @@ const MyWorkShopTrainingHomeOneCopy = () => {
 
                             {/* Right Column: Swara Patel Image Showcase (No Card Background) */}
                             <div className="col-xl-6 col-lg-6">
-                                <div className="sv-inner__slider-main" style={{ maxHeight: '540px', overflow: 'hidden' }}>
-                                    <div className="row g-3">
-                                        <div className="col-xl-6 col-lg-6 col-md-6">
-                                            <div className="sv-inner__slider-wrapper" style={{ maxHeight: '540px', overflow: 'hidden' }}>
+                                <div className="sv-inner__slider-main" style={{ maxHeight: '500px', overflow: 'hidden' }}>
+                                    <div className="row g-2 g-md-3">
+                                        <div className="col-6 col-md-6 col-lg-6 col-xl-6">
+                                            <div className="sv-inner__slider-wrapper" style={{ maxHeight: '500px', overflow: 'hidden' }}>
                                                 <Slider {...setting_1} className="sv-inner__slider-active-1">
                                                     {slider_images_1.map((item, index) => (
-                                                        <div key={index} className="sv-inner__slider-item">
+                                                        <div key={index} className="sv-inner__slider-item" style={{ padding: '6px 0' }}>
                                                             <Image
                                                                 src={item}
                                                                 alt="workshop image"
                                                                 style={{
                                                                     width: '100%',
-                                                                    height: '250px',
+                                                                    height: '220px',
                                                                     objectFit: 'cover',
-                                                                    borderRadius: '16px',
+                                                                    borderRadius: '12px',
                                                                     display: 'block'
                                                                 }}
                                                             />
@@ -165,19 +166,19 @@ const MyWorkShopTrainingHomeOneCopy = () => {
                                                 </Slider>
                                             </div>
                                         </div>
-                                        <div className="col-xl-6 col-lg-6 col-md-6">
-                                            <div className="sv-inner__slider-wrapper" style={{ maxHeight: '540px', overflow: 'hidden' }}>
+                                        <div className="col-6 col-md-6 col-lg-6 col-xl-6">
+                                            <div className="sv-inner__slider-wrapper" style={{ maxHeight: '500px', overflow: 'hidden' }}>
                                                 <Slider {...setting_1} className="sv-inner__slider-active-2">
                                                     {slider_images_2.map((item, index) => (
-                                                        <div key={index} className="sv-inner__slider-item">
+                                                        <div key={index} className="sv-inner__slider-item" style={{ padding: '6px 0' }}>
                                                             <Image
                                                                 src={item}
                                                                 alt="workshop image"
                                                                 style={{
                                                                     width: '100%',
-                                                                    height: '250px',
+                                                                    height: '220px',
                                                                     objectFit: 'cover',
-                                                                    borderRadius: '16px',
+                                                                    borderRadius: '12px',
                                                                     display: 'block'
                                                                 }}
                                                             />

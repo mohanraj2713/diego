@@ -7,26 +7,63 @@
 .#{$theme-prifix}-marquee{
     &-slider{
         @include transform(rotate(-3deg) translateY(-35px));
+        @media #{$xs} {
+            @include transform(rotate(-3deg) translateY(-15px));
+        }
         &-active{
             background-color: #BCE70C;
-            height: 84px;
+            height: 84px !important;
+            line-height: 84px !important;
+            @media #{$xs} {
+                height: 60px !important;
+                line-height: 60px !important;
+            }
+            & .slick-list,
+            & .slick-track {
+                height: 100% !important;
+            }
+            & .slick-slide {
+                height: 100% !important;
+                & > div {
+                    height: 100% !important;
+                    display: flex !important;
+                    align-items: center !important;
+                }
+            }
         }
     }
     &-item{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 100% !important;
         & p{
-            margin-bottom: 0;
+            margin: 0 !important;
+            padding: 0 !important;
             color: #1A2813;
             font-size: 30px;
             font-weight: 600;
             @extend %ff-garamond;
             text-transform: uppercase;
-            line-height: 1;
-            margin-top: 3px;
-            display: flex;
-            align-items: center;
+            line-height: 84px !important;
+            display: flex !important;
+            align-items: center !important;
+            white-space: nowrap;
+            @media #{$xs} {
+                font-size: 20px;
+                line-height: 60px !important;
+            }
             & img{
                 margin-left: 25px;
                 margin-right: 35px;
+                display: inline-block !important;
+                vertical-align: middle !important;
+                @media #{$xs} {
+                    margin-left: 15px;
+                    margin-right: 20px;
+                    width: 20px;
+                    height: 20px;
+                }
             }
         }
     }

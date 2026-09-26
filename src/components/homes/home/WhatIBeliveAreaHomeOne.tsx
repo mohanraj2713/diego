@@ -42,22 +42,28 @@ const setting = {
         {
             breakpoint: 1200,
             settings: {
+                variableWidth: true,
+                slidesToShow: 1,
             }
         },
         {
             breakpoint: 992,
             settings: {
+                variableWidth: true,
+                slidesToShow: 1,
             }
         },
         {
             breakpoint: 768,
             settings: {
+                variableWidth: true,
                 slidesToShow: 1,
             }
         },
         {
             breakpoint: 480,
             settings: {
+                variableWidth: true,
                 slidesToShow: 1,
             }
         }
