@@ -40,18 +40,9 @@ const scrollTo = () => {
 };
 
 const HeroAreaHome = () => {
-  const [currentWord, setCurrentWord] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWord((prevWord) => (prevWord + 1) % words.length);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, [words.length]);
 
   useEffect(() => {
     animatedHeadline();
@@ -144,6 +135,45 @@ const HeroAreaHome = () => {
 
         {/* Main Content Area */}
         <div className="container p-relative" style={{ zIndex: 3 }}>
+          <style jsx global>{`
+            .cd-words-wrapper b:not(.is-visible) {
+              position: absolute !important;
+              opacity: 0 !important;
+              visibility: hidden !important;
+              pointer-events: none !important;
+            }
+            .cd-words-wrapper b.is-visible {
+              position: relative !important;
+              opacity: 1 !important;
+              visibility: visible !important;
+            }
+            @media (max-width: 767px) {
+              .tp-hero-left-wrapper {
+                padding-top: 100px !important;
+                padding-bottom: 50px !important;
+                margin-right: 0 !important;
+              }
+              .tp-hero-title {
+                font-size: clamp(28px, 6.5vw, 44px) !important;
+                line-height: 1.2 !important;
+                margin-top: 10px !important;
+                margin-bottom: 15px !important;
+              }
+              .tp-hero-content p {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+                font-size: 15px !important;
+                line-height: 1.55 !important;
+                margin-bottom: 25px !important;
+                max-width: 100% !important;
+              }
+              .hero-video-controls {
+                bottom: 15px !important;
+                right: 15px !important;
+                transform: scale(0.9);
+              }
+            }
+          `}</style>
           <div className="row align-items-center">
             <div className="col-xl-9 col-lg-10 col-md-12">
               <div className="tp-hero-left-wrapper" style={{ paddingTop: '140px', paddingBottom: '100px' }}>
@@ -153,14 +183,14 @@ const HeroAreaHome = () => {
                     {sub_title} <Image src={HeroHand} alt="hand-greeting" />
                   </span>
 
-                  <h3 className="tp-hero-title cd-headline clip tp_title_anim" style={{ color: '#ffffff', fontSize: '56px', fontWeight: 800, lineHeight: 1.15, marginTop: '15px', marginBottom: '20px' }}>
+                  <h3 className="tp-hero-title cd-headline clip tp_title_anim" style={{ color: '#ffffff', fontSize: 'clamp(28px, 5.5vw, 56px)', fontWeight: 800, lineHeight: 1.15, marginTop: '15px', marginBottom: '20px' }}>
                     <span className="d-inline-flex align-items-center flex-wrap gap-2" style={{ verticalAlign: 'middle' }}>
                       <span>I am</span>
                       <img
                         src="/assets/img/my-work/Signature.png"
                         alt="Swara Patel Signature"
                         style={{
-                          height: 'clamp(45px, 6vw, 75px)',
+                          height: 'clamp(38px, 5vw, 75px)',
                           width: 'auto',
                           objectFit: 'contain',
                           filter: 'brightness(0) invert(1)',
@@ -174,7 +204,7 @@ const HeroAreaHome = () => {
                       {words.map((word, index) => (
                         <b
                           key={index}
-                          className={`${index === currentWord ? "is-visible" : "is-hidden"}`}
+                          className={index === 0 ? "is-visible" : "is-hidden"}
                           style={{ color: '#54b960' }}
                         >
                           {word}

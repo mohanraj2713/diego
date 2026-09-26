@@ -117,7 +117,7 @@ const MyWorkShopTrainingHomeOneCopy = () => {
 
     return (
         <>
-            <section className="tp-services-area tp-sv tp-services-bg-text-animation fix" id="services">
+            <section className="tp-services-area tp-sv tp-services-bg-text-animation fix" id="workshops">
                 <div className="container container-large">
                     <div className="tp-services-inner py-60 p-relative z-index-1"
                     // style={{ paddingTop: '60px', paddingBottom: '60px' }}

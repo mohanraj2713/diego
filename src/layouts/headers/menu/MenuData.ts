@@ -27,12 +27,6 @@ const menu_data: MenuItem[] = [
     has_dropdown: false,
   },
   {
-    id: 4,
-    title: "Portfolio",
-    link: "#portfolio",
-    has_dropdown: false,
-  },
-  {
     id: 5,
     title: "Contact",
     link: "#contact",
