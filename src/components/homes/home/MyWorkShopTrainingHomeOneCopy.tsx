@@ -127,8 +127,8 @@ const MyWorkShopTrainingHomeOneCopy = () => {
                         </div>
                         <div className="row gx-0 align-items-center">
 
-                            <div className="col-xl-6 col-lg-7">
-                                <div className="tp-services-wrapper tp-services-capsule-wrapper p-relative pr-70" style={{ paddingTop: "0px" }}
+                            <div className="col-xl-6 col-lg-6">
+                                <div className="tp-services-wrapper tp-services-capsule-wrapper p-relative pr-lg-4 pr-xl-5" style={{ paddingTop: "0px" }}
                                     data-tp-throwable-scene="true">
                                     <div className="tp-section-title-wrapper tp_text_anim mb-30">
                                         <div className="tp-section-title-inner p-relative">
@@ -148,17 +148,16 @@ const MyWorkShopTrainingHomeOneCopy = () => {
                                             <div className="sv-inner__slider-wrapper" style={{ maxHeight: '540px', overflow: 'hidden' }}>
                                                 <Slider {...setting_1} className="sv-inner__slider-active-1">
                                                     {slider_images_1.map((item, index) => (
-                                                        <div key={index} className="sv-inner__slider-item" style={{ padding: '8px 0' }}>
+                                                        <div key={index} className="sv-inner__slider-item">
                                                             <Image
                                                                 src={item}
                                                                 alt="workshop image"
                                                                 style={{
                                                                     width: '100%',
-                                                                    height: '240px',
-                                                                    objectFit: 'contain',
+                                                                    height: '250px',
+                                                                    objectFit: 'cover',
                                                                     borderRadius: '16px',
                                                                     display: 'block'
-
                                                                 }}
                                                             />
                                                         </div>
@@ -170,14 +169,14 @@ const MyWorkShopTrainingHomeOneCopy = () => {
                                             <div className="sv-inner__slider-wrapper" style={{ maxHeight: '540px', overflow: 'hidden' }}>
                                                 <Slider {...setting_1} className="sv-inner__slider-active-2">
                                                     {slider_images_2.map((item, index) => (
-                                                        <div key={index} className="sv-inner__slider-item" style={{ padding: '8px 0' }}>
+                                                        <div key={index} className="sv-inner__slider-item">
                                                             <Image
                                                                 src={item}
                                                                 alt="workshop image"
                                                                 style={{
                                                                     width: '100%',
-                                                                    height: '240px',
-                                                                    objectFit: 'contain',
+                                                                    height: '250px',
+                                                                    objectFit: 'cover',
                                                                     borderRadius: '16px',
                                                                     display: 'block'
                                                                 }}
