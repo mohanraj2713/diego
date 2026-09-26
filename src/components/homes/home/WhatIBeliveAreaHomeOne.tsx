@@ -37,7 +37,7 @@ const setting = {
     buttons: false,
     focusOnSelect: true,
     pauseOnHover: true,
-    rtl: true,
+    rtl: false,
     responsive: [
         {
             breakpoint: 1200,
