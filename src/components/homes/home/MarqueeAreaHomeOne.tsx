@@ -7,12 +7,12 @@ import smile from '@/assets/img/marquee/smile.svg';
 import stroke from '@/assets/img/marquee/stroke.svg';
 
 const marquee_data = [
-  { text: ' I believe movement is one of the oldest. ', img: smile },
-  { text: ' Most natural ways we learn,connect and grow. ', img: stroke },
-  { text: ' I believe movement is one of the oldest. ', img: smile },
-  { text: ' Most natural ways we learn,connect and grow. ', img: stroke },
-  { text: ' I believe movement is one of the oldest. ', img: smile },
-  { text: ' Most natural ways we learn,connect and grow. ', img: stroke },
+  { text: ' I believe movement is one of the oldest ', img: smile },
+  { text: ' Most natural ways we learn,connect and grow ', img: stroke },
+  { text: ' I believe movement is one of the oldest ', img: smile },
+  { text: ' Most natural ways we learn,connect and grow', img: stroke },
+  { text: ' I believe movement is one of the oldest', img: smile },
+  { text: ' Most natural ways we learn,connect and grow', img: stroke },
   // { text: 'Selected Work (2023)', img: smile },
   // { text: 'Diego Template', img: stroke },
   // { text: 'Selected Work (2023)', img: smile },
@@ -77,8 +77,19 @@ const MarqueeAreaHomeOne = () => {
             <Slider {...setting} className="tp-marquee-slider-active d-flex align-items-center ">
               {marquee_data.map((item, index) => (
                 <div key={index} className="tp-marquee-item">
-                  <p>{item.text}
-                    {/* <Image src={item.img} alt="image" /> */}
+                  <p>
+                    {item.text.trim()}
+                    <span 
+                      style={{ 
+                        display: 'inline-block',
+                        paddingLeft: '30px', 
+                        paddingRight: '30px', 
+                        opacity: 0.5,
+                        fontWeight: 300 
+                      }}
+                    >
+                      |
+                    </span>
                   </p>
                 </div>
               ))}

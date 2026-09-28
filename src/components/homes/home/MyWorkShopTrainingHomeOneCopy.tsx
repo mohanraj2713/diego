@@ -91,7 +91,7 @@ interface DataType {
 
 const service_content: DataType = {
     subtitle: "My workshops & training",
-    title: <>I CREATE SPACES PEOPLE WANT TO BE PART OF.</>,
+    title: <>I create spaces people want to be part of.</>,
     sm_des: (
         <>
             I’m known for my energy and my ability to make people feel at ease, open up and participate fully, whether I’m in a room of 10 or 500.
@@ -118,6 +118,20 @@ const MyWorkShopTrainingHomeOneCopy = () => {
     return (
         <>
             <section className="tp-services-area tp-sv tp-services-bg-text-animation fix" id="workshops">
+                <style jsx>{`
+                  /* Light Theme Overlay */
+                  :global(html[tp-theme='tp-theme-light']) :global(.sv-inner__slider-main::after) {
+                    background: linear-gradient(180deg, #f7f9f7 1.05%, rgba(247, 249, 247, 0) 24.26%, rgba(247, 249, 247, 0) 68.54%, #f7f9f7 98.06%) !important;
+                    pointer-events: none !important;
+                  }
+
+                  /* Dark Theme Overlay */
+                  :global(html[tp-theme='tp-theme-dark']) :global(.sv-inner__slider-main::after),
+                  :global(html:not([tp-theme='tp-theme-light'])) :global(.sv-inner__slider-main::after) {
+                    background: linear-gradient(180deg, #0f1811 1.05%, rgba(15, 24, 17, 0) 24.26%, rgba(15, 24, 17, 0) 68.54%, #0f1811 98.06%) !important;
+                    pointer-events: none !important;
+                  }
+                `}</style>
                 <div className="container container-large">
                     <div className="tp-services-inner py-60 p-relative z-index-1"
                     // style={{ paddingTop: '60px', paddingBottom: '60px' }}
