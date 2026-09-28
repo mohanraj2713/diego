@@ -81,13 +81,13 @@ const WhatIBeliveAreaHomeOne = () => {
                                 <div key={index} className="tp-marquee-item">
                                     <p>
                                         {item.text.trim()}
-                                        <span 
-                                            style={{ 
+                                        <span
+                                            style={{
                                                 display: 'inline-block',
-                                                paddingLeft: '30px', 
-                                                paddingRight: '30px', 
+                                                paddingLeft: '30px',
+                                                paddingRight: '30px',
                                                 opacity: 0.5,
-                                                fontWeight: 300 
+                                                fontWeight: 300
                                             }}
                                         >
                                             |

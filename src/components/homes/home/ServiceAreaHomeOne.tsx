@@ -58,15 +58,28 @@ const ServiceAreaHomeOne = () => {
           }
 
           .tp-services-quote-text {
-            font-size: 22px;
-            line-height: 1.6;
-            font-weight: 500;
+            font-size: 48px;
+            line-height: 1.35;
+            font-weight: 700;
+            letter-spacing: -0.02em;
             transition: color 0.3s ease;
+          }
+          @media (max-width: 1400px) {
+            .tp-services-quote-text {
+              font-size: 42px;
+              line-height: 1.35;
+            }
+          }
+          @media (max-width: 1200px) {
+            .tp-services-quote-text {
+              font-size: 34px;
+              line-height: 1.35;
+            }
           }
           @media (max-width: 768px) {
             .tp-services-quote-text {
-              font-size: 18px;
-              line-height: 1.5;
+              font-size: 24px;
+              line-height: 1.4;
               text-align: center;
             }
           }
@@ -83,18 +96,19 @@ const ServiceAreaHomeOne = () => {
             </div>
             <div className="row gx-0 align-items-center">
 
-              <div className="col-xl-6 col-lg-7">
+              {/* Left Column */}
+              <div className="col-xl-6 col-lg-6 p-relative">
                 <div 
-                  className="tp-services-wrapper tp-services-capsule-wrapper p-relative pt-80 pr-30" 
-                  style={{ paddingTop: "80px", minHeight: "600px" }}
+                  className="tp-services-wrapper tp-services-capsule-wrapper p-relative pt-40 pr-40" 
+                  style={{ paddingTop: "40px", minHeight: "520px" }}
                   data-tp-throwable-scene="true"
                 >
-                  <div className="tp-section-title-wrapper tp_text_anim mb-40">
+                  <div className="tp-section-title-wrapper tp_text_anim mb-25">
                     <div className="tp-section-title-inner p-relative">
-                      <span className="tp-section-subtitle tp-service-home-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '10px' }}>{subtitle}</span>
-                      <h3 className="tp-section-title tp-service-home-title tp_title_anim" style={{ fontSize: '32px', lineHeight: '1.2' }}>{title}</h3>
+                      <span className="tp-section-subtitle tp-service-home-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '8px' }}>{subtitle}</span>
+                      <h3 className="tp-section-title tp-service-home-title tp_title_anim" style={{ fontSize: '36px', lineHeight: '1.2', fontWeight: 700 }}>{title}</h3>
                     </div>
-                    <p className="tp-service-home-desc">{sm_des}</p>
+                    <p className="tp-service-home-desc" style={{ marginTop: '8px', opacity: 0.8 }}>{sm_des}</p>
                   </div>
 
                   <div className="tp-services-capsule-item-wrapper">
@@ -132,9 +146,9 @@ const ServiceAreaHomeOne = () => {
               </div>
 
               {/* Right Column: Swara Patel Text Showcase */}
-              <div className="col-xl-6 col-lg-5">
-                <div className="tp-services-img-wrapper pl-30 p-relative" style={{ marginTop: "30px" }}>
-                  <div className="p-relative d-flex justify-content-center">
+              <div className="col-xl-6 col-lg-6">
+                <div className="tp-services-img-wrapper pl-30 pr-10 p-relative">
+                  <div className="p-relative d-flex align-items-center">
                     <p className="tp-services-quote-text">
                       I use movement to unlock what words often cannot- confidence, connection, joy, and self-expression.
                     </p>
