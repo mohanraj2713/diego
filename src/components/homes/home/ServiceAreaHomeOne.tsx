@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import shape_1 from "@/assets/img/services/shape/services-shape-1.png";
 import shape_2 from "@/assets/img/services/shape/services-shape-2.png";
-import swara_img from "@/assets/img/my-work/swara_patel.png";
+// import swara_img from "@/assets/img/my-work/swara_patel.png";
 
 interface DataType {
   subtitle: string;
@@ -21,10 +21,57 @@ const service_content: DataType = {
 const { subtitle, title, sm_des } = service_content;
 
 const ServiceAreaHomeOne = () => {
-
   return (
     <>
       <section className="tp-services-area tp-sv tp-services-bg-text-animation fix" id="possibilities">
+        <style jsx>{`
+          /* Light Theme Styles */
+          :global(html[tp-theme='tp-theme-light']) .tp-services-area {
+            background-color: #f7f9f7 !important;
+          }
+          :global(html[tp-theme='tp-theme-light']) .tp-service-home-title {
+            color: #121212 !important;
+          }
+          :global(html[tp-theme='tp-theme-light']) .tp-service-home-desc {
+            color: rgba(18, 18, 18, 0.75) !important;
+          }
+          :global(html[tp-theme='tp-theme-light']) .tp-services-quote-text {
+            color: #121212 !important;
+          }
+
+          /* Dark Theme Styles */
+          :global(html[tp-theme='tp-theme-dark']) .tp-services-area,
+          :global(html:not([tp-theme='tp-theme-light'])) .tp-services-area {
+            background-color: #0f1811 !important;
+          }
+          :global(html[tp-theme='tp-theme-dark']) .tp-service-home-title,
+          :global(html:not([tp-theme='tp-theme-light'])) .tp-service-home-title {
+            color: #ffffff !important;
+          }
+          :global(html[tp-theme='tp-theme-dark']) .tp-service-home-desc,
+          :global(html:not([tp-theme='tp-theme-light'])) .tp-service-home-desc {
+            color: rgba(255, 255, 255, 0.8) !important;
+          }
+          :global(html[tp-theme='tp-theme-dark']) .tp-services-quote-text,
+          :global(html:not([tp-theme='tp-theme-light'])) .tp-services-quote-text {
+            color: #ffffff !important;
+          }
+
+          .tp-services-quote-text {
+            font-size: 22px;
+            line-height: 1.6;
+            font-weight: 500;
+            transition: color 0.3s ease;
+          }
+          @media (max-width: 768px) {
+            .tp-services-quote-text {
+              font-size: 18px;
+              line-height: 1.5;
+              text-align: center;
+            }
+          }
+        `}</style>
+
         <div className="container container-large">
           <div className="tp-services-inner pb-195 p-relative z-index-1">
 
@@ -37,9 +84,12 @@ const ServiceAreaHomeOne = () => {
             <div className="row gx-0 align-items-center">
 
               <div className="col-xl-6 col-lg-7">
-                <div className="tp-services-wrapper tp-services-capsule-wrapper p-relative pt-100 pr-70" style={{ paddingTop: "100px" }}
-                  data-tp-throwable-scene="true">
-                  <div className="tp-section-title-wrapper tp_text_anim mb-170">
+                <div 
+                  className="tp-services-wrapper tp-services-capsule-wrapper p-relative pt-80 pr-30" 
+                  style={{ paddingTop: "80px", minHeight: "600px" }}
+                  data-tp-throwable-scene="true"
+                >
+                  <div className="tp-section-title-wrapper tp_text_anim mb-40">
                     <div className="tp-section-title-inner p-relative">
                       <span className="tp-section-subtitle tp-service-home-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '10px' }}>{subtitle}</span>
                       <h3 className="tp-section-title tp-service-home-title tp_title_anim" style={{ fontSize: '32px', lineHeight: '1.2' }}>{title}</h3>
@@ -81,21 +131,13 @@ const ServiceAreaHomeOne = () => {
                 </div>
               </div>
 
-              {/* Right Column: Swara Patel Image Showcase (No Card Background) */}
+              {/* Right Column: Swara Patel Text Showcase */}
               <div className="col-xl-6 col-lg-5">
                 <div className="tp-services-img-wrapper pl-30 p-relative" style={{ marginTop: "30px" }}>
                   <div className="p-relative d-flex justify-content-center">
-                    <Image
-                      src={swara_img}
-                      alt="Swara Patel - Movement Specialist"
-                      className="w-100 h-auto d-block"
-                      style={{
-                        objectFit: 'contain',
-                        maxHeight: '540px',
-                        filter: 'drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1))',
-                      }}
-                      priority
-                    />
+                    <p className="tp-services-quote-text">
+                      I use movement to unlock what words often cannot- confidence, connection, joy, and self-expression.
+                    </p>
                   </div>
                 </div>
               </div>

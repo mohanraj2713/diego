@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import Count from '@/components/common/Count';
 
+import swara_img from "@/assets/img/my-work/swara_patel.png";
+
 const workItems = [
     "Dance curriculum expert",
     "Teacher Training & Teacher Wellness",
@@ -295,8 +297,8 @@ const MyWorkAreaHomeOne: React.FC = () => {
                         >
                             {/* Mobile Image Rendered First (< 992px) */}
                             <div className="mywork-mobile-img">
-                                <img
-                                    src="/assets/img/my-work/mywork_section_image.png"
+                                <Image
+                                    src={swara_img}
                                     alt="Swara Patel - Connection"
                                     style={{
                                         width: '100%',
@@ -376,8 +378,8 @@ const MyWorkAreaHomeOne: React.FC = () => {
                                     justifyContent: 'flex-end',
                                 }}
                             >
-                                <img
-                                    src="/assets/img/my-work/mywork_section_image.png"
+                                <Image
+                                    src={swara_img}
                                     alt="Swara Patel - Connection"
                                     style={{
                                         height: '520px',

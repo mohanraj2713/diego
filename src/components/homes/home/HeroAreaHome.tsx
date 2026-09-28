@@ -179,9 +179,9 @@ const HeroAreaHome = () => {
               <div className="tp-hero-left-wrapper" style={{ paddingTop: '140px', paddingBottom: '100px' }}>
                 <div className="tp-hero-content tp_text_anim p-relative z-index-1">
 
-                  <span className="singleLine" style={{ color: '#e2e8f0', fontSize: '18px', fontWeight: 600 }}>
+                  {/* <span className="singleLine" style={{ color: '#e2e8f0', fontSize: '18px', fontWeight: 600 }}>
                     {sub_title} <Image src={HeroHand} alt="hand-greeting" />
-                  </span>
+                  </span> */}
 
                   <h3 className="tp-hero-title cd-headline clip tp_title_anim" style={{ color: '#ffffff', fontSize: 'clamp(28px, 5.5vw, 56px)', fontWeight: 800, lineHeight: 1.15, marginTop: '15px', marginBottom: '20px' }}>
                     <span className="d-inline-flex align-items-center flex-wrap gap-2" style={{ verticalAlign: 'middle' }}>
@@ -214,9 +214,9 @@ const HeroAreaHome = () => {
                     {title_2}
                   </h3>
 
-                  <p style={{ color: 'rgba(255, 255, 255, 0.88)', fontSize: '18px', maxWidth: '620px', lineHeight: 1.6, marginBottom: '30px', paddingLeft: 0, paddingRight: 0, textAlign: 'left' }}>
+                  {/* <p style={{ color: 'rgba(255, 255, 255, 0.88)', fontSize: '18px', maxWidth: '620px', lineHeight: 1.6, marginBottom: '30px', paddingLeft: 0, paddingRight: 0, textAlign: 'left' }}>
                     {sm_info}
-                  </p>
+                  </p> */}
 
                   <div className="tp-hero-btn wrap">
                     <div className="tp-hover-btn-wrapper tp-btn-bounce">

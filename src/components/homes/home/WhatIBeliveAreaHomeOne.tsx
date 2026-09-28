@@ -79,7 +79,8 @@ const WhatIBeliveAreaHomeOne = () => {
                         <Slider {...setting} className="tp-marquee-slider-active d-flex align-items-center ">
                             {marquee_data.map((item, index) => (
                                 <div key={index} className="tp-marquee-item">
-                                    <p>{item.text} <Image src={item.img} alt="image" /></p>
+                                    <p>{item.text}
+                                        {/* <Image src={item.img} alt="image" /> */}</p>
                                 </div>
                             ))}
                         </Slider>

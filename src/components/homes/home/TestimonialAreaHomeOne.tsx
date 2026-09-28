@@ -1,7 +1,8 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import Slider from 'react-slick';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 interface TestimonialVideoItem {
   id: number;
@@ -22,36 +23,9 @@ const PlayIcon = () => (
   </svg>
 );
 
-const slider_settings = {
-  dots: false,
-  arrows: false,
-  infinite: true,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  speed: 800,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  pauseOnHover: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-      },
-    },
-  ],
-};
-
 const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
-  const sliderRef = useRef<Slider | null>(null);
 
   const bg_img = style ? null : "/assets/img/bg/distort-bg.png";
 
@@ -62,17 +36,11 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
   const handlePlayVideo = (e: React.MouseEvent, videoUrl: string) => {
     e.preventDefault();
     e.stopPropagation();
-    if (sliderRef.current) {
-      sliderRef.current.slickPause();
-    }
     setSelectedVideo(videoUrl);
   };
 
   const handleCloseVideo = () => {
     setSelectedVideo(null);
-    if (sliderRef.current) {
-      sliderRef.current.slickPlay();
-    }
   };
 
   useEffect(() => {
@@ -142,6 +110,42 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
             box-shadow: 0 0 35px rgba(84, 185, 96, 1) !important;
             background-color: #45a451 !important;
           }
+
+          /* Swiper Pagination Dots Styling */
+          :global(.tp-testimonial-swiper-active .swiper-pagination) {
+            position: relative;
+            bottom: 0;
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+          }
+          :global(.tp-testimonial-swiper-active .swiper-pagination-bullet) {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(84, 185, 96, 0.3);
+            opacity: 1;
+            border-radius: 50%;
+            margin: 0 !important;
+            transition: all 0.3s ease;
+            cursor: pointer;
+          }
+          :global(.tp-testimonial-swiper-active .swiper-pagination-bullet-active) {
+            width: 24px;
+            border-radius: 10px;
+            background-color: #54b960;
+          }
+
+          @media (max-width: 768px) {
+            .testimonial-video-card {
+              max-width: 340px;
+              margin: 0 auto;
+            }
+            .testimonial-video-thumb {
+              height: 420px !important;
+            }
+          }
         `}</style>
 
         <div className="container">
@@ -170,92 +174,129 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
           <div className="row">
             <div className="col-xl-12">
               <div className="tp-testimonial-slider ml-10 mr-10">
-                <Slider
-                  {...slider_settings}
-                  ref={(slider) => {
-                    sliderRef.current = slider;
-                  }}
-                  className="tp-testimonial-slider-video-active"
-                >
-                  {testimonial_video_data.map((item) => (
-                    <div key={item.id} className="px-2 py-3">
-                      <div 
-                        className="testimonial-video-card p-2"
-                        style={{
-                          borderRadius: '20px',
-                        }}
-                      >
-                        {/* Video Thumbnail Box Only */}
-                        <div 
-                          className="testimonial-video-thumb p-relative fix"
-                          style={{
-                            height: '320px',
-                            overflow: 'hidden',
-                            position: 'relative',
-                            borderRadius: '16px'
-                          }}
-                        >
-                          <video
-                            className="video-element"
-                            src={`${item.video}#t=0.5`}
-                            preload="metadata"
-                            muted
-                            playsInline
-                            style={{
-                              width: '100%',
-                              height: '100%',
-                              objectFit: 'cover',
-                              borderRadius: '16px',
-                              display: 'block',
-                              pointerEvents: 'none',
-                              transition: 'transform 0.4s ease'
-                            }}
-                          />
-                          {/* Dark Overlay Gradient */}
+                {mounted ? (
+                  <Swiper
+                    modules={[Autoplay, Pagination]}
+                    slidesPerView={1}
+                    spaceBetween={20}
+                    loop={true}
+                    speed={800}
+                    autoplay={{
+                      delay: 3500,
+                      disableOnInteraction: false,
+                      pauseOnMouseEnter: true,
+                    }}
+                    pagination={{
+                      clickable: true,
+                    }}
+                    breakpoints={{
+                      0: {
+                        slidesPerView: 1,
+                        spaceBetween: 15,
+                      },
+                      768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                      },
+                      992: {
+                        slidesPerView: 3,
+                        spaceBetween: 25,
+                      },
+                    }}
+                    className="tp-testimonial-swiper-active"
+                  >
+                    {testimonial_video_data.map((item) => (
+                      <SwiperSlide key={item.id}>
+                        <div className="px-2 py-3">
                           <div 
+                            className="testimonial-video-card p-2"
                             style={{
-                              position: 'absolute',
-                              top: 0,
-                              left: 0,
-                              right: 0,
-                              bottom: 0,
-                              background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.45) 100%)',
-                              borderRadius: '16px',
-                              pointerEvents: 'none'
+                              borderRadius: '20px',
                             }}
-                          />
-
-                          {/* Play Button Overlay */}
-                          <button 
-                            className="play-btn-overlay d-flex align-items-center justify-content-center"
-                            style={{
-                              position: 'absolute',
-                              top: '50%',
-                              left: '50%',
-                              transform: 'translate(-50%, -50%)',
-                              width: '60px',
-                              height: '60px',
-                              borderRadius: '50%',
-                              backgroundColor: '#54b960',
-                              border: 'none',
-                              boxShadow: '0 0 20px rgba(84, 185, 96, 0.7)',
-                              transition: 'all 0.3s ease',
-                              zIndex: 2,
-                              cursor: 'pointer',
-                              pointerEvents: 'auto'
-                            }}
-                            onClick={(e) => handlePlayVideo(e, item.video)}
-                            aria-label="Play testimonial video"
                           >
-                            <div style={{ marginLeft: '3px', display: 'flex' }}>
-                              <PlayIcon />
+                            {/* Video Thumbnail Box Only */}
+                            <div 
+                              className="testimonial-video-thumb p-relative fix"
+                              style={{
+                                height: '360px',
+                                overflow: 'hidden',
+                                position: 'relative',
+                                borderRadius: '16px'
+                              }}
+                            >
+                              <video
+                                className="video-element"
+                                src={`${item.video}#t=0.5`}
+                                preload="metadata"
+                                muted
+                                playsInline
+                                style={{
+                                  width: '100%',
+                                  height: '100%',
+                                  objectFit: 'cover',
+                                  borderRadius: '16px',
+                                  display: 'block',
+                                  pointerEvents: 'none',
+                                  transition: 'transform 0.4s ease'
+                                }}
+                              />
+                              {/* Dark Overlay Gradient */}
+                              <div 
+                                style={{
+                                  position: 'absolute',
+                                  top: 0,
+                                  left: 0,
+                                  right: 0,
+                                  bottom: 0,
+                                  background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.45) 100%)',
+                                  borderRadius: '16px',
+                                  pointerEvents: 'none'
+                                }}
+                              />
+
+                              {/* Play Button Overlay */}
+                              <button 
+                                className="play-btn-overlay d-flex align-items-center justify-content-center"
+                                style={{
+                                  position: 'absolute',
+                                  top: '50%',
+                                  left: '50%',
+                                  transform: 'translate(-50%, -50%)',
+                                  width: '60px',
+                                  height: '60px',
+                                  borderRadius: '50%',
+                                  backgroundColor: '#54b960',
+                                  border: 'none',
+                                  boxShadow: '0 0 20px rgba(84, 185, 96, 0.7)',
+                                  transition: 'all 0.3s ease',
+                                  zIndex: 2,
+                                  cursor: 'pointer',
+                                  pointerEvents: 'auto'
+                                }}
+                                onClick={(e) => handlePlayVideo(e, item.video)}
+                                aria-label="Play testimonial video"
+                              >
+                                <div style={{ marginLeft: '3px', display: 'flex' }}>
+                                  <PlayIcon />
+                                </div>
+                              </button>
                             </div>
-                          </button>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="row">
+                    {testimonial_video_data.slice(0, 3).map((item) => (
+                      <div key={item.id} className="col-lg-4 col-md-6 col-12 px-2 py-3">
+                        <div className="testimonial-video-card p-2" style={{ borderRadius: '20px' }}>
+                          <div className="testimonial-video-thumb p-relative fix" style={{ height: '360px', borderRadius: '16px', backgroundColor: '#162218' }}></div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                </Slider>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -23,6 +23,8 @@ import Slider from "react-slick";
 
 import Count from '@/components/common/Count';
 
+import swara_img from "@/assets/img/my-work/swara_patel.png";
+
 const workItems = [
     "Dance curriculum expert",
     "Teacher Training & Teacher Wellness",
@@ -393,8 +395,8 @@ const MyWorkAreaHomeOneCopy = () => {
                                 >
                                     {/* Mobile Image Rendered First (< 992px) */}
                                     <div className="mywork-mobile-img">
-                                        <img
-                                            src="/assets/img/my-work/mywork_section_image.png"
+                                        <Image
+                                            src={swara_img}
                                             alt="Swara Patel - Connection"
                                             style={{
                                                 width: '100%',
@@ -477,8 +479,8 @@ const MyWorkAreaHomeOneCopy = () => {
                                             borderRadius: '0 24px 24px 0',
                                         }}
                                     >
-                                        <img
-                                            src="/assets/img/my-work/mywork_section_image.png"
+                                        <Image
+                                            src={swara_img}
                                             alt="Swara Patel - Connection"
                                             style={{
                                                 height: '100%',
