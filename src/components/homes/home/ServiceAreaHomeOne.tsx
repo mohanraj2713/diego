@@ -14,7 +14,7 @@ interface DataType {
 
 const service_content: DataType = {
   subtitle: "What becomes possible ",
-  title: <>when we use movement </>,
+  title: <>when we use movement as a way to learn, connect and grow? </>,
   sm_des: <>as a way to learn, connect and grow?  </>,
 }
 
@@ -76,11 +76,53 @@ const ServiceAreaHomeOne = () => {
               line-height: 1.35;
             }
           }
-          @media (max-width: 768px) {
+          @media (max-width: 991px) {
+            .tp-services-inner {
+              padding-bottom: 60px !important;
+              padding-left: 20px !important;
+              padding-right: 20px !important;
+            }
+            .tp-services-wrapper {
+              padding-left: 10px !important;
+              padding-right: 10px !important;
+              padding-top: 20px !important;
+              min-height: 420px !important;
+            }
+            .tp-services-img-wrapper {
+              padding-left: 15px !important;
+              padding-right: 15px !important;
+              margin-top: 35px !important;
+              margin-bottom: 20px !important;
+            }
             .tp-services-quote-text {
-              font-size: 24px;
+              font-size: 26px;
               line-height: 1.4;
               text-align: center;
+              margin: 0 auto;
+            }
+          }
+          @media (max-width: 768px) {
+            .tp-services-inner {
+              padding-bottom: 50px !important;
+              padding-left: 15px !important;
+              padding-right: 15px !important;
+            }
+            .tp-services-wrapper {
+              min-height: 380px !important;
+            }
+            .tp-services-quote-text {
+              font-size: 22px;
+              line-height: 1.45;
+              text-align: center;
+              padding: 0 10px;
+            }
+            .tp-service-home-title {
+              font-size: 26px !important;
+              line-height: 1.3 !important;
+            }
+            .tp-services-capsule-item {
+              font-size: 13px !important;
+              padding: 8px 18px !important;
             }
           }
         `}</style>
@@ -98,8 +140,8 @@ const ServiceAreaHomeOne = () => {
 
               {/* Left Column */}
               <div className="col-xl-6 col-lg-6 p-relative">
-                <div 
-                  className="tp-services-wrapper tp-services-capsule-wrapper p-relative pt-40 pr-40" 
+                <div
+                  className="tp-services-wrapper tp-services-capsule-wrapper p-relative pt-40 pr-40"
                   style={{ paddingTop: "40px", minHeight: "520px" }}
                   data-tp-throwable-scene="true"
                 >
@@ -108,7 +150,7 @@ const ServiceAreaHomeOne = () => {
                       <span className="tp-section-subtitle tp-service-home-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '8px' }}>{subtitle}</span>
                       <h3 className="tp-section-title tp-service-home-title tp_title_anim" style={{ fontSize: '36px', lineHeight: '1.2', fontWeight: 700 }}>{title}</h3>
                     </div>
-                    <p className="tp-service-home-desc" style={{ marginTop: '8px', opacity: 0.8 }}>{sm_des}</p>
+                    {/* <p className="tp-service-home-desc" style={{ marginTop: '8px', opacity: 0.8 }}>{sm_des}</p> */}
                   </div>
 
                   <div className="tp-services-capsule-item-wrapper">
@@ -147,7 +189,7 @@ const ServiceAreaHomeOne = () => {
 
               {/* Right Column: Swara Patel Text Showcase */}
               <div className="col-xl-6 col-lg-6">
-                <div className="tp-services-img-wrapper pl-30 pr-10 p-relative">
+                <div className="tp-services-img-wrapper pl-lg-30 pr-lg-10 p-relative">
                   <div className="p-relative d-flex align-items-center">
                     <p className="tp-services-quote-text">
                       I use movement to unlock what words often cannot- confidence, connection, joy, and self-expression.

@@ -1,83 +1,75 @@
 'use client'
 import React from 'react';
-import Image from 'next/image';
-import Slider from "react-slick";
-
-import smile from '@/assets/img/marquee/smile.svg';
-import stroke from '@/assets/img/marquee/stroke.svg';
 
 const marquee_data = [
-  { text: ' I believe movement is one of the oldest ', img: smile },
-  { text: ' Most natural ways we learn,connect and grow ', img: stroke },
-  { text: ' I believe movement is one of the oldest ', img: smile },
-  { text: ' Most natural ways we learn,connect and grow', img: stroke },
-  { text: ' I believe movement is one of the oldest', img: smile },
-  { text: ' Most natural ways we learn,connect and grow', img: stroke },
-  // { text: 'Selected Work (2023)', img: smile },
-  // { text: 'Diego Template', img: stroke },
-  // { text: 'Selected Work (2023)', img: smile },
-  // { text: 'Diego Template', img: stroke },
-
-  // { text: 'I believe movement is one of the oldest, most natural ways we learn,connect and grow.', img: smile }
-]
-
-const setting = {
-  speed: 7000,
-  autoplay: true,
-  autoplaySpeed: 0,
-  centerMode: true,
-  cssEase: 'linear',
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  variableWidth: true,
-  infinite: true,
-  initialSlide: 1,
-  arrows: false,
-  buttons: false,
-  focusOnSelect: true,
-  pauseOnHover: true,
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        variableWidth: true,
-        slidesToShow: 1,
-      }
-    },
-    {
-      breakpoint: 992,
-      settings: {
-        variableWidth: true,
-        slidesToShow: 1,
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        variableWidth: true,
-        slidesToShow: 1,
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        variableWidth: true,
-        slidesToShow: 1,
-      }
-    }
-  ]
-}
+  { text: ' I believe movement is one of the oldest ' },
+  { text: ' Most natural ways we learn,connect and grow ' },
+  { text: ' I believe movement is one of the oldest ' },
+  { text: ' Most natural ways we learn,connect and grow' },
+];
 
 const MarqueeAreaHomeOne = () => {
   return (
     <>
       <div className="tp-marquee-area z-index-5">
+        <style jsx>{`
+          .marquee-track-container {
+            overflow: hidden;
+            width: 100%;
+            background-color: #BCE70C;
+            height: 84px;
+            display: flex;
+            align-items: center;
+          }
+          .marquee-track-content {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            will-change: transform;
+            animation: tpContinuousMarquee 45s linear infinite;
+          }
+          .tp-marquee-area:hover .marquee-track-content {
+            animation-play-state: paused;
+          }
+          @keyframes tpContinuousMarquee {
+            0% {
+              transform: translate3d(0, 0, 0);
+            }
+            100% {
+              transform: translate3d(-50%, 0, 0);
+            }
+          }
+          .marquee-text-item {
+            color: #1A2813;
+            font-size: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 84px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+          }
+          @media (max-width: 768px) {
+            .marquee-track-container {
+              height: 60px;
+            }
+            .marquee-track-content {
+              animation-duration: 35s;
+            }
+            .marquee-text-item {
+              font-size: 20px;
+              line-height: 60px;
+            }
+          }
+        `}</style>
         <div className="tp-marquee-wrapper">
-          <div className="tp-marquee-slider fix">
-            <Slider {...setting} className="tp-marquee-slider-active d-flex align-items-center ">
-              {marquee_data.map((item, index) => (
-                <div key={index} className="tp-marquee-item">
-                  <p>
+          <div className="tp-marquee-slider fix marquee-track-container">
+            <div className="marquee-track-content">
+              {[...marquee_data, ...marquee_data, ...marquee_data, ...marquee_data].map((item, index) => (
+                <div key={index} className="tp-marquee-item d-inline-flex align-items-center">
+                  <p className="marquee-text-item">
                     {item.text.trim()}
                     <span 
                       style={{ 
@@ -93,8 +85,7 @@ const MarqueeAreaHomeOne = () => {
                   </p>
                 </div>
               ))}
-            </Slider>
-
+            </div>
           </div>
         </div>
       </div>
