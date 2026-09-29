@@ -132,23 +132,19 @@ const MyWorkShopTrainingHomeOneCopy = () => {
                     pointer-events: none !important;
                   }
                 `}</style>
-                <div className="container container-large">
-                    <div className="tp-services-inner py-60 p-relative z-index-1"
-                    // style={{ paddingTop: '60px', paddingBottom: '60px' }}
-
-                    >
+                <div className="container container-large px-3 px-sm-4 px-md-5">
+                    <div className="tp-services-inner py-4 py-md-5 p-relative z-index-1">
                         <div className="tp-services-bottom-text tp-services-bg-text">
                             {/* <p>Services</p> */}
                         </div>
-                        <div className="row gx-0 align-items-center">
+                        <div className="row align-items-center g-4 g-lg-5">
 
                             <div className="col-xl-6 col-lg-6 mb-4 mb-lg-0">
-                                <div className="tp-services-wrapper tp-services-capsule-wrapper p-relative pr-lg-4 pr-xl-5" style={{ paddingTop: "0px" }}
-                                    data-tp-throwable-scene="true">
+                                <div className="tp-services-wrapper p-relative pr-lg-4 pr-xl-5" style={{ paddingTop: "0px" }}>
                                     <div className="tp-section-title-wrapper tp_text_anim mb-30">
                                         <div className="tp-section-title-inner p-relative">
                                             <span className="tp-section-subtitle tp-service-home-subtitle" style={{ position: 'relative', top: 0, left: 0, transform: 'none', display: 'inline-block', marginBottom: '10px' }}>{subtitle}</span>
-                                            <h3 className="tp-section-title tp-service-home-title tp_title_anim" style={{ fontSize: '32px', lineHeight: '1.2' }}>{title}</h3>
+                                            <h3 className="tp-section-title tp-service-home-title tp_title_anim" style={{ fontSize: 'clamp(24px, 4vw, 32px)', lineHeight: '1.2' }}>{title}</h3>
                                         </div>
                                         <p className="tp-service-home-desc mb-0">{sm_des}</p>
                                     </div>
