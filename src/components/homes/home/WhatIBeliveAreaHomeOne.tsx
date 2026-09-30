@@ -13,7 +13,7 @@ const marquee_data = [
 const WhatIBeliveAreaHomeOne = () => {
   return (
     <>
-      <div className="tp-marquee-area z-index-5" style={{ marginTop: '80px', marginBottom: '80px' }}>
+      <div className="tp-marquee-area z-index-5" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <style jsx>{`
           .marquee-track-container {
             overflow: hidden;
@@ -64,6 +64,10 @@ const WhatIBeliveAreaHomeOne = () => {
               font-size: 20px;
               line-height: 60px;
             }
+          }
+          :global(html[tp-theme='tp-theme-dark']) .tp-marquee-area,
+          :global(html:not([tp-theme='tp-theme-light'])) .tp-marquee-area {
+            background-color: #142213 !important;
           }
         `}</style>
         <div className="tp-marquee-wrapper">

@@ -134,7 +134,7 @@ const MyWorkAreaHomeOneCopy = () => {
 
     return (
         <>
-            <section className="tp-services-area tp-sv tp-services-bg-text-animation fix" id="services">
+            <section className="tp-mywork-home-section tp-services-area tp-sv tp-services-bg-text-animation fix" id="services">
                 <div className="container container-large">
                     <div className="tp-services-inner py-60 p-relative z-index-1" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
                         <div className="tp-services-bottom-text tp-services-bg-text">
@@ -218,11 +218,9 @@ const MyWorkAreaHomeOneCopy = () => {
                                 color: #E2E8F0 !important;
                             }
 
-                            /* EXPLICIT DARK THEME SELECTORS */
                             html[tp-theme='tp-theme-dark'] .tp-mywork-home-section,
                             body.tp-theme-dark .tp-mywork-home-section,
-                            .tp-theme-dark .tp-mywork-home-section,
-                            body:not(.tp-magic-cursor) .tp-mywork-home-section {
+                            .tp-theme-dark .tp-mywork-home-section {
                                 background-color: #142213 !important;
                             }
                             html[tp-theme='tp-theme-dark'] .tp-mywork-home-subtitle,
@@ -232,8 +230,7 @@ const MyWorkAreaHomeOneCopy = () => {
                             }
                             html[tp-theme='tp-theme-dark'] .tp-mywork-home-item,
                             body.tp-theme-dark .tp-mywork-home-item,
-                            .tp-theme-dark .tp-mywork-home-item,
-                            body:not(.tp-magic-cursor) .tp-mywork-home-item {
+                            .tp-theme-dark .tp-mywork-home-item {
                                 color: #E2E8F0 !important;
                                 border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
                             }
@@ -242,30 +239,24 @@ const MyWorkAreaHomeOneCopy = () => {
                             body.tp-theme-dark .tp-mywork-home-card,
                             body.tp-theme-dark .mywork-popout-card,
                             .tp-theme-dark .tp-mywork-home-card,
-                            .tp-theme-dark .mywork-popout-card,
-                            body:not(.tp-magic-cursor) .mywork-popout-card {
+                            .tp-theme-dark .mywork-popout-card {
                                 background-color: rgba(22, 36, 24, 0.92) !important;
                                 border: 1px solid rgba(84, 185, 96, 0.35) !important;
                                 box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
                             }
-                            html[tp-theme='tp-theme-dark'] .mywork-card-title,
-                            body:not(.tp-magic-cursor) .mywork-card-title {
+                            html[tp-theme='tp-theme-dark'] .mywork-card-title {
                                 color: #ffffff !important;
                             }
-                            html[tp-theme='tp-theme-dark'] .mywork-card-text,
-                            body:not(.tp-magic-cursor) .mywork-card-text {
+                            html[tp-theme='tp-theme-dark'] .mywork-card-text {
                                 color: #E2E8F0 !important;
                             }
-                            html[tp-theme='tp-theme-dark'] .mywork-card-highlight,
-                            body:not(.tp-magic-cursor) .mywork-card-highlight {
+                            html[tp-theme='tp-theme-dark'] .mywork-card-highlight {
                                 color: #ffffff !important;
                             }
-                            html[tp-theme='tp-theme-dark'] .tp-mywork-fact-item h4,
-                            body:not(.tp-magic-cursor) .tp-mywork-fact-item h4 {
+                            html[tp-theme='tp-theme-dark'] .tp-mywork-fact-item h4 {
                                 color: #ffffff !important;
                             }
-                            html[tp-theme='tp-theme-dark'] .tp-mywork-fact-item p,
-                            body:not(.tp-magic-cursor) .tp-mywork-fact-item p {
+                            html[tp-theme='tp-theme-dark'] .tp-mywork-fact-item p {
                                 color: #E2E8F0 !important;
                             }
 
@@ -273,22 +264,19 @@ const MyWorkAreaHomeOneCopy = () => {
                             html[tp-theme='tp-theme-light'] .tp-mywork-home-section,
                             [tp-theme='tp-theme-light'] .tp-mywork-home-section,
                             [tp-theme='light'] .tp-mywork-home-section,
-                            .tp-theme-light .tp-mywork-home-section,
-                            body.tp-magic-cursor .tp-mywork-home-section {
+                            .tp-theme-light .tp-mywork-home-section {
                                 background-color: #ffffff !important;
                             }
                             html[tp-theme='tp-theme-light'] .tp-mywork-home-subtitle,
                             [tp-theme='tp-theme-light'] .tp-mywork-home-subtitle,
                             [tp-theme='light'] .tp-mywork-home-subtitle,
-                            .tp-theme-light .tp-mywork-home-subtitle,
-                            body.tp-magic-cursor .tp-mywork-home-subtitle {
+                            .tp-theme-light .tp-mywork-home-subtitle {
                                 color: #54b960 !important;
                             }
                             html[tp-theme='tp-theme-light'] .tp-mywork-home-item,
                             [tp-theme='tp-theme-light'] .tp-mywork-home-item,
                             [tp-theme='light'] .tp-mywork-home-item,
-                            .tp-theme-light .tp-mywork-home-item,
-                            body.tp-magic-cursor .tp-mywork-home-item {
+                            .tp-theme-light .tp-mywork-home-item {
                                 color: #27282C !important;
                                 border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
                             }
@@ -299,41 +287,34 @@ const MyWorkAreaHomeOneCopy = () => {
                             [tp-theme='light'] .tp-mywork-home-card,
                             [tp-theme='light'] .mywork-popout-card,
                             .tp-theme-light .tp-mywork-home-card,
-                            .tp-theme-light .mywork-popout-card,
-                            body.tp-magic-cursor .tp-mywork-home-card,
-                            body.tp-magic-cursor .mywork-popout-card {
+                            .tp-theme-light .mywork-popout-card {
                                 background-color: #ffffff !important;
                                 border: 1px solid rgba(84, 185, 96, 0.3) !important;
                                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
                             }
                             html[tp-theme='tp-theme-light'] .mywork-card-title,
                             [tp-theme='tp-theme-light'] .mywork-card-title,
-                            .tp-theme-light .mywork-card-title,
-                            body.tp-magic-cursor .mywork-card-title {
+                            .tp-theme-light .mywork-card-title {
                                 color: #121212 !important;
                             }
                             html[tp-theme='tp-theme-light'] .mywork-card-text,
                             [tp-theme='tp-theme-light'] .mywork-card-text,
-                            .tp-theme-light .mywork-card-text,
-                            body.tp-magic-cursor .mywork-card-text {
+                            .tp-theme-light .mywork-card-text {
                                 color: #27282C !important;
                             }
                             html[tp-theme='tp-theme-light'] .mywork-card-highlight,
                             [tp-theme='tp-theme-light'] .mywork-card-highlight,
-                            .tp-theme-light .mywork-card-highlight,
-                            body.tp-magic-cursor .mywork-card-highlight {
+                            .tp-theme-light .mywork-card-highlight {
                                 color: #121212 !important;
                             }
                             html[tp-theme='tp-theme-light'] .tp-mywork-fact-item h4,
                             [tp-theme='tp-theme-light'] .tp-mywork-fact-item h4,
-                            .tp-theme-light .tp-mywork-fact-item h4,
-                            body.tp-magic-cursor .tp-mywork-fact-item h4 {
+                            .tp-theme-light .tp-mywork-fact-item h4 {
                                 color: #121212 !important;
                             }
                             html[tp-theme='tp-theme-light'] .tp-mywork-fact-item p,
                             [tp-theme='tp-theme-light'] .tp-mywork-fact-item p,
-                            .tp-theme-light .tp-mywork-fact-item p,
-                            body.tp-magic-cursor .tp-mywork-fact-item p {
+                            .tp-theme-light .tp-mywork-fact-item p {
                                 color: #27282C !important;
                             }
 

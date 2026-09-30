@@ -90,20 +90,25 @@ const ServiceHeroAreaHomeOne = () => {
             <div className="sv-inner__slider-area tp-service-hero-area sv-inner__slider-plr">
                 <style jsx>{`
                     :global(html[tp-theme='tp-theme-light']) .tp-service-hero-desc,
-                    :global(body.tp-magic-cursor) .tp-service-hero-desc {
+                    :global(.tp-theme-light) .tp-service-hero-desc {
                         color: #27282C !important;
                     }
                     :global(html[tp-theme='tp-theme-dark']) .tp-service-hero-desc,
-                    :global(body:not(.tp-magic-cursor)) .tp-service-hero-desc {
+                    :global(.tp-theme-dark) .tp-service-hero-desc {
                         color: #E2E8F0 !important;
                     }
                     :global(html[tp-theme='tp-theme-light']) .tp-service-hero-title,
-                    :global(body.tp-magic-cursor) .tp-service-hero-title {
+                    :global(.tp-theme-light) .tp-service-hero-title {
                         color: #121212 !important;
                     }
                     :global(html[tp-theme='tp-theme-dark']) .tp-service-hero-title,
-                    :global(body:not(.tp-magic-cursor)) .tp-service-hero-title {
+                    :global(.tp-theme-dark) .tp-service-hero-title {
                         color: #FFFFFF !important;
+                    }
+
+                    :global(html[tp-theme='tp-theme-dark']) .tp-service-hero-area,
+                    :global(.tp-theme-dark) .tp-service-hero-area {
+                        background-color: #142213 !important;
                     }
                 `}</style>
 

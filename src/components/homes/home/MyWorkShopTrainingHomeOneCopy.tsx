@@ -117,19 +117,18 @@ const MyWorkShopTrainingHomeOneCopy = () => {
 
     return (
         <>
-            <section className="tp-services-area tp-sv tp-services-bg-text-animation fix" id="workshops">
-                <style jsx>{`
-                  /* Light Theme Overlay */
-                  :global(html[tp-theme='tp-theme-light']) :global(.sv-inner__slider-main::after) {
-                    background: linear-gradient(180deg, #f7f9f7 1.05%, rgba(247, 249, 247, 0) 24.26%, rgba(247, 249, 247, 0) 68.54%, #f7f9f7 98.06%) !important;
+            <section className="tp-services-area tp-sv tp-workshops-section tp-services-bg-text-animation fix" id="workshops">
+                <style jsx global>{`
+                  /* Dark Theme Overlay & Background */
+                  html[tp-theme='tp-theme-dark'] .sv-inner__slider-main::after,
+                  html:not([tp-theme='tp-theme-light']) .sv-inner__slider-main::after {
+                    background: linear-gradient(180deg, #142213 1.05%, rgba(20, 34, 19, 0) 24.26%, rgba(20, 34, 19, 0) 68.54%, #142213 98.06%) !important;
                     pointer-events: none !important;
                   }
 
-                  /* Dark Theme Overlay */
-                  :global(html[tp-theme='tp-theme-dark']) :global(.sv-inner__slider-main::after),
-                  :global(html:not([tp-theme='tp-theme-light'])) :global(.sv-inner__slider-main::after) {
-                    background: linear-gradient(180deg, #0f1811 1.05%, rgba(15, 24, 17, 0) 24.26%, rgba(15, 24, 17, 0) 68.54%, #0f1811 98.06%) !important;
-                    pointer-events: none !important;
+                  html[tp-theme='tp-theme-dark'] .tp-workshops-section,
+                  html:not([tp-theme='tp-theme-light']) .tp-workshops-section {
+                    background-color: #142213 !important;
                   }
                 `}</style>
                 <div className="container container-large px-3 px-sm-4 px-md-5">

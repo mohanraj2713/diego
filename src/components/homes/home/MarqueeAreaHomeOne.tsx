@@ -63,6 +63,10 @@ const MarqueeAreaHomeOne = () => {
               line-height: 60px;
             }
           }
+          :global(html[tp-theme='tp-theme-dark']) .tp-marquee-area,
+          :global(html:not([tp-theme='tp-theme-light'])) .tp-marquee-area {
+            background-color: #142213 !important;
+          }
         `}</style>
         <div className="tp-marquee-wrapper">
           <div className="tp-marquee-slider fix marquee-track-container">

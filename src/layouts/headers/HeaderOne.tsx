@@ -139,7 +139,7 @@ const HeaderOne = () => {
                     </a>
                   </div> */}
 
-                  <div className="tp-header-hamburger ml-20">
+                  <div className="tp-header-hamburger ml-20 d-lg-none">
                     <button
                       className="tp-hamburger-btn tp-hamburger-btn-white tp-menu-bar tp-offcanvas-open-btn-2"
                       onClick={() => setShowCanvas(true)}
@@ -236,7 +236,7 @@ const HeaderOne = () => {
                     </a>
                   </div> */}
 
-                  <div className="tp-header-hamburger ml-20">
+                  <div className="tp-header-hamburger ml-20 d-lg-none">
                     <button
                       onClick={() => setShowCanvas(true)}
                       className="tp-hamburger-btn tp-hamburger-btn-white tp-menu-bar tp-offcanvas-open-btn-2"

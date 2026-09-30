@@ -137,6 +137,11 @@ const AboutAreaHomeOne = () => {
                       .tp-theme-dark .tp-about-desc-content p strong {
                         color: #ffffff !important;
                       }
+
+                      html[tp-theme='tp-theme-dark'] .tp-about-area,
+                      .tp-theme-dark .tp-about-area {
+                        background-color: #142213 !important;
+                      }
                     `}</style>
                     <div>{about_des}</div>
                   </div>
