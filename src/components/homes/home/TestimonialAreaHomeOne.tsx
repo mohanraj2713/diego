@@ -7,15 +7,14 @@ import { Autoplay, Pagination } from 'swiper/modules';
 interface TestimonialVideoItem {
   id: number;
   video: string;
+  thumb: string;
 }
 
-const testimonial_video_data: TestimonialVideoItem[] = [
-  { id: 1, video: "/assets/video/testimonials/1.mp4" },
-  { id: 2, video: "/assets/video/testimonials/2.mp4" },
-  { id: 3, video: "/assets/video/testimonials/3.mp4" },
-  { id: 4, video: "/assets/video/testimonials/4.mp4" },
-  { id: 5, video: "/assets/video/testimonials/5.mp4" },
-];
+const testimonial_video_data: TestimonialVideoItem[] = Array.from({ length: 14 }, (_, i) => ({
+  id: i + 1,
+  video: `/assets/video/testimonials/videos/${i + 1}.mp4`,
+  thumb: `/assets/video/testimonials/thumbnail/${i + 1}.jpg`,
+}));
 
 const PlayIcon = () => (
   <svg width="22" height="24" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -224,12 +223,10 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                                 borderRadius: '16px'
                               }}
                             >
-                              <video
+                              <img
                                 className="video-element"
-                                src={`${item.video}#t=0.5`}
-                                preload="metadata"
-                                muted
-                                playsInline
+                                src={item.thumb}
+                                alt={`Testimonial ${item.id}`}
                                 style={{
                                   width: '100%',
                                   height: '100%',
@@ -259,15 +256,14 @@ const TestimonialAreaHomeOne = ({ style }: { style?: boolean }) => {
                                 className="play-btn-overlay d-flex align-items-center justify-content-center"
                                 style={{
                                   position: 'absolute',
-                                  top: '50%',
-                                  left: '50%',
-                                  transform: 'translate(-50%, -50%)',
-                                  width: '60px',
-                                  height: '60px',
+                                  bottom: '24px',
+                                  right: '24px',
+                                  width: '56px',
+                                  height: '56px',
                                   borderRadius: '50%',
                                   backgroundColor: '#54b960',
+                                  boxShadow: '0 8px 32px rgba(84, 185, 96, 0.4)',
                                   border: 'none',
-                                  boxShadow: '0 0 20px rgba(84, 185, 96, 0.7)',
                                   transition: 'all 0.3s ease',
                                   zIndex: 2,
                                   cursor: 'pointer',

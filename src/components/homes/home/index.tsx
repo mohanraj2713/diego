@@ -25,11 +25,7 @@ const HomeOne = () => {
   return (
     <>
       <HeaderOne />
-      <div
-        id="smooth-wrapper"
-        className="tp-page-wrapper theme-bg"
-        style={{ backgroundImage: `url(/assets/img/bg/distort-bg.png)` }}
-      >
+      <div id="smooth-wrapper" className="tp-page-wrapper bg-white">
         <div id="smooth-content">
           <main>
             <HeroAreaHome />
@@ -61,3 +57,4 @@ const HomeOne = () => {
 };
 
 export default HomeOne;
+
