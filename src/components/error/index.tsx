@@ -2,7 +2,7 @@
 import React from 'react'; 
 import Breadcrumb from './Breadcrumb';
 import HeaderOne from '@/layouts/headers/HeaderOne';
-import FooterFour from '@/layouts/footers/FooterFour';
+import FooterOne from '@/layouts/footers/FooterOne';
 
 const Error = () => {
   return (
@@ -25,7 +25,7 @@ const Error = () => {
           </div>
         </section>
       </main>
-      <FooterFour />
+      <FooterOne />
     </>
   );
 };
