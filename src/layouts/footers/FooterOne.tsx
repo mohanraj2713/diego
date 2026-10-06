@@ -24,17 +24,17 @@ const FooterOne = ({ style }: { style?: any }) => {
             {/* Logo & Social Icons */}
             <div className="col-xl-4 col-lg-4 col-md-12 mb-4 mb-lg-0">
               <div className="logo mb-4">
-                <Link className="logo-black" href="/">
+                <Link className="logo-black" href="https://agilekids.dance/" target="_blank" rel="noopener noreferrer">
                   <Image src={logo_black} alt="Swara Patel Logo" style={{ width: '145px', height: 'auto', objectFit: 'contain' }} />
                 </Link>
-                <Link className="logo-white" href="/">
+                <Link className="logo-white" href="https://agilekids.dance/" target="_blank" rel="noopener noreferrer">
                   <Image src={logo_white} alt="Swara Patel Logo" style={{ width: '145px', height: 'auto', objectFit: 'contain' }} />
                 </Link>
               </div>
 
               {/* Circular Social Buttons */}
               <div className="d-flex align-items-center gap-2">
-                <a href="mailto:contact@swarapatel.com" aria-label="Email" className="tp-footer-social-btn" style={{
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=swarahappyfeet@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" className="tp-footer-social-btn" style={{
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
@@ -46,7 +46,7 @@ const FooterOne = ({ style }: { style?: any }) => {
                 }}>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
                 </a>
-                <a href="#" aria-label="Website" className="tp-footer-social-btn" style={{
+                <a href="https://www.instagram.com/patelswara?stkn=MTBnODI0YzY1YWo1" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="tp-footer-social-btn" style={{
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
@@ -56,9 +56,9 @@ const FooterOne = ({ style }: { style?: any }) => {
                   textDecoration: 'none',
                   transition: 'all 0.2s ease'
                 }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="9" /><path d="M3.6 9h16.8M3.6 15h16.8M12 3a14.5 14.5 0 000 18 14.5 14.5 0 000-18z" /></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
-                <a href="#" aria-label="Behance" className="tp-footer-social-btn" style={{
+                <a href="https://www.linkedin.com/in/swarapatelagilekids?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="tp-footer-social-btn" style={{
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
@@ -68,9 +68,9 @@ const FooterOne = ({ style }: { style?: any }) => {
                   textDecoration: 'none',
                   transition: 'all 0.2s ease'
                 }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 6h5a3 3 0 010 6H4V6zm0 6h5.5a3.5 3.5 0 010 7H4v-7zm10-3h5v2h-5V9zm0 6a3 3 0 106 0 3 3 0 00-6 0z" /></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
-                <a href="#" aria-label="Youtube" className="tp-footer-social-btn" style={{
+                <a href="https://www.agilekids.dance/" target="_blank" rel="noopener noreferrer" aria-label="Website" className="tp-footer-social-btn" style={{
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
@@ -80,7 +80,7 @@ const FooterOne = ({ style }: { style?: any }) => {
                   textDecoration: 'none',
                   transition: 'all 0.2s ease'
                 }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="6" width="20" height="12" rx="4" /><polygon points="10,9 15,12 10,15" fill="currentColor" /></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                 </a>
               </div>
             </div>
@@ -129,9 +129,15 @@ const FooterOne = ({ style }: { style?: any }) => {
               }}>
                 Say Hello
               </h3>
-              <div className="tp-footer-text" style={{ fontSize: '15px', lineHeight: '1.6' }}>
-                <div>email id</div>
-                <div>Phone number</div>
+              <div className="tp-footer-text" style={{ fontSize: '15px', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=swarahappyfeet@gmail.com" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>swarahappyfeet@gmail.com</a>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <a href="tel:+919619252433" style={{color: 'inherit', textDecoration: 'none'}}>+91 9619252433</a>
+                </div>
               </div>
             </div>
           </div>

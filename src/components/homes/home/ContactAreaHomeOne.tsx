@@ -37,19 +37,22 @@ const ContactAreaHomeOne: React.FC = () => {
         </div>
 
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} style={{
+        <form action="https://formsubmit.co/swarahappyfeet@gmail.com" method="POST" style={{
           display: 'flex',
           flexDirection: 'column',
           gap: '20px'
         }}>
+          {/* Optional: disable captcha or configure redirect if needed, but we'll stick to defaults */}
+          <input type="hidden" name="_subject" value="New Contact Form Submission!" />
+
           {/* Row 1: Your Name & Company */}
           <div className="row g-3">
             <div className="col-md-6">
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
                 className="tp-contact-home-input"
                 style={{
                   width: '100%',
@@ -64,9 +67,8 @@ const ContactAreaHomeOne: React.FC = () => {
             <div className="col-md-6">
               <input
                 type="text"
+                name="company"
                 placeholder="Company"
-                value={formData.company}
-                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                 className="tp-contact-home-input"
                 style={{
                   width: '100%',
@@ -84,9 +86,9 @@ const ContactAreaHomeOne: React.FC = () => {
           <div>
             <input
               type="email"
+              name="email"
               placeholder="Email Id"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              required
               className="tp-contact-home-input"
               style={{
                 width: '100%',
@@ -102,10 +104,10 @@ const ContactAreaHomeOne: React.FC = () => {
           {/* Row 3: Comments */}
           <div>
             <textarea
+              name="comments"
               rows={4}
               placeholder="Comments"
-              value={formData.comments}
-              onChange={(e) => setFormData({ ...formData, comments: e.target.value })}
+              required
               className="tp-contact-home-input"
               style={{
                 width: '100%',
