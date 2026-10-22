@@ -23,7 +23,7 @@ import Slider from "react-slick";
 
 import Count from '@/components/common/Count';
 
-import swara_img from "@/assets/img/my-work/swara_patel.png";
+import swara_img from "@/assets/img/my-work/Swara Photo.png";
 
 const workItems = [
     "Dance curriculum expert",
@@ -418,14 +418,25 @@ const MyWorkAreaHomeOneCopy = () => {
                                         </p>
 
                                         <p
-                                            className="mywork-card-text mb-4"
+                                            className="mywork-card-text mb-3"
                                             style={{
                                                 fontSize: '17px',
                                                 lineHeight: '1.65',
                                                 fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                             }}
                                         >
-                                            People may come with different roles, ages and backgrounds, but connection begins when you see the person, not the label.
+                                            Over the years, I&apos;ve realised that beneath our different ages, roles and backgrounds, we are remarkably similar.
+                                        </p>
+
+                                        <p
+                                            className="mywork-card-text mb-3"
+                                            style={{
+                                                fontSize: '17px',
+                                                lineHeight: '1.65',
+                                                fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
+                                            }}
+                                        >
+                                            We all want to belong, feel seen, reflect, learn, grow, connect and experience joy. These are the human experiences I bring into my work.
                                         </p>
 
                                         <p
@@ -437,7 +448,7 @@ const MyWorkAreaHomeOneCopy = () => {
                                                 fontFamily: 'var(--tp-ff-dmsans), "DM Sans", sans-serif',
                                             }}
                                         >
-                                            And when people feel seen, they let go, participate fully, and connect more openly. That&rsquo;s where real connection begins.
+                                            And perhaps that&apos;s why I can walk into such different rooms and still find a way to connect.
                                         </p>
                                     </div>
 

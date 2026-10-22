@@ -42,10 +42,24 @@ const scrollTo = () => {
 const HeroAreaHome = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+  const [videoSrc, setVideoSrc] = useState('/assets/img/my-work/web_version.mp4');
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     animatedHeadline();
+
+    const updateVideoSrc = () => {
+      const isMobileScreen = window.innerWidth <= 768;
+      const targetSrc = isMobileScreen 
+        ? '/assets/img/my-work/mobile_version.mp4' 
+        : '/assets/img/my-work/web_version.mp4';
+      
+      setVideoSrc(targetSrc);
+    };
+
+    updateVideoSrc();
+    window.addEventListener('resize', updateVideoSrc);
+    return () => window.removeEventListener('resize', updateVideoSrc);
   }, []);
 
   const handlePlay = () => {
@@ -81,6 +95,15 @@ const HeroAreaHome = () => {
     }
   };
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+      if (isPlaying) {
+        videoRef.current.play().catch(() => {});
+      }
+    }
+  }, [videoSrc]);
+
   return (
     <>
       <section id="home" className="tp-hero-area p-relative tp-btn-trigger z-index-1 fix theme-bg-2" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
@@ -88,7 +111,7 @@ const HeroAreaHome = () => {
         {/* Background Video */}
         <video
           ref={videoRef}
-          src="/assets/img/my-work/Swara ma'am Showreel.mp4"
+          src={videoSrc}
           autoPlay
           loop
           muted

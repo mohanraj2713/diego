@@ -11,11 +11,11 @@ const FAQAreaHomeOne: React.FC = () => {
     },
     {
       question: "Are Swara’s workshops suitable for both children and adults?",
-      answer: " Yes. I work across the entire spectrum, from early years to senior professionals.My work has included parent-child sessions with early years families, leadership workshops with school students, wellness workshops with Grade 12 students, sessions with IIT students, teacher and support-staff training, and wellness experiences for corporate teams at offsites and organisational events.The content and facilitation style changes with the audience, but the underlying approach remains the same: high participation, movement, interaction, reflection and learning through experience."
+      answer: "Yes. I work across the entire spectrum, from early years to senior professionals. My work has included parent-child sessions with early years families, leadership workshops with school students, wellness workshops with Grade 12 students, sessions with IIT students, teacher and support-staff training, and wellness experiences for corporate teams at offsites and organisational events. The content and facilitation style changes with the audience, but the underlying approach remains the same: high participation, movement, interaction, reflection and learning through experience."
     },
     {
       question: "Can a training & workshop be customised for our organisation or audience?",
-      answer: "Absolutely. I work with the organiser to understand the audience, context and intended outcomes, and shape the experience accordingly"
+      answer: "Absolutely. I work with the organiser to understand the audience, context and intended outcomes, and shape the experience accordingly."
     },
     {
       question: "How large a group can Swara facilitate?",
@@ -23,11 +23,11 @@ const FAQAreaHomeOne: React.FC = () => {
     },
     {
       question: "What can participants expect to take away from a Swara workshop?",
-      answer: "Something you don’t just understand, but experience and carry with you. New perspectives, deeper connection, confidence, joy and a shift in the way you see yourself and others.And you don’t have to take our word for it. Visit the Testimonial section on this website and hear it, see it and feel it through the people who have experienced a Swara workshop"
+      answer: "Something you don’t just understand, but experience and carry with you. New perspectives, deeper connection, confidence, joy and a shift in the way you see yourself and others. And you don’t have to take our word for it. Visit the Testimonial section on this website and hear it, see it and feel it through the people who have experienced a Swara workshop."
     },
     {
       question: "How long are the workshops?",
-      answer: "The duration depends on the type of experience and the audience. For example, Mind | Body | Soul is a 120-minute movement-based wellness experience, while a Student Leadership Workshop is typically around 90 minutes.These formats can be adapted based on the objectives, audience, group size and setting."
+      answer: "The duration depends on the type of experience and the audience. For example, Mind | Body | Soul is a 120-minute movement-based wellness experience, while a Student Leadership Workshop is typically around 90 minutes. These formats can be adapted based on the objectives, audience, group size and setting."
     },
     {
       question: "Can Swara conduct workshops at our school, organisation or event location?",
@@ -39,7 +39,7 @@ const FAQAreaHomeOne: React.FC = () => {
     },
     {
       question: "How can we invite Swara to speak or conduct a workshop?",
-      answer: " Simply get in touch through the Let’s Talk section. Share a little about your organisation, audience, objective and preferred format, and we can start the conversation."
+      answer: "Simply get in touch through the Let’s Talk section. Share a little about your organisation, audience, objective and preferred format, and we can start the conversation."
     }
   ];
 
